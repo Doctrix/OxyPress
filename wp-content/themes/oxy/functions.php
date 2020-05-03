@@ -3,8 +3,7 @@
 require_once('walker/CommentWalker.php');
 require_once('options/apparence.php');
 
-function oxy_supports ()
-{
+function oxy_supports () {
 	add_theme_support('title-tag');
 	add_theme_support('post-thumbnails');
 	add_theme_support('menus');
@@ -15,8 +14,7 @@ function oxy_supports ()
 	add_image_size('post-thumbnail', 350, 215, true);
 }
 
-function oxy_register_assets ()
-{
+function oxy_register_assets () {
     wp_register_style('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css', []);
 	wp_register_script('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js', ['popper', 'jquery'], false, true);
 	wp_register_script('popper', 'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js', [], false, true);
@@ -33,20 +31,17 @@ function oxy_title_separator ()
 	return '|';
 }
 
-function oxy_menu_class ($classes)
-{
+function oxy_menu_class ($classes) {
 	$classes[] = 'nav-item';
 	return $classes;
 }
 
-function oxy_menu_link_class ($attrs)
-{
+function oxy_menu_link_class ($attrs) {
 	$attrs['class'] = 'nav-link';
 	return $attrs;
 }
 
-function oxy_pagination ()
-{
+function oxy_pagination () {
 	$pages = paginate_links(['type' => 'array']);
 	if ($pages === null) {
 		return;
@@ -280,7 +275,7 @@ function oxy_register_widget () {
 	register_widget(YoutubeWidget::class);
 	register_sidebar([
 		'id' => 'homepage',
-		'name' => 'Sidebar Accueil',
+		'name' => __('Sidebar Accueil', 'oxy'),
 		'before_widget' => '<div class="p-4 %2$s" id="%1$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="font-italic">',
@@ -338,3 +333,8 @@ add_action('after_switch_theme', function () {
 });
 
 add_action('after_switch_theme', 'flush_rewrite_rules');
+
+// https://developer.wordpress.org/apis/handbook/internationalization/
+add_action('after_setup_theme', function () {
+	load_theme_textdomain('oxy', get_template_directory() . '/languages');
+});
