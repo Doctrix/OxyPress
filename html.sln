@@ -7,20 +7,21 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "html", "K:\Serveur\Nginx\ht
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_56368"
-		Debug.AspNetCompiler.PhysicalPath = "K:\Serveur\Nginx\html\"
+		Debug.AspNetCompiler.PhysicalPath = "..\html\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56368\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.VirtualPath = "/localhost_56368"
-		Release.AspNetCompiler.PhysicalPath = "K:\Serveur\Nginx\html\"
+		Release.AspNetCompiler.PhysicalPath = "..\html\"
 		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56368\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "56368"
+		SlnRelativePath = "..\html\"
 	EndProjectSection
 EndProject
 Global
