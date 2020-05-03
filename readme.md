@@ -21,4 +21,4 @@ Please make sure to update tests as appropriate.
 [WordPress](https://wordpress.org/about/license/)
 
 ## Download WordPress
-[Get WordPress](https://wordpress.org/download/)
+Source code : [Get WordPress](https://wordpress.org/download/)
