@@ -1,0 +1,1 @@
+jQuery(".oxy_datepicker").flatpickr({})
