@@ -268,6 +268,9 @@ function oxy_query_vars ($params) {
 add_action('pre_get_posts', 'oxy_pre_get_posts');
 add_filter('query_vars', 'oxy_query_vars');
 
+/**
+* Widgets
+*/
 require_once 'widgets/Widget.php';
 
 function oxy_register_widget () {
@@ -285,6 +288,24 @@ function oxy_register_widget () {
 }
 
 add_action('widgets_init', 'oxy_register_widget');
+
+/**
+* Banniere
+*/
+
+function oxy_register_widget_header () {
+	register_widget(BanniereWidget::class);
+	register_sidebar([
+		'id' => 'bannierepage',
+		'name' => __('Banniere Page', 'oxy'),
+		'before_widget' => '<div class="p-4 %2$s" id="%1$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="font-italic">',
+		'after_title' => '</h4>'
+	]);
+}
+
+add_action('widgets_init', 'oxy_register_widget_header');
 
 add_filter('comment_form_default_fields', function ($fields) {
 	$fields['email'] = <<<HTML

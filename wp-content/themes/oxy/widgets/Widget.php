@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 class YoutubeWidget extends WP_Widget {
 
 	public function __construct()
@@ -85,6 +85,53 @@ class TwitchWidget extends WP_Widget {
 			name="<?= $this->get_field_name('twitch') ?>"
 			value="<?= esc_attr($twitch) ?>"
 			id="<?= $this->get_field_name('twitch') ?>">
+		</p>
+		<?php
+	}
+
+	public function update ($newInstance, $oldInstance) {
+		return $newInstance;
+	}
+}
+
+class BanniereWidget extends WP_Widget {
+
+	public function __construct()
+	{
+		parent::__construct('banniere_widget', 'Banniere Widget');
+	}
+
+	public function widget($args, $instance) {
+		echo $args['before_widget'];
+		if (isset($instance['title'])) {
+			$title = apply_filters('widget_title', $instance['title']);
+			echo $args['before_title'] . $title . $args['after_title'];
+		}
+		$banniere = isset($instance['banniere']) ? $instance['banniere'] : '';
+		echo '<img src="https://' . esc_attr($banniere) . '" class="img-fluid" alt="Responsive image">';
+		echo $args['after_widget'];
+	}
+	public function form ($instance) {
+		$title = isset($instance['title']) ? $instance['title'] : '';
+		$banniere = isset($instance['banniere']) ? $instance['banniere'] : '';
+		?>
+		<p>
+		<label for="<?= $this->get_field_id('title') ?>">Titre</label>
+		<input
+			class="widefat"
+			type="text"
+			name="<?= $this->get_field_name('title') ?>"
+			value="<?= esc_attr($title) ?>"
+			id="<?= $this->get_field_name('title') ?>">
+		</p>
+		<p>
+		<label for="<?= $this->get_field_id('banniere') ?>">URL image</label>
+		<input
+			class="widefat"
+			type="text"
+			name="<?= $this->get_field_name('banniere') ?>"
+			value="<?= esc_attr($banniere) ?>"
+			id="<?= $this->get_field_name('banniere') ?>">
 		</p>
 		<?php
 	}
