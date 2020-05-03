@@ -20,4 +20,4 @@ Please make sure to update tests as appropriate.
 
 ## License
 [WordPress](https://wordpress.org/about/license/)
-[GetWordPress]https://wordpress.org/download/
+[Get WordPress](https://wordpress.org/download/)
