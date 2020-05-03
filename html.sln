@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "html", "K:\Serveur\Nginx\html\", "{8B257FAF-C1A9-4256-9782-EA15ED14D004}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_56368"
+		Debug.AspNetCompiler.PhysicalPath = "K:\Serveur\Nginx\html\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56368\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_56368"
+		Release.AspNetCompiler.PhysicalPath = "K:\Serveur\Nginx\html\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56368\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "56368"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8B257FAF-C1A9-4256-9782-EA15ED14D004}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B257FAF-C1A9-4256-9782-EA15ED14D004}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {74B84D83-D9EA-4A2E-96C9-43F716327E6E}
+	EndGlobalSection
+EndGlobal
