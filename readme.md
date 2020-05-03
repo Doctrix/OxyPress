@@ -4,7 +4,7 @@ OxyWeb is a website under Wordpress.
 
 ## Installation
 
-Use the package manager [wget](https://github.com/Doctrix/OxyWeb.git).
+Use the package manager [Git](https://github.com/Doctrix/OxyWeb.git).
 
 Uncompress the Git folder in your server's html or www root folder.
 Using your web browser open the page of your website /wp-admin/install.php to start installing Wordpress on your server!
@@ -19,4 +19,5 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 Please make sure to update tests as appropriate.
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+[WordPress](https://wordpress.org/about/license/)
+[GetWordPress]https://wordpress.org/download/
