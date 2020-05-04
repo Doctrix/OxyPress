@@ -248,7 +248,6 @@ add_action('after_switch_theme', function () {
 	wp_insert_term('16', 'pegi');
 	wp_insert_term('18', 'pegi');
 });
-
 add_action('after_switch_theme', 'flush_rewrite_rules');
 
 // Internationalization : https://developer.wordpress.org/apis/handbook/internationalization/
@@ -297,3 +296,20 @@ add_filter( 'rest_authentication_errors', function( $result ) {
 	}
  	return $result;
 }, 9);
+
+function oxyReadData (){
+	$data = wp_cache_get('data', 'oxy');
+	if ($data === false) {
+
+		$data = file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . 'data');
+		wp_cache_set('data', $data, 'oxy', 60);
+	}
+	return $data;
+}
+
+if(isset($_GET['cachetest'])) {
+// var_dump(oxyReadData());
+// var_dump(oxyReadData());
+// var_dump(oxyReadData());
+// die();
+}
