@@ -18,6 +18,8 @@
  * @package WordPress
  */
 
+ define('DISABLE_WP_CRON', true);
+
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define('DB_NAME', 'db_wordpress_test');
@@ -65,7 +67,6 @@ define('NONCE_SALT',       'l$J^@Bq7l5tTqeAY1k%rk85c@&U=c:qfJ/2^(Ao)k@KOhYbe(q#M
  */
 $table_prefix  = 'wptest_';
 
-
 /**
  * For developers: WordPress debugging mode.
  *
@@ -98,4 +99,3 @@ if ( !defined('ABSPATH') )
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
-

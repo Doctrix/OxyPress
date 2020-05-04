@@ -2,6 +2,7 @@
 
 require_once('walker/CommentWalker.php');
 require_once('options/apparence.php');
+require_once('options/cron.php');
 
 function oxy_supports () {
 	add_theme_support('title-tag');
