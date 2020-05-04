@@ -251,17 +251,49 @@ add_action('after_switch_theme', function () {
 
 add_action('after_switch_theme', 'flush_rewrite_rules');
 
-// https://developer.wordpress.org/apis/handbook/internationalization/
+// Internationalization : https://developer.wordpress.org/apis/handbook/internationalization/
 add_action('after_setup_theme', function () {
 	load_theme_textdomain('oxy', get_template_directory() . '/languages');
 });
 
-/** SQL */
+// SQL -- string->slug=%s -- integer->slug=%d
 /** @var wpdb $wpdb */
 global $wpdb;
-
 $tag = "jeux-video";
-/** string->slug=%s -- integer->slug=%d */
 $query = $wpdb->prepare("SELECT name FROM {$wpdb->terms} WHERE slug=%s", [$tag]);
-
 $results = $wpdb->get_results($query);
+
+// Api : https://developer.wordpress.org/rest-api
+//
+add_action('rest_api_init', function () {
+	register_rest_route('oxy/v1', '/js/(?P<id>\d+)', [
+		'methods' => 'GET',
+		'callback' => function (WP_REST_Request $request) {
+			// debug
+			//$response = new WP_REST_Response(['success' => 'bonjour les devs']);
+			//$response->set_status(201);
+			//return $response;
+			$postID = (int)$request->get_param('id');
+			$post = get_post($postID);
+			if ($post === null) {
+				return new WP_Error('ChercheR l\'error', 'Vous recherchez quelque chose en particuler sinon rend toi sur https://oxygames.fr', ['status' => 404]);
+			}
+			return $post->post_title;
+		},
+		'permission_callback' => function () {
+			return current_user_can('edit_posts');
+		}
+	]);
+});
+
+add_filter( 'rest_authentication_errors', function( $result ) {
+    if ( true === $result || is_wp_error( $result ) ) {
+        return $result;
+    }
+	/** @var WP $wp */
+	global $wp;
+	if (strpos($wp->query_vars['rest_route'], 'oxy/v1') !== false) {
+		return true;
+	}
+ 	return $result;
+}, 9);
