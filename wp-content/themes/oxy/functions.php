@@ -255,3 +255,13 @@ add_action('after_switch_theme', 'flush_rewrite_rules');
 add_action('after_setup_theme', function () {
 	load_theme_textdomain('oxy', get_template_directory() . '/languages');
 });
+
+/** SQL */
+/** @var wpdb $wpdb */
+global $wpdb;
+
+$tag = "jeux-video";
+/** string->slug=%s -- integer->slug=%d */
+$query = $wpdb->prepare("SELECT name FROM {$wpdb->terms} WHERE slug=%s", [$tag]);
+
+$results = $wpdb->get_results($query);
