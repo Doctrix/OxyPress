@@ -2,6 +2,7 @@
 /**
 * Plugin Name: Oxy Plugin
 */
+defined('ABSPATH') or die('oups il y a rien à voir');
 
 register_activation_hook(__FILE__, function() {
 	touch(__DIR__ . '/oxy');
