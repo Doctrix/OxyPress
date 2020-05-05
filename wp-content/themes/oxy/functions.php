@@ -169,7 +169,6 @@ add_filter('query_vars', 'oxy_query_vars');
 * Widgets
 */
 require_once 'widgets/Widget.php';
-
 function oxy_register_widget () {
 	register_widget(TwitchWidget::class);
 	register_widget(YoutubeWidget::class);
@@ -248,6 +247,7 @@ add_action('after_switch_theme', function () {
 	wp_insert_term('16', 'pegi');
 	wp_insert_term('18', 'pegi');
 });
+
 add_action('after_switch_theme', 'flush_rewrite_rules');
 
 // Internationalization : https://developer.wordpress.org/apis/handbook/internationalization/
@@ -313,3 +313,7 @@ if(isset($_GET['cachetest'])) {
 // var_dump(oxyReadData());
 // die();
 }
+
+add_filter('oxy_search_title', function () {
+	return 'Recherche : %s';
+});

@@ -117,8 +117,8 @@ register_taxonomy('genre', 'post', [
 		'public' => true,
 		'menu_position' => 3,
 		'menu_icon' => 'dashicons-upload',
-		'supports' => ['title', 'editor', 'thumbnail', 'comments', 'trackbacks', 'excerpt', 'post-formats'],
-		'show_in_rest' => true,
+		'supports' => ['title', 'editor', 'thumbnail', 'excerpt', 'post-formats'],
+		'show_in_rest' => false,
 		'has_archive' => true,
 	]);
 });
