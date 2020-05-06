@@ -13,6 +13,24 @@ function oxy_supports () {
 	register_nav_menu('footer', 'Pied de page');
 
 	add_image_size('post-thumbnail', 350, 215, true);
+
+	// Add Custom Background Support.
+		$args = array(
+			'default-color' => '000000',
+		);
+		add_theme_support( 'custom-background', $args );
+
+		add_theme_support( 'custom-logo', array(
+			'height'		 => 60,
+			'width'			 => 200,
+			'flex-height'	 => true,
+			'flex-width'	 => true,
+			'header-text'	 => array( 'site-title', 'site-description' ),
+		) );
+
+		// Adds RSS feed links to for posts and comments.
+		add_theme_support( 'automatic-feed-links' );
+
 }
 
 function oxy_register_assets () {
@@ -25,6 +43,7 @@ function oxy_register_assets () {
 	}
 	wp_enqueue_style('bootstrap',);
 	wp_enqueue_script('bootstrap');
+	wp_enqueue_style( 'style', get_stylesheet_uri() );
 }
 
 function oxy_title_separator ()
@@ -347,7 +366,12 @@ if( function_exists('acf_register_block_type') ) {
 			'render_template'   => 'blocs/featured.php',
 			'keywords'          => array( 'featured_games', 'quote' ),
 			'enqueue_style'		=> 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css',
-			'category'			=> 'game'
+			'category'			=> 'game',
+			'supports'			=> [
+				'align'			=> false,
+				'mode'			=> true,
+				'multiple'		=> false,
+			]
 		));
 	});
 }

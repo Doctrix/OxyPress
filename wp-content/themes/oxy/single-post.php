@@ -12,14 +12,22 @@
 	<p>
 		<img src="<?php the_post_thumbnail_url(); ?>" alt="" style="width:100%; height:auto;">
 	</p>
-
+<div class="card">
+    <div class="card-body">
 	<?php the_content() ?>
-
-	<?php
+	</div>
+</div>
+<br />
+<div class="card">
+	<div class="card-body">
+		<?php
 	if (comments_open() || get_comments_number()) {
 		comments_template();
 	}
 	?>
+	</div>
+</div>
+<br />
 
 	<h2>Articles relatifs</h2>
 
@@ -58,4 +66,5 @@
 <?php endwhile;
 endif; ?>
 
+<br />
 <?php get_footer() ?>

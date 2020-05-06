@@ -1,7 +1,7 @@
 <div class="card">
     <?php the_post_thumbnail('post-thumbnail', ['class' => 'card-img-top', 'alt' => '', 'style' => 'height: auto;']) ?>
     <div class="card-body">
-   		<h5 class="card-title"><?php the_title() ?></h5>
+   		<h5 type="text/css" class="card-title"><?php the_title() ?></h5>
         <h6 class="card-subtitle"><small class="text-muted"><?= 'Publi&eacute; il y a ' .human_time_diff(get_the_time('U'), current_time('timestamp')); ?></small></h6>
    		<p class="card-text">
            <?php the_excerpt() ?>

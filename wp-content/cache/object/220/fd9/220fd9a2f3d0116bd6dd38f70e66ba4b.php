@@ -1,0 +1,1 @@
+w²^<?php exit; ?>a:1:{s:7:"content";s:187:"{"common.install":1588572265,"common.install_version":"0.13.3","common.show_note.nginx_restart_required":true,"license.status":"no_key","license.next_check":1589004274,"license.terms":""}";}
