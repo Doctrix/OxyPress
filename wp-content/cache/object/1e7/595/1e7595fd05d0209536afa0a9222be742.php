@@ -1,1 +1,0 @@
-w²^<?php exit; ?>a:1:{s:7:"content";s:174:"O:8:"stdClass":4:{s:12:"last_checked";i:1588753434;s:7:"checked";a:2:{s:3:"oxy";s:5:"1.0.0";s:15:"twentyseventeen";s:3:"2.3";}s:8:"response";a:0:{}s:12:"translations";a:0:{}}";}

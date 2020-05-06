@@ -1,2 +1,0 @@
-
-w²^<?php exit; ?>a:1:{s:7:"content";a:11:{s:34:"_transient_timeout_is_multi_author";b:1;s:26:"_transient_is_multi_author";b:1;s:17:"wordpress_api_key";b:1;s:21:"gutenberg-experiments";b:1;s:15:"acf_pro_license";b:1;s:17:"Activated_Akismet";b:1;s:11:"medium_crop";b:1;s:17:"medium_large_crop";b:1;s:10:"large_crop";b:1;s:23:"auto_core_update_failed";b:1;s:35:"akismet_comment_form_privacy_notice";b:1;}}

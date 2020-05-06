@@ -9,9 +9,17 @@
         <h6 class="card-text"><small class="text-muted"><?php the_category(); ?></small></h6>
         <p><?php the_terms(get_the_ID(), 'genre', 'Genre : <small>', '</small> <small>', '</small>'); ?></p>
         <p><?php the_terms(get_the_ID(), 'statut', 'Statut : <small>', '</small> <small>', '</small>'); ?></p>
-        <p><?php the_terms(get_the_ID(), 'prix', '<strong>', '</strong> <strong>', '</strong>'); ?></p>
+
         <p><?php the_terms(get_the_ID(), 'systeme', 'OS : <small>', '</small> <small>', '</small>'); ?></p>
         <p><?php the_terms(get_the_ID(), 'pegi', '<h4>PEGI ', '</h4> <h4>', '</h4>'); ?></p>
+           <?php if (get_field('payant') === true):?>
+		<p><strong>Prix : </strong><?= the_field('euro')?> euro</p>
+        <p><?php the_terms(get_the_ID(), 'prix', 'Prix : <strong>', '</strong> <strong>', '</strong>'); ?></p>
+	       <?php endif ?>
+
+	       <?php if (get_field('payant') === false):?>
+<p><strong>Free : </strong><?php the_terms(get_the_ID(), 'prix', '<strong>', '</strong> <strong>', '</strong>'); ?></p>
+	       <?php endif ?>
    		<a href="<?php the_permalink() ?>" class="btn btn-primary">Voir plus</a>
   	</div>
 </div>

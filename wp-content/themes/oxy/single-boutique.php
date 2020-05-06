@@ -10,6 +10,44 @@
 <br/>
 <div class="card">
     <div class="card-body">
+        <h2>Description</h2>
+        <?php the_content() ?>
+    </div>
+</div>
+<br/>
+<div class="card">
+    <div class="card-body">
+        <h2>Informations</h2>
+        <?php if(have_rows('infos')): ?>
+        <?php while(have_rows('infos')): the_row() ?>
+        <strong>Auteur :</strong> <a href="<?= get_sub_field('url') ?>" target="_blank"><?= get_sub_field('auteur') ?></a>
+        <br/>
+        <?php endwhile; ?>
+        <?php endif ?>
+        <?php the_post_thumbnail('post-thumbnail', ['class' => 'card-img-top', 'alt' => '', 'style' => 'height: 150px; width:150px;']) ?>
+
+        <h6 class="card-text"><small class="text-muted"><?php the_category(); ?></small></h6>
+        <p><?php the_terms(get_the_ID(), 'genre', 'Genre : <small>', '</small> <small>', '</small>'); ?></p>
+        <p><?php the_terms(get_the_ID(), 'statut', 'Statut : <small>', '</small> <small>', '</small>'); ?></p>
+
+        <p><?php the_terms(get_the_ID(), 'systeme', 'OS : <small>', '</small> <small>', '</small>'); ?></p>
+        <p><?php the_terms(get_the_ID(), 'pegi', '<h4>PEGI ', '</h4> <h4>', '</h4>'); ?></p>
+           <?php if (get_field('payant') === true):?>
+		<p><strong>Prix : </strong><?= the_field('euro')?> euro</p>
+        <p><?php the_terms(get_the_ID(), 'prix', 'Prix : <strong>', '</strong> <strong>', '</strong>'); ?></p>
+	       <?php endif ?>
+
+	       <?php if (get_field('payant') === false):?>
+<p><strong>Free : </strong><?php the_terms(get_the_ID(), 'prix', '<strong>', '</strong> <strong>', '</strong>'); ?></p>
+	       <?php endif ?>
+
+        <?php endwhile;
+        endif; ?>
+  	</div>
+</div>
+<br/>
+<div class="card">
+    <div class="card-body">
 
         <h2>Gallerie d'images</h2>
 
@@ -69,43 +107,4 @@ jQuery(document).ready(function($) {
     });
 });
 </script>
-
-<br/>
-<div class="card">
-    <div class="card-body">
-        <h2>Description</h2>
-        <?php the_content() ?>
-    </div>
-</div>
-<br/>
-<div class="card">
-    <div class="card-body">
-        <h2>Informations</h2>
-        <?php if(have_rows('infos')): ?>
-            <?php while(have_rows('infos')): the_row() ?>
-                <strong>Auteur :</strong> <a href="<?= get_sub_field('url') ?>" target="_blank"><?= get_sub_field('auteur') ?></a>
-        <br/>
-            <?php endwhile; ?>
-        <?php endif ?>
-    <?php the_post_thumbnail('post-thumbnail', ['class' => 'card-img-top', 'alt' => '', 'style' => 'height: 150px; width:150px;']) ?>
-
-        <h6 class="card-text"><small class="text-muted"><?php the_category(); ?></small></h6>
-        <p><?php the_terms(get_the_ID(), 'genre', 'Genre : <small>', '</small> <small>', '</small>'); ?></p>
-        <p><?php the_terms(get_the_ID(), 'statut', 'Statut : <small>', '</small> <small>', '</small>'); ?></p>
-
-        <p><?php the_terms(get_the_ID(), 'systeme', 'OS : <small>', '</small> <small>', '</small>'); ?></p>
-        <p><?php the_terms(get_the_ID(), 'pegi', '<h4>PEGI ', '</h4> <h4>', '</h4>'); ?></p>
-           <?php if (get_field('payant') === true):?>
-<p><strong>Prix : </strong><?= the_field('euro')?> euro</p>
-        <p><?php the_terms(get_the_ID(), 'prix', '<strong>', '</strong> <strong>', '</strong>'); ?></p>
-	<?php endif ?>
-
-	<?php if (get_field('payant') === false):?>
-<p><strong>Free : </strong><?php the_terms(get_the_ID(), 'prix', '<strong>', '</strong> <strong>', '</strong>'); ?></p>
-	<?php endif ?>
-
-<?php endwhile;
-endif; ?>
-  	</div>
-</div>
 <?php get_footer() ?>
