@@ -317,3 +317,37 @@ if(isset($_GET['cachetest'])) {
 add_filter('oxy_search_title', function () {
 	return 'Recherche : %s';
 });
+
+// Fonction qui ajouter un menu ACF
+add_action('init', function () {
+	if (function_exists('acf_add_options_page')) {
+		acf_add_options_page([
+			'page_title' => 'Options de l\'utilisateur',
+		]);
+	}
+});
+
+// Block personnalité ACF
+add_filter('block_categories', function($categories) {
+	$categories[] = [
+		'slug' => 'game',
+		'title' => 'Game',
+		'icon' => null
+	];
+	return $categories;
+});
+
+if( function_exists('acf_register_block_type') ) {
+    add_action('acf/init', function () {
+		acf_register_block_type(array(
+			'name'              => 'featured_games',
+			'title'             => __('Featured Games'),
+			'description'       => __('A custom produit block.'),
+			'icon'				=> 'awards',
+			'render_template'   => 'blocs/featured.php',
+			'keywords'          => array( 'featured_games', 'quote' ),
+			'enqueue_style'		=> 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css',
+			'category'			=> 'game'
+		));
+	});
+}

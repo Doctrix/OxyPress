@@ -22,6 +22,41 @@
             "button_label": "",
             "sub_fields": [
                 {
+                    "key": "field_5eb18637b3076",
+                    "label": "Auteur",
+                    "name": "auteur",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5eb186a4b3078",
+                    "label": "URL",
+                    "name": "url",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                },
+                {
                     "key": "field_5eb0deca8246b",
                     "label": "Catégories",
                     "name": "categories",
@@ -156,6 +191,33 @@
             ]
         },
         {
+            "key": "field_5eb186f6b3079",
+            "label": "Galerie",
+            "name": "galerie",
+            "type": "gallery",
+            "instructions": "Photos autorisés!\r\nCapture du jeu\r\nImage et logos du jeu",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "post-thumbnail",
+            "insert": "append",
+            "library": "uploadedTo",
+            "min": "",
+            "max": 6,
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": 350,
+            "max_height": 250,
+            "max_size": 10,
+            "mime_types": "jpg,png,jpeg"
+        },
+        {
             "key": "field_5eb0d5e4cc0ba",
             "label": "Payant",
             "name": "payant",
@@ -255,12 +317,11 @@
     "hide_on_screen": [
         "permalink",
         "discussion",
-        "comments",
         "revisions",
         "slug",
         "send-trackbacks"
     ],
     "active": 1,
     "description": "",
-    "modified": 1588655483
+    "modified": 1588708441
 }

@@ -49,7 +49,7 @@
 		while($query->have_posts()): $query->the_post();
 		?>
 			<div class="col-sm-4">
-				<?php get_template_part('parts/card', 'post'); ?>
+				<?php get_template_part('parts/card','post'); ?>
     		</div>
 		<?php endwhile;
 		wp_reset_postdata(); ?>

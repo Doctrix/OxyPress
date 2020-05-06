@@ -117,7 +117,7 @@ register_taxonomy('genre', 'post', [
 		'public' => true,
 		'menu_position' => 3,
 		'menu_icon' => 'dashicons-upload',
-		'supports' => ['title', 'editor', 'thumbnail', 'excerpt', 'post-formats'],
+		'supports' => ['title', 'editor', 'thumbnail', 'excerpt'],
 		'show_in_rest' => false,
 		'has_archive' => true,
 	]);
