@@ -2,7 +2,7 @@
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 	<center><p>
-		<img src="<?php the_post_thumbnail_url(); ?>" alt="" style="width:100%; height:300px;">
+		<img src="<?php the_post_thumbnail_url(); ?>" alt="" style="width:80%; height:300px;">
 	</p>
 <h1><?php the_title() ?></h1>
     <p class="card-text"><h6 class="card-subtitle"><small class="text-muted"><?= 'Publi&eacute; il y a ' .human_time_diff(get_the_time('U'), current_time('timestamp')); ?></small></h6></p>
@@ -18,29 +18,24 @@
 <div class="card">
     <div class="card-body">
         <h2>Informations</h2>
-        <?php if(have_rows('infos')): ?>
-        <?php while(have_rows('infos')): the_row() ?>
-        <strong>Auteur :</strong> <a href="<?= get_sub_field('url') ?>" target="_blank"><?= get_sub_field('auteur') ?></a>
-        <br/>
-        <?php endwhile; ?>
-        <?php endif ?>
-        <?php the_post_thumbnail('post-thumbnail', ['class' => 'card-img-top', 'alt' => '', 'style' => 'height: 150px; width:150px;']) ?>
 
         <h6 class="card-text"><small class="text-muted"><?php the_category(); ?></small></h6>
-        <p><?php the_terms(get_the_ID(), 'genre', 'Genre : <small>', '</small> <small>', '</small>'); ?></p>
-        <p><?php the_terms(get_the_ID(), 'statut', 'Statut : <small>', '</small> <small>', '</small>'); ?></p>
-
-        <p><?php the_terms(get_the_ID(), 'systeme', 'OS : <small>', '</small> <small>', '</small>'); ?></p>
-        <p><?php the_terms(get_the_ID(), 'pegi', '<h4>PEGI ', '</h4> <h4>', '</h4>'); ?></p>
-           <?php if (get_field('payant') === true):?>
-		<p><strong>Prix : </strong><?= the_field('euro')?> euro</p>
-        <p><?php the_terms(get_the_ID(), 'prix', 'Prix : <strong>', '</strong> <strong>', '</strong>'); ?></p>
-	       <?php endif ?>
-
-	       <?php if (get_field('payant') === false):?>
-<p><strong>Free : </strong><?php the_terms(get_the_ID(), 'prix', '<strong>', '</strong> <strong>', '</strong>'); ?></p>
-	       <?php endif ?>
-
+        <?php the_terms(get_the_ID(), 'genre', 'Genre : <small>', '', '</small>'); ?>
+        <?php the_terms(get_the_ID(), 'statut', 'Statut : <small>', '', '</small>'); ?>
+        <p><?php the_terms(get_the_ID(), 'systeme', 'OS : <small>', '', '</small>'); ?></p>
+        <?php the_terms(get_the_ID(), 'pegi', '<h4>PEGI ', '', '</h4>'); ?>
+        <?php if (get_field('payant') === true):?>
+		<strong>Prix : </strong><?= the_field('euro')?> euro
+        <?php the_terms(get_the_ID(), 'prix', 'Prix : <strong>', '', '</strong>'); ?>
+	    <?php endif ?>
+        <?php if (get_field('payant') === false):?>
+        <?php the_terms(get_the_ID(), 'prix', '<h3>', '', '</h3>'); ?> 
+        <?php if(have_rows('infos')): ?>
+        <?php while(have_rows('infos')): the_row() ?>        
+        <strong>Auteur :</strong> <a href="<?= get_sub_field('url') ?>" target="_blank"><?= get_sub_field('auteur') ?></a>
+        <?php endwhile; ?>
+        <?php endif ?>
+	    <?php endif ?>
         <?php endwhile;
         endif; ?>
   	</div>
@@ -50,6 +45,11 @@
     <div class="card-body">
 
         <h2>Gallerie d'images</h2>
+        <svg class="bi bi-card-image" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M14.5 3h-13a.5.5 0 00-.5.5v9a.5.5 0 00.5.5h13a.5.5 0 00.5-.5v-9a.5.5 0 00-.5-.5zm-13-1A1.5 1.5 0 000 3.5v9A1.5 1.5 0 001.5 14h13a1.5 1.5 0 001.5-1.5v-9A1.5 1.5 0 0014.5 2h-13z" clip-rule="evenodd"/>
+  <path d="M10.648 7.646a.5.5 0 01.577-.093L15.002 9.5V13h-14v-1l2.646-2.354a.5.5 0 01.63-.062l2.66 1.773 3.71-3.71z"/>
+  <path fill-rule="evenodd" d="M4.502 7a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" clip-rule="evenodd"/>
+</svg>
 
       <?php
         $images = get_field('galerie');
@@ -71,7 +71,7 @@
                     foreach( $images as $image ):
                         $counter++; ?>
 
-                    <a href="<?php echo $image['sizes']['large']; ?>" class="fancybox img-<?php echo $counter; ?>" rel="mini">
+                    <a href="<?php echo $image['sizes']['thumbnail']; ?>" class="fancybox img-<?php echo $counter; ?>" rel="mini">
                         <img class="d-block w-100" src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['title']; ?>" />
                     </a>
 
