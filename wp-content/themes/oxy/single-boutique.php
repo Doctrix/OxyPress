@@ -18,11 +18,10 @@
 <div class="card">
     <div class="card-body">
         <h2>Informations</h2>
-
         <h6 class="card-text"><small class="text-muted"><?php the_category(); ?></small></h6>
-        <?php the_terms(get_the_ID(), 'genre', 'Genre : <small>', '', '</small>'); ?>
-        <?php the_terms(get_the_ID(), 'statut', 'Statut : <small>', '', '</small>'); ?>
-        <p><?php the_terms(get_the_ID(), 'systeme', 'OS : <small>', '', '</small>'); ?></p>
+        <?php the_terms(get_the_ID(), 'genre', '<h5>Genre : <small>', '', '</small></h5>'); ?>
+        <?php the_terms(get_the_ID(), 'statut', '<h5>Statut : <small><strong>', '', '</strong></small></h5>'); ?>
+        <?php the_terms(get_the_ID(), 'systeme', '<h5>OS : <small>', '', '</small></h5>'); ?>
         <?php the_terms(get_the_ID(), 'pegi', '<h4>PEGI ', '', '</h4>'); ?>
         <?php if (get_field('payant') === true):?>
 		<strong>Prix : </strong><?= the_field('euro')?> euro
@@ -42,10 +41,8 @@
 </div>
 <br/>
 <div class="card">
-    <div class="card-body">
-
-        <h2>Gallerie d'images</h2>
-        <svg class="bi bi-card-image" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <div class="card-body">      
+        <svg class="bi bi-card-image" width="5em" height="5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
   <path fill-rule="evenodd" d="M14.5 3h-13a.5.5 0 00-.5.5v9a.5.5 0 00.5.5h13a.5.5 0 00.5-.5v-9a.5.5 0 00-.5-.5zm-13-1A1.5 1.5 0 000 3.5v9A1.5 1.5 0 001.5 14h13a1.5 1.5 0 001.5-1.5v-9A1.5 1.5 0 0014.5 2h-13z" clip-rule="evenodd"/>
   <path d="M10.648 7.646a.5.5 0 01.577-.093L15.002 9.5V13h-14v-1l2.646-2.354a.5.5 0 01.63-.062l2.66 1.773 3.71-3.71z"/>
   <path fill-rule="evenodd" d="M4.502 7a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" clip-rule="evenodd"/>
@@ -72,7 +69,7 @@
                         $counter++; ?>
 
                     <a href="<?php echo $image['sizes']['thumbnail']; ?>" class="fancybox img-<?php echo $counter; ?>" rel="mini">
-                        <img class="d-block w-100" src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['title']; ?>" />
+                        <img class="d-block w-100" src="<?php echo $image['sizes']['post-thumbnail']; ?>" alt="<?php echo $image['title']; ?>" />
                     </a>
 
                     <?php $current_position = $images->$image + 1; // current_post starts at 0

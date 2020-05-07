@@ -13,7 +13,35 @@ Text Domain: oxy
 Tags: one-column, two-columns, full-width-template, right-sidebar, custom-background, custom-menu, custom-header, editor-style, featured-images, translation-ready, custom-logo, threaded-comments, footer-widgets, rtl-language-support, theme-options, news, blog, e-commerce
 */
 
-/* The bootstrap.css file is auto-enqueued in functions.php */
+.cadre-bloc-shadow {
+    width: 80em;
+    border: 1px solid #333;
+    box-shadow: 8px 8px 5px #444;
+    display: block;
+    margin: 10px auto 10px auto;
+    padding: 20px 20px;
+    max-width: 96%;
+    background-image: linear-gradient(180deg, #fff, #ddd 40%, #ccc);
+}
+.cadre-bloc-shadow.menu-footer {
+    padding: 40px 40px;
+    margin: 10px auto 10px auto;
+}
+
+.cover {
+    width: 80em;
+    text-align: center; 
+    margin: 20px auto 20px auto;
+    padding: 40px 40px;
+    max-width: 96%;
+}
+.titre{
+    color: #4c550085;
+    font-weight: 400;
+    line-height: 1.8;
+    font-size: 36px;
+    word-wrap: break-word;
+}
 
 /* WordPress Core */
 
@@ -129,9 +157,6 @@ img {
     height: auto;
 }
 
-.sticky,
-.bypostauthor {
-}
 
 table {
     width: 100%;
@@ -161,7 +186,7 @@ body, html {
 }
 
 body {
-    font-family: 'Ubuntu', Dubai, arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     padding: 0;
     color: #404040;
     font-weight: 400;
