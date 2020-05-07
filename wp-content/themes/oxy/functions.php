@@ -375,3 +375,50 @@ if( function_exists('acf_register_block_type') ) {
 		));
 	});
 }
+
+// Ajouter des champs personnalisés dans le profil utilisateur de WordPress
+add_filter('user_contactmethods','wpm_user_fields',10,1);
+
+function wpm_user_fields( $contactmethods ) {
+
+	// On ajoute Instagram
+	$contactmethods['mifaconcept'] = 'MifaConcept';
+
+	// On ajoute Instagram
+	$contactmethods['github'] = 'GitHub';
+
+	// On ajoute Instagram
+	$contactmethods['facebook'] = 'Facebook';
+
+	// On ajoute Instagram
+	$contactmethods['instagram'] = 'Instagram';
+
+	//On ajoute Pinterest
+	$contactmethods['pinterest'] = 'Pinterest';
+
+	return $contactmethods;
+}
+
+
+add_filter('rest_endpoints', function($e){
+	if (isset($e['/wp/v2/users'])) 
+	{
+		unset($e['/wp/v2/users']);
+	}
+	if (isset($e['/wp/v2/users/']['(?P[\d]+)']))
+	{
+		unset($e['/wp/v2/users/']['(?P[\d]+)']);
+	}
+	return $e;
+});
+
+if (!is_admin()) {
+	if (preg_match('/author=([0-9]*)/i', $_SERVER['QUERY_STRING'])) 
+	die();
+	add_filter('redirect_canonical', 'shapeSpace_check_enum', 10, 2);
+}
+function shapeSpace_check_enum($redirect, $request) {
+	if (preg_match('/\?author=([0-9]*)(\/*)/i', $request)) die();
+	else return $redirect;
+}
+	

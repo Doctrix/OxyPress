@@ -54,6 +54,12 @@ Tags: one-column, two-columns, full-width-template, right-sidebar, custom-backgr
     background-color: #2A2A2E;
     border-color: #2A2A2E;
 }
+
+
+.texte{
+    text-align: center;
+    color:brown;
+}
 /* WordPress Core */
 
 .gallery-caption {
