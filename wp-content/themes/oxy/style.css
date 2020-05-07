@@ -43,6 +43,15 @@ Tags: one-column, two-columns, full-width-template, right-sidebar, custom-backgr
     word-wrap: break-word;
 }
 
+.card-title {
+    color: #002741;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #2A2A2E;
+    border-color: #2A2A2E;
+}
 /* WordPress Core */
 
 .gallery-caption {
@@ -193,11 +202,12 @@ body {
     line-height: 1.8;
     font-size: 16px;
     word-wrap: break-word;
+    background-color: #2A2A2E;
 }
 
 a, a:active, a:hover, a:focus {
     text-decoration: none;
-    color: #00aff2;
+    color: #858f00;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -236,9 +246,7 @@ a:active {
     position: relative;
 }
 
-.card-title {
-    color: #f8ff00;
-}
+
 
 @media (min-width: 768px) {
     .nav > li > a:before {
@@ -248,7 +256,7 @@ a:active {
         left: 50%;
         width: 0;
         height: 2px;
-        background-color: #00aff2;
+        background-color: #00f295;
         -webkit-transition: all 1s;
         transition: all 1s;
     }

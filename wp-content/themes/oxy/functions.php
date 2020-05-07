@@ -16,7 +16,7 @@ function oxy_supports () {
 
 	// Add Custom Background Support.
 		$args = array(
-			'default-color' => '000000',
+			'default-color' => '2A2A2E',
 		);
 		add_theme_support( 'custom-background', $args );
 
