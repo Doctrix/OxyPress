@@ -5,7 +5,7 @@
 wp_nav_menu([
 	'theme_location' => 'footer',
 	'container' => false,
-	'menu_class' => 'navbar-nav mr-auto cadre-bloc-shadow menu-footer'
+	'menu_class' => 'navbar-nav mr-auto cadre-bloc-shadow bloc-large'
 	]);
 the_widget(TwitchWidget::class, ['twitch' => '2HE5vRIx_RVGqQ'], ['before_widget' => '<div class="cadre-bloc-shadow">', 'after_widget' => '</div>']);
 ?>

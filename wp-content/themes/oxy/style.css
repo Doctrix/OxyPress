@@ -23,7 +23,7 @@ Tags: one-column, two-columns, full-width-template, right-sidebar, custom-backgr
     max-width: 96%;
     background-image: linear-gradient(180deg, #fff, #ddd 40%, #ccc);
 }
-.cadre-bloc-shadow.menu-footer {
+.cadre-bloc-shadow.bloc-large {
     padding: 40px 40px;
     margin: 10px auto 10px auto;
 }
@@ -37,10 +37,12 @@ Tags: one-column, two-columns, full-width-template, right-sidebar, custom-backgr
 }
 .titre{
     color: #4c550085;
+    text-transform: capitalize;
     font-weight: 400;
     line-height: 1.8;
     font-size: 36px;
     word-wrap: break-word;
+    margin-bottom: 4px;
 }
 
 .card-title {
