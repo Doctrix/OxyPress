@@ -122,13 +122,13 @@ class OxyPlayPage {
 		}
 		add_action('admin_menu', 'addSubMenu');
 		function addSubMenu () {
-		add_submenu_page(self::PLAY, 'Options', 'Options jeux', 'manage_options', [self::class, 'renderOptions'], 'play_options');
+		add_submenu_page(self::PLAY, 'Options', 'Options jeux', 'manage_options',  'play_options', [self::class, 'renderOptions']);
 		}
 		add_action('admin_init', [self::class, 'registerSettings']);
 		add_action('admin_enqueue_scripts', [self::class, 'registerScripts']);
 	}
 
-	public static function registerScripts ($suffix) {
+	 public static function registerScripts ($suffix) {
 		if ($suffix === 'settings_page_oxyplay_options') {
 
 		}
@@ -156,7 +156,7 @@ class OxyPlayPage {
 			<textarea name="oxyplay_events_titre" rows="2" style="width: 50%"><?= esc_html(get_option('oxyplay_events_titre')) ?></textarea>
 			<?php
 		}, self::PLAY, 'oxyplay_options_section');
-	}
+	} 
 
 
 

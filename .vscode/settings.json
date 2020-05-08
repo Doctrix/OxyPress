@@ -1,3 +1,4 @@
 {
-    "typescript.locale": "fr"
+    "typescript.locale": "fr",
+    "php.validate.executablePath": "K:\\Serveur\\Nginx\\php\\php.exe" 
 }
