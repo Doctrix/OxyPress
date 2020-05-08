@@ -115,24 +115,17 @@ class OxyPlayPage {
 				'date' => $columns['date']
 			];
 		}); */
-		add_action( 'admin_menu', 'play_menu_page');
-		function play_menu_page() {
-		// add_menu_page( $page_title, $menu_title, $capability, $menu_slug, $function, $icon_url, $position );
-		add_menu_page( 'Lancer un jeu', 'Jouer', 'manage_options', self::PLAY, [self::class, 'render'], 'dashicons-welcome-widgets-menus', 9 );
-		}
-		add_action('admin_menu', 'addSubMenu');
-		function addSubMenu () {
-		add_submenu_page(self::PLAY, 'Options', 'Options jeux', 'manage_options',  'play_options', [self::class, 'renderOptions']);
-		}
+		add_action( 'admin_menu', [self::class, 'play_menu_page']);
+		add_action('admin_menu', [self::class, 'addSubMenu']);
 		add_action('admin_init', [self::class, 'registerSettings']);
-		add_action('admin_enqueue_scripts', [self::class, 'registerScripts']);
+		//add_action('admin_enqueue_scripts', [self::class, 'registerScripts']);
 	}
 
-	 public static function registerScripts ($suffix) {
-		if ($suffix === 'settings_page_oxyplay_options') {
+	//  public static function registerScripts ($suffix) {
+	// 	if ($suffix === 'settings_page_oxyplay_options') {
 
-		}
-	}
+	// 	}
+	// }
 
 	public static function registerSettings () {
 		register_setting(self::PLAY, 'oxyplay_infos');
@@ -157,8 +150,16 @@ class OxyPlayPage {
 			<?php
 		}, self::PLAY, 'oxyplay_options_section');
 	} 
+		
+	
+	public function play_menu_page() {
+		// add_menu_page( $page_title, $menu_title, $capability, $menu_slug, $function, $icon_url, $position );
+		add_menu_page( 'Lancer un jeu', 'Jouer', 'manage_options', self::PLAY, [self::class, 'render'], 'dashicons-welcome-widgets-menus', 9 );
+		}
 
-
+	public function addSubMenu () {
+		add_submenu_page(self::PLAY, 'Options', 'Options jeux', 'manage_options',  'play_options', [self::class, 'renderOptions']);
+		}
 
 	public static function render () {
 		?>
