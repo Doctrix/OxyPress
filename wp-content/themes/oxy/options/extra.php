@@ -13,7 +13,7 @@ class MenuOptionsUserPage {
 		if ($suffix === 'settings_page_extra_options') {
 			wp_register_style('flatpickr', 'https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css', [], false);
 			wp_register_script('flatpickr', 'https://cdn.jsdelivr.net/npm/flatpickr', [], false, true);
-			wp_enqueue_script('oxy_admin', get_template_directory_uri() . '/assets/admin.js',['flatpickr'], false, true);
+			wp_enqueue_script('oxy_admin', get_template_directory_uri() . '/assets/js/admin.js',['flatpickr'], false, true);
 			wp_enqueue_style('flatpickr');
 		}
 	}

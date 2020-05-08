@@ -19,5 +19,5 @@ add_action('customize_register', function (WP_Customize_Manager $manager) {
 });
 
 add_action('customize_preview_init', function () {
-	wp_enqueue_script('oxy_apparence', get_template_directory_uri() . '/assets/apparence.js', ['jquery', 'customize-preview'], '', true);
+	wp_enqueue_script('oxy_apparence', get_template_directory_uri() . '/assets/js/apparence.js', ['jquery', 'customize-preview'], '', true);
 });

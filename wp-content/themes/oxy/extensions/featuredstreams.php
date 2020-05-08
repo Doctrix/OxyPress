@@ -2,8 +2,8 @@
 <script type="text/javascript" src="assets/js/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="assets/js/isotope.pkgd.min.js"></script>
 <script type="text/javascript" src="assets/js/global.js"></script>
-<!-- Style.css -->
-<link rel="stylesheet" href="assets/css/style.css">
+<!-- Style_streams.css -->
+<link rel="stylesheet" href="assets/css/style_streams.css">
 
 
 <div id="main" class="isotope">

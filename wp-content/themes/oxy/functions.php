@@ -119,7 +119,7 @@ add_filter('manage_boutique_posts_custom_column',  function ($column, $postId) {
 }, 10, 2);
 
 add_action('admin_enqueue_scripts', function () {
-	wp_enqueue_style('admin_oxy', get_template_directory_uri() . '/assets/admin.css');
+	wp_enqueue_style('admin_oxy', get_template_directory_uri() . '/assets/css/admin.css');
 });
 
 add_filter('manage_post_posts_columns', function ($columns) {
