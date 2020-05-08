@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 5.4.x - Development - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-05-06 14:18:33+0000\n"
+"PO-Revision-Date: 2020-05-07 08:46:30+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -421,7 +421,7 @@ msgstr "<a href=\"https://wordpress.org/support/article/posts-screen/\">Document
 
 #: wp-admin/options-discussion.php:31
 msgid "<a href=\"https://wordpress.org/support/article/settings-discussion-screen/\">Documentation on Discussion Settings</a>"
-msgstr "<a href=\"https://wordpress.org/support/article/settings-discussion-screen/\">Documentation sur les réglages de discussion</a>"
+msgstr "<a href=\"https://wordpress.org/support/article/settings-discussion-screen/\">Documentation sur les réglages des commentaires</a>"
 
 #: wp-admin/theme-install.php:130
 msgid "<a href=\"https://wordpress.org/support/article/using-themes/#adding-new-themes\">Documentation on Adding New Themes</a>"
@@ -7659,7 +7659,7 @@ msgstr "Insertion de média"
 
 #: wp-admin/edit-form-advanced.php:280
 msgid "The title field and the big Post Editing Area are fixed in place, but you can reposition all the other boxes using drag and drop. You can also minimize or expand them by clicking the title bar of each box. Use the Screen Options tab to unhide more boxes (Excerpt, Send Trackbacks, Custom Fields, Discussion, Slug, Author) or to choose a 1- or 2-column layout for this screen."
-msgstr "Le champ du titre et la zone d’édition de la publication sont inamovibles, mais vous pouvez déplacer toutes les autres sections par simple glisser/déposer. Vous pouvez également les fermer/ouvrir en cliquant sur la barre de titre de chaque section. Utilisez l’onglet « Options de l’écran » pour masquer d’autres sections (Extrait, Envoyer des rétroliens, Champs personnalisés, Discussion, Slug, Auteur) ou pour choisir un affichage sur une ou deux colonnes pour cet écran."
+msgstr "Le champ du titre et la zone d’édition de la publication sont inamovibles, mais vous pouvez déplacer toutes les autres sections par simple glisser/déposer. Vous pouvez également les fermer/ouvrir en cliquant sur la barre de titre de chaque section. Utilisez l’onglet « Options de l’écran » pour masquer d’autres sections (Extrait, Envoyer des rétroliens, Champs personnalisés, Commentaires, Slug, Auteur) ou pour choisir un affichage sur une ou deux colonnes pour cet écran."
 
 #: wp-admin/includes/class-custom-image-header.php:128
 msgid "Don&#8217;t forget to click &#8220;Save Changes&#8221; when you&#8217;re done!"
@@ -8782,7 +8782,7 @@ msgstr "Envoi d’article par e-mail"
 
 #: wp-admin/options-discussion.php:24
 msgid "This screen provides many options for controlling the management and display of comments and links to your posts/pages. So many, in fact, they won&#8217;t all fit here! :) Use the documentation links to get information on what each discussion setting does."
-msgstr "Cet écran offre plusieurs options pour contrôler la gestion et l’affichage des commentaires et liens sur vos articles/pages. D’ailleurs, il y en a tellement qu’elles ne tiennent pas toutes ici ! :) Utiliser le lien vers la documentation pour obtenir des informations sur ce que fait chaque réglage de discussion."
+msgstr "Cet écran offre plusieurs options pour contrôler la gestion et l’affichage des commentaires et liens sur vos articles/pages. D’ailleurs, il y en a tellement qu’elles ne tiennent pas toutes ici ! :) Utiliser le lien vers la documentation pour obtenir des informations sur ce que fait chaque réglage des commentaires."
 
 #: wp-admin/user-edit.php:50
 msgid "You can change your password, turn on keyboard shortcuts, change the color scheme of your WordPress administration screens, and turn off the WYSIWYG (Visual) editor, among other things. You can hide the Toolbar (formerly called the Admin Bar) from the front end of your site, however it cannot be disabled on the admin screens."
@@ -10272,7 +10272,7 @@ msgstr "Retourner aux mises à jour de WordPress"
 
 #: wp-admin/edit-form-advanced.php:396
 msgid "<strong>Discussion</strong> &mdash; You can turn comments and pings on or off, and if there are comments on the post, you can see them here and moderate them."
-msgstr "<strong>Discussion</strong> &mdash; Vous pouvez activer ou désactiver les commentaires et pings, et si votre article reçoit des commentaires, vous pourrez les voir ici et les modérer."
+msgstr "<strong>Commentaires</strong> &mdash; Vous pouvez activer ou désactiver les commentaires et pings, et si votre article reçoit des commentaires, vous pourrez les voir ici et les modérer."
 
 #: wp-admin/edit-form-advanced.php:290
 msgid "<strong>Title</strong> &mdash; Enter a title for your post. After you enter a title, you&#8217;ll see the permalink below, which you can edit."
@@ -11725,7 +11725,7 @@ msgstr "Ces réglages peuvent être modifiés pour chaque publication."
 
 #: wp-admin/edit-form-advanced.php:401 wp-admin/options-discussion.php:15
 msgid "Discussion Settings"
-msgstr "Réglages de discussion"
+msgstr "Réglages des commentaires"
 
 #: wp-admin/includes/class-wp-users-list-table.php:159
 #: wp-admin/includes/deprecated.php:570

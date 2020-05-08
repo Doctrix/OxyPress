@@ -16,7 +16,7 @@ register_deactivation_hook(__FILE__, function() {
 // register_uninstall_hook();
 
 add_action('init', function () {
-register_taxonomy('genre', 'post', [
+	register_taxonomy('genre', 'post', [
 		'labels' => [
 			'name' => 'Genre',
 			'singular_name' => 'Genre',
@@ -115,9 +115,10 @@ register_taxonomy('genre', 'post', [
 			'menu_name' => 'Boutique',
 		],
 		'public' => true,
-		'menu_position' => 3,
+		'menu_position' => 6,
 		'menu_icon' => 'dashicons-upload',
-		'supports' => ['title', 'editor', 'thumbnail', 'excerpt'],
+		'supports' => ['title', 'editor', 'comments', 'author', 'excerpt', 'thumbnail', 'custom-fields', 'post-formats'],
+		'taxonomies' => ['genre','prix','systeme','pegi'],
 		'show_in_rest' => false,
 		'has_archive' => true,
 	]);

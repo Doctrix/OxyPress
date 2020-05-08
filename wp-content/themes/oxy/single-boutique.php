@@ -1,37 +1,34 @@
 <?php get_header() ?>
-
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-	<center><p>
-		<img src="<?php the_post_thumbnail_url(); ?>" alt="" style="width:80%; height:300px;">
-	</p>
-<h1><?php the_title() ?></h1>
-    <p class="card-text"><h6 class="card-subtitle"><small class="text-muted"><?= 'Publi&eacute; il y a ' .human_time_diff(get_the_time('U'), current_time('timestamp')); ?></small></h6></p>
-    </center>
+	<p class="cover"><img src="<?php the_post_thumbnail_url(); ?>" alt="" style="width:98.75%; height:280px;"></p>
+    <h1 class="titre-boutique"><?php the_title() ?></h1>
+    <p class="card-subtitle"><h6 class="txt-date-publier-boutique"><small class="text-muted"><?= _e('Publi&eacute; il y a ' .human_time_diff(get_the_time('U'), current_time('timestamp'))); ?></small></h6></p>
 <br/>
 <div class="card">
     <div class="card-body">
-        <h2>Description</h2>
+        <h2><?php _e('Game description'); ?></h2>
+        <h3><?php _e('Profile of'); ?> <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo esc_attr( get_the_author() ); ?>"><?php the_author(); ?></a></h3>
         <?php the_content() ?>
     </div>
 </div>
 <br/>
 <div class="card">
     <div class="card-body">
-        <h2>Informations</h2>
+        <h2><?php _e('Game Information'); ?></h2>
         <h6 class="card-text"><small class="text-muted"><?php the_category(); ?></small></h6>
-        <?php the_terms(get_the_ID(), 'genre', '<h5>Genre : <small>', '', '</small></h5>'); ?>
-        <?php the_terms(get_the_ID(), 'statut', '<h5>Statut : <small><strong>', '', '</strong></small></h5>'); ?>
-        <?php the_terms(get_the_ID(), 'systeme', '<h5>OS : <small>', '', '</small></h5>'); ?>
-        <?php the_terms(get_the_ID(), 'pegi', '<h4>PEGI ', '', '</h4>'); ?>
+        <?php _e(the_terms(get_the_ID(), 'genre', '<h5>Genre : <small>', '', '</small></h5>')); ?>
+        <?php _e(the_terms(get_the_ID(), 'statut', '<h5>Statut : <small><strong>', '', '</strong></small></h5>')); ?>
+        <?php _e(the_terms(get_the_ID(), 'systeme', '<h5>OS : <small>', '', '</small></h5>')); ?>
+        <?php _e(the_terms(get_the_ID(), 'pegi', '<h4>PEGI ', '', '</h4>')); ?>
         <?php if (get_field('payant') === true):?>
 		<strong>Prix : </strong><?= the_field('euro')?> euro
-        <?php the_terms(get_the_ID(), 'prix', 'Prix : <strong>', '', '</strong>'); ?>
+        <?php _e(the_terms(get_the_ID(), 'prix', 'Prix : <strong>', '', '</strong>')); ?>
 	    <?php endif ?>
         <?php if (get_field('payant') === false):?>
-        <?php the_terms(get_the_ID(), 'prix', '<h3>', '', '</h3>'); ?> 
+        <?php _e(the_terms(get_the_ID(), 'prix', '<h3>', '', '</h3>')); ?> 
         <?php if(have_rows('infos')): ?>
         <?php while(have_rows('infos')): the_row() ?>        
-        <strong>Auteur :</strong> <a href="<?= get_sub_field('url') ?>" target="_blank"><?= get_sub_field('auteur') ?></a>
+        <strong><?php _e('Author'); ?> :</strong> <a href="<?= get_sub_field('url') ?>" target="_blank"><?= get_sub_field('auteur') ?></a>
         <?php endwhile; ?>
         <?php endif ?>
 	    <?php endif ?>
@@ -40,7 +37,7 @@
   	</div>
 </div>
 <br/>
-<div class="card">
+<div class="cover">
     <div class="card-body">      
         <svg class="bi bi-card-image" width="5em" height="5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
   <path fill-rule="evenodd" d="M14.5 3h-13a.5.5 0 00-.5.5v9a.5.5 0 00.5.5h13a.5.5 0 00.5-.5v-9a.5.5 0 00-.5-.5zm-13-1A1.5 1.5 0 000 3.5v9A1.5 1.5 0 001.5 14h13a1.5 1.5 0 001.5-1.5v-9A1.5 1.5 0 0014.5 2h-13z" clip-rule="evenodd"/>

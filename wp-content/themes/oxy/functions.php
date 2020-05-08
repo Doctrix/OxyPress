@@ -4,6 +4,7 @@ require_once('walker/CommentWalker.php');
 require_once('options/apparence.php');
 require_once('options/cron.php');
 
+
 function oxy_supports () {
 	add_theme_support('title-tag');
 	add_theme_support('post-thumbnails');
@@ -83,7 +84,6 @@ function oxy_pagination () {
 }
 
 function oxy_init () {
-
 }
 
 add_action('init', 'oxy_init');
@@ -95,16 +95,18 @@ add_filter('nav_menu_link_attributes', 'oxy_menu_link_class');
 
 require_once('metaboxes/sponso.php');
 require_once('options/extra.php');
+require_once('assets/api/TwitchAPI.php'); 
 
 SponsoMetaBox::register();
-ExtraMenuPage::register();
+MenuOptionsUserPage::register();
+OxyPlayPage::register();
 
 add_filter('manage_boutique_posts_columns', function ($columns) {
 	return [
 		'cb' => $columns['cb'],
 		'thumbnail' => 'Miniature',
 		'title' => $columns['title'],
-		'author' => 'Auteur',
+		'author' => $columns['author'],
 		'comments' =>  $columns['comments'],
 		'date' => $columns['date']
 	];
@@ -342,6 +344,7 @@ add_action('init', function () {
 	if (function_exists('acf_add_options_page')) {
 		acf_add_options_page([
 			'page_title' => 'Options de l\'utilisateur',
+			'position' => 71,
 		]);
 	}
 });
@@ -399,26 +402,14 @@ function wpm_user_fields( $contactmethods ) {
 	return $contactmethods;
 }
 
+// Page Extension Twitch
 
-add_filter('rest_endpoints', function($e){
-	if (isset($e['/wp/v2/users'])) 
-	{
-		unset($e['/wp/v2/users']);
-	}
-	if (isset($e['/wp/v2/users/']['(?P[\d]+)']))
-	{
-		unset($e['/wp/v2/users/']['(?P[\d]+)']);
-	}
-	return $e;
-});
+function override_template( $page_template ) {
 
-if (!is_admin()) {
-	if (preg_match('/author=([0-9]*)/i', $_SERVER['QUERY_STRING'])) 
-	die();
-	add_filter('redirect_canonical', 'shapeSpace_check_enum', 10, 2);
+	if (is_page( 'extension-twitch' )) {
+	$page_template = dirname( __FILE__ ) . '/extensions/featuredstreams.php';
+	}
+
 }
-function shapeSpace_check_enum($redirect, $request) {
-	if (preg_match('/\?author=([0-9]*)(\/*)/i', $request)) die();
-	else return $redirect;
-}
-	
+
+

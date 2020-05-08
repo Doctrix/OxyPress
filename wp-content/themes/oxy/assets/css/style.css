@@ -1,0 +1,225 @@
+
+/* Tutoriel Twitch API - style.css
+ * Auteur: Hadrien Boyer
+ * URL: http://hadri.info
+ */
+
+html {
+	width: 100%;
+	height: 100%;
+	font-size: 90%;
+	overflow-y: scroll;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+body {
+	height: 100%;
+	margin: 0;
+	font-family:"Open Sans",Helvetica,Arial,sans-serif;
+}
+
+/* Links */
+
+a {
+	color: #3FBD98;
+	text-decoration: none;
+	-webkit-transition: color 100ms;
+    -moz-transition: color 100ms;
+    -o-transition: color 100ms;
+    transition: color 300ms;
+}
+a:visited {
+	color: #3FBD98;
+}
+a:hover, a:focus, a:active {
+	color: #55e0bb;
+}
+
+h2 { padding:30px 0; }
+
+/* Images */
+
+img {
+	max-width: 100%;
+	height: auto;
+	-webkit-transition:all 0.3s ease-in-out;
+	-moz-transition:all 0.3s ease-in-out;
+	-o-transition:all 0.3s ease-in-out;
+	transition:all 0.3s ease-in-out;
+}
+img:hover {
+	-webkit-filter: opacity(.8);
+  filter: opacity(.8);
+}
+
+/* Global */
+#main {
+	text-align:center;	
+}
+
+#container {
+	width: 100%;
+	height: 100%;
+	transition: all 0.17s ease-in-out;
+	-moz-transition: all 0.17s ease-in-out;
+	-webkit-transition: all 0.17s ease-in-out;
+	-o-transition: all 0.17s ease-in-out;
+}
+#footer {
+	width:100%;
+	text-align:center;
+	height:80px;
+	padding-top:70px;
+	float:left;
+}
+
+/* Stream Box */
+.streamBox {
+	width:25%;
+	border-bottom:4px solid #EEE;
+}
+
+.streamBox .thumbContainer img {
+	width: 100%;
+	height: auto;
+}
+
+.streamInfos {
+	height: 80px;	
+}
+.streamInfos span.jeu { margin-top: 10px; }
+.streamInfos span.jeu,.streamInfos span.username{
+	width: 100%;
+	height: auto;
+	margin-bottom: 10px;
+	float: left;
+}
+ul.infos { 	
+	padding: 0;
+}
+ul.infos > li {
+	display: inline-block;
+	font-size: 11px;
+}
+ul.infos > li.username {
+	margin-right: 8px;
+}
+
+/* Filters */
+.itemsFilter {
+	padding: 0 40px;	
+}
+
+.itemsFilter span.filterItem {
+	color: #333;
+	margin-top: 10px;
+}
+.itemsFilter span.filterItem a{
+	color: #333;
+	padding: 0px 5px;
+}
+.itemsFilter span.filterItem a:hover{
+	color: #3FBD98;
+}
+.itemsFilter span a.current{
+	color: #FFF;
+	background:#3FBD98;
+	-webkit-transition:all 0.3s ease-in-out;
+	padding: 5px 5px;
+	border-radius: 3px;
+}
+.itemsFilter span a.allgames{ font-weight:bold; }
+
+.itemsFilter span a.current:hover{ color:#FFF; }
+
+.filtersContent{
+	width: 100%;
+	line-height: 38px;
+	text-align: center;
+}
+
+/* Responsive */
+
+/* Portrait Tablets */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+#container {
+	width: 680px;
+}
+}
+
+/* Ecrans en 1024 */
+@media only screen and (min-width: 1000px) and (max-width: 1249px) {
+#container {
+	width: 100%;
+	height: 100%;
+}
+#main { width: auto; }
+
+.itemOverlay span {
+	line-height: 10px;
+}
+}
+
+/* Portrait Tablets */
+@media only screen and (min-width: 768px) and (max-width: 999px) {
+#container {
+	width: 100%;
+	height: 100%;
+}
+#main { width: auto; }
+
+.itemOverlay span {
+	line-height: 10px;
+}
+.streamBox{
+	width: 49.9%;
+	float: left;
+}
+}
+
+/*  Portrait Mobiles */
+@media only screen and (max-width: 767px) {
+#container {
+	width: 100%;
+	height: 100%;
+}
+#main {
+	width: 100%;
+	float: left;
+	margin: 0 auto;
+	margin-left: 0px;
+	text-align: left;
+	padding-left: 0;
+}
+.itemOverlay span {
+	line-height: 10px;
+}
+.streamBox { margin: 0; }
+}
+
+/* Paysage Mobiles */
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+#container {
+	width: 100%;
+	height: 100%;
+}
+#main {
+	width: 100%;
+	float: left;
+	text-align: center;
+	padding-let: 0;
+}
+.streamBox {
+	margin: 0;
+	width: 49.9%;
+	float: left;
+}
+}
+
+@media only screen and (min-width: 0px) and (max-width: 580px) {
+.streamBox{
+	margin:0;
+	width:100%;
+	float:left;
+}
+}

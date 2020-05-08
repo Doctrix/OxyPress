@@ -42,9 +42,12 @@
     </ul>
 </div>
 </div>
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+<div class="cadre-bloc-shadow bloc-large">
+<?php get_template_part('parts/live','post'); ?>
+</div> 
 
+    						
+<?php get_footer();?> 
 
 
 
