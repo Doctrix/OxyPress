@@ -1,78 +1,6 @@
 <?php
 
-class MenuOptionsUserPage {
-
-	const GROUP = 'extra_options';
-
-	public static function register () {
-		add_action('admin_menu', [self::class, 'addMenu']);
-		add_action('admin_init', [self::class, 'registerSettings']);
-		add_action('admin_enqueue_scripts', [self::class, 'registerScripts']);
-	}
-
-	public static function registerScripts ($suffix) {
-		if ($suffix === 'settings_page_extra_options') {
-			wp_register_style('flatpickr', 'https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css', [], false);
-			wp_register_script('flatpickr', 'https://cdn.jsdelivr.net/npm/flatpickr', [], false, true);
-			wp_enqueue_script('oxy_admin', get_template_directory_uri() . '/assets/js/admin.js',['flatpickr'], false, true);
-			wp_enqueue_style('flatpickr');
-		}
-	}
-
-	public static function registerSettings () {
-		register_setting(self::GROUP, 'extra_infos');
-		register_setting(self::GROUP, 'extra_liens');
-		register_setting(self::GROUP, 'extra_events_titre');
-		register_setting(self::GROUP, 'extra_events_date');
-		add_settings_section('extra_options_section', 'Param�tres', function() {
-			echo "Vous pouvez ici g&eacute;rer les param&egrave;tres li&eacute;s � vos options";
-
-		}, self::GROUP);
-		add_settings_field('extra_options_infos', "Informations mise en avant", function() {
-			?>
-			<textarea name="extra_infos" rows="2" style="width: 100%"><?= esc_html(get_option('extra_infos')) ?></textarea>
-			<?php
-		}, self::GROUP, 'extra_options_section');
-		add_settings_field('extra_options_liens', "Liens", function() {
-			?>
-			<textarea name="extra_liens" rows="2" style="width: 50%"><?= esc_url(get_option('extra_liens')) ?></textarea>
-			<?php
-		}, self::GROUP, 'extra_options_section');
-		add_settings_field('extra_options_events_titre', "Projets en cours", function() {
-			?>
-			<textarea name="extra_events_titre" rows="2" style="width: 50%"><?= esc_html(get_option('extra_events_titre')) ?></textarea>
-			<?php
-		}, self::GROUP, 'extra_options_section');
-		add_settings_field('extra_options_events_date', "Date de sortie", function() {
-			?>
-			<input type="text" name="extra_events_date" value="<?= esc_attr(get_option('extra_events_date')) ?>" class="oxy_datepicker">
-			<?php
-		}, self::GROUP, 'extra_options_section');
-	}
-
-	public static function addMenu () {
-		add_menu_page("Options suppl&eacute;mentaire", "Options", "manage_options", self::GROUP, [self::class, 'render'],'',9);
-	}
-
-	public static function render () {
-		?>
-		<h1>Options suppl&eacute;mentaire</h1>
-
-		<p>Votre adresse web: <a href="<?= get_option('siteurl') ?>">En savoir plus</a></p>
-		<p>Email administrateur: <?= get_option('admin_email') ?></p>
-		<p>Role par d&eacute;faut: <?= get_option('default_role') ?></p>
-		<form action="options.php" method="post">
-			<?php
-			settings_fields(self::GROUP);
-			do_settings_sections(self::GROUP);
-			submit_button();
-			?>
-			</form>
-		<?php
-	}
-}
-
-class OxyPlayPage { 
+class MenuProfilPage { 
 
 	const PLAY = 'play';
 
@@ -84,18 +12,18 @@ class OxyPlayPage {
 	
  	public function play_menu_page() {
 		// add_menu_page( $page_title, $menu_title, $capability, $menu_slug, $function, $icon_url, $position );
-		add_menu_page( 'Lancer un jeu', 'Jouer', 'manage_options', self::PLAY, [self::class, 'render'], 'dashicons-welcome-widgets-menus', 7 );
+		add_menu_page( 'Votre profil', 'Profil', 'manage_options', self::PLAY, [self::class, 'render'], 'dashicons-welcome-widgets-menus', 7 );
 	}
 
 	public function addSubMenu () {
-		add_submenu_page('play', 'Options', 'Options', 'manage_options',  'play_options', [self::class, 'renderOptions']);
+		add_submenu_page('play', 'Vos Options', 'Options', 'manage_options',  'play_options', [self::class, 'renderOptions']);
 	}
 
 	
 	public static function render () {
 	?>	
 
-<?php
+	<?php
 	$curauth = wp_get_current_user();
 	if ( ! ( $curauth instanceof WP_User ) ) {
 		return;
@@ -125,9 +53,8 @@ class OxyPlayPage {
 			<?php
 			settings_fields(self::PLAY);
 			do_settings_sections(self::class);
-
+			media_buttons();
 			?>
-			<br>
 			<hr>
 			<div><img src="<?php get_post('thumbnail') ?>" alt="<?php get_post('alt') ?>"><?php get_post('name') ?><br>
 			<button type="button"><a href="#">Voir la page du jeu</a></button>
@@ -142,9 +69,9 @@ class OxyPlayPage {
 
 		/* Menu jouer */
 		add_settings_section('section', 'Jouer', function() {
-			echo _e('Choisir un jeu pour commencer');
+			echo _e('Choisir un jeu pour commencer<br/>');
 		}, self::class);
-
+		
 		/* Menu Statut section */
 		add_settings_section('section', __('Votre statut'), function() {
 			echo _e('Ici, vous pouvez gérer les paramètres liés à votre statut');
@@ -188,3 +115,111 @@ class OxyPlayPage {
 	}
 }
 
+class MenuAideSupportPage {
+
+	const GROUP = 'aide';
+
+	public static function register () {
+		add_action('admin_menu', [self::class, 'addMenu']);
+		add_action('admin_init', [self::class, 'registerSettings']);
+		add_action('admin_enqueue_scripts', [self::class, 'registerScripts']);
+	}
+
+	public static function registerScripts () {
+
+	}
+
+	public static function registerSettings () {
+		
+	}
+
+	public static function addMenu () {
+		add_menu_page("Informations complémentaire", "Aide?", "manage_options", self::GROUP, [self::class, 'render'],'',9);
+	}
+
+	public static function render () {
+		?>
+		<h1>Infos Contact</h1>
+
+		<p>Votre adresse web: <a href="<?= get_option('siteurl') ?>">En savoir plus</a></p>
+		<p>Email administrateur: <?= get_option('admin_email') ?></p>
+		<p>Role par d&eacute;faut: <?= get_option('default_role') ?></p>
+		<form action="options.php" method="post">
+			<?php
+			settings_fields(self::GROUP);
+			do_settings_sections(self::GROUP);
+			
+			?>
+			</form>
+		<?php
+	}
+}
+
+class MenuOptionsPage {
+
+	const GROUP = 'extra_options';
+
+	public static function register () {
+		add_action('admin_menu', [self::class, 'addMenu']);
+		add_action('admin_init', [self::class, 'registerSettings']);
+		add_action('admin_enqueue_scripts', [self::class, 'registerScripts']);
+	}
+
+	public static function registerScripts ($suffix) {
+		if ($suffix === 'settings_page_extra_options') {
+			wp_register_style('flatpickr', 'https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css', [], false);
+			wp_register_script('flatpickr', 'https://cdn.jsdelivr.net/npm/flatpickr', [], false, true);
+			wp_enqueue_script('oxy_admin', get_template_directory_uri() . '/assets/js/admin.js',['flatpickr'], false, true);
+			wp_enqueue_style('flatpickr');
+		}
+	}
+
+	public static function registerSettings () {
+		register_setting(self::GROUP, 'extra_infos');
+		register_setting(self::GROUP, 'extra_liens');
+		register_setting(self::GROUP, 'extra_events_titre');
+		register_setting(self::GROUP, 'extra_events_date');
+		add_settings_section('extra_options_section', 'Projets mis en avant', function() {
+			echo "Vous pouvez ici g&eacute;rer les param&egrave;tres";
+
+		}, self::GROUP);
+		add_settings_field('extra_options_infos', "Informations mise en avant", function() {
+			?>
+			<textarea name="extra_infos" rows="2" style="width: 100%"><?= esc_html(get_option('extra_infos')) ?></textarea>
+			<?php
+		}, self::GROUP, 'extra_options_section');
+		add_settings_field('extra_options_liens', "Liens", function() {
+			?>
+			<textarea name="extra_liens" rows="2" style="width: 50%"><?= esc_url(get_option('extra_liens')) ?></textarea>
+			<?php
+		}, self::GROUP, 'extra_options_section');
+		add_settings_field('extra_options_events_titre', "Projets en cours", function() {
+			?>
+			<textarea name="extra_events_titre" rows="2" style="width: 50%"><?= esc_html(get_option('extra_events_titre')) ?></textarea>
+			<?php
+		}, self::GROUP, 'extra_options_section');
+		add_settings_field('extra_options_events_date', "Date de sortie", function() {
+			?>
+			<input type="text" name="extra_events_date" value="<?= esc_attr(get_option('extra_events_date')) ?>" class="oxy_datepicker">
+			<?php
+		}, self::GROUP, 'extra_options_section');
+	}
+
+	public static function addMenu () {
+		add_menu_page("Options", "Options", "manage_options", self::GROUP, [self::class, 'render'],'',101);
+	}
+
+	public static function render () {
+		?>
+		<h1>Options du site</h1>
+
+		<form action="options.php" method="post">
+			<?php
+			settings_fields(self::GROUP);
+			do_settings_sections(self::GROUP);
+			submit_button();
+			?>
+			</form>
+		<?php
+	}
+}

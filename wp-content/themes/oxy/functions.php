@@ -98,8 +98,10 @@ require_once('options/extra.php');
 
 
 SponsoMetaBox::register();
-MenuOptionsUserPage::register();
-OxyPlayPage::register();
+MenuProfilPage::register();
+MenuAideSupportPage::register();
+MenuOptionsPage::register();
+
 
 add_filter('manage_boutique_posts_columns', function ($columns) {
 	
