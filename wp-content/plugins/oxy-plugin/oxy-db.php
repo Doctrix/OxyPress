@@ -40,18 +40,3 @@ $commissions_sql = "CREATE TABLE IF NOT EXISTS $commissions_table_name (
 require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
 
 dbDelta($commissions_sql);
-
-
-/**
- * On ajoute un onglet "Parrainage" dans le back-office Boutique
- */
-function oxy_add_commission_game_tab($tabs) {
-	$tabs = array_insert_after('general', $tabs, 'commission', array(
-		'label' => __('Parrainage', 'mosaika'),
-		'target' => 'commission_game_data',
-		'class' => array()
-	));
-
-	return $tabs;
-}
-add_filter('boutique_game_data_tabs', 'oxy_add_commission_game_tab');

@@ -432,7 +432,7 @@ function get_display_name($user_id) {
  * Permet de savoir combien de "points" un utilisateur possède
  * On compte combien de points il a gagné (récompense) et on soustrait le nombre de points qu'il a déjà utilisés (usage)
  */
-function msk_get_customer_commission_balance($user_id) {
+function oxy_get_customer_commission_balance($user_id) {
 	global $wpdb;
 	$commissions_table_name = $wpdb->prefix . 'commissions';
 
@@ -463,15 +463,15 @@ function msk_get_customer_commission_balance($user_id) {
 /**
  * On récupère chaque ligne de commission (récompense ou usage)
  */
-function msk_get_customer_commission_data($user_id) {
+function oxy_get_customer_commission_data($user_id) {
 	global $wpdb;
 	$commissions_table_name = $wpdb->prefix . 'commissions';
 
-	$commission = msk_get_customer_commission_balance($user_id);
+	$commission = oxy_get_customer_commission_balance($user_id);
 
 	$commission_data = $wpdb->get_results(
 		$wpdb->prepare("
-			SELECT id, type, amount, order_id, line_product_id, line_product_rate, line_product_quantity, time
+			SELECT id, type, amount, order_id, line_game_id, line_game_rate, line_game_quantity, time
 			FROM $commissions_table_name 
 			WHERE user_id = %d 
 			ORDER BY time DESC

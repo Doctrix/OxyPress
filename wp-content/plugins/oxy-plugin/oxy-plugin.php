@@ -145,7 +145,3 @@ add_filter( 'rest_authentication_errors', function( $result ) {
     // on logged-in requests
     return $result;
 });
-
-if (!function_exists('register_extended_field_group')){
-	return;
-}

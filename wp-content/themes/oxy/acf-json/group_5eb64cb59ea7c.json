@@ -1,6 +1,6 @@
 {
     "key": "group_5eb64cb59ea7c",
-    "title": "Game",
+    "title": "Options utilisateur",
     "fields": [
         {
             "key": "field_5eb64ccfc7d8f",
@@ -39,5 +39,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1589005592
+    "modified": 1589043169
 }
