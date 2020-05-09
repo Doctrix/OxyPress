@@ -102,15 +102,20 @@ MenuOptionsUserPage::register();
 OxyPlayPage::register();
 
 add_filter('manage_boutique_posts_columns', function ($columns) {
+	
 	return [
 		'cb' => $columns['cb'],
 		'thumbnail' => 'Miniature',
 		'title' => $columns['title'],
 		'author' => $columns['author'],
+		'taxonomy-genre' => $columns['taxonomy-genre'],
+		'taxonomy-prix' => $columns['taxonomy-prix'],
+		'taxonomy-systeme' => $columns['taxonomy-systeme'],
+		'taxonomy-pegi' => $columns['taxonomy-pegi'],
 		'comments' =>  $columns['comments'],
 		'date' => $columns['date']
-	];
-});
+	]; 
+}); 
 
 add_filter('manage_boutique_posts_custom_column',  function ($column, $postId) {
 	if ($column === 'thumbnail') {
@@ -344,7 +349,7 @@ add_action('init', function () {
 	if (function_exists('acf_add_options_page')) {
 		acf_add_options_page([
 			'page_title' => 'Options de l\'utilisateur',
-			'position' => 71,
+			'position' => 8,
 		]);
 	}
 });
@@ -413,3 +418,65 @@ function override_template( $page_template ) {
 }
 
 
+/* Infos utilisateur  */
+function get_display_name($user_id) {
+	if (!$curauth = get_userdata($user_id))
+		 return false;
+	return $curauth->data->display_name;
+}
+
+
+/**
+ * Permet de savoir combien de "points" un utilisateur possède
+ * On compte combien de points il a gagné (récompense) et on soustrait le nombre de points qu'il a déjà utilisés (usage)
+ */
+function msk_get_customer_commission_balance($user_id) {
+	global $wpdb;
+	$commissions_table_name = $wpdb->prefix . 'commissions';
+
+	$commission_data = $wpdb->get_row(
+		$wpdb->prepare("
+			SELECT 
+			IFNULL(sum(IF(type = %s, amount, 0)), 0) as user_gain,
+			IFNULL(sum(IF(type = %s, amount, 0)), 0) as user_use
+			FROM $commissions_table_name
+			WHERE user_id = %d
+			", 
+			'gain',
+			'use',
+			$user_id
+		)
+	);
+
+	$commission_balance = ($commission_data->user_gain > $commission_data->user_use) ? ($commission_data->user_gain - $commission_data->user_use) : 0;
+
+	return array(
+		'balance' => $commission_balance,
+		'gain' => $commission_data->user_gain,
+		'use' => $commission_data->user_use
+	);
+}
+
+
+/**
+ * On récupère chaque ligne de commission (récompense ou usage)
+ */
+function msk_get_customer_commission_data($user_id) {
+	global $wpdb;
+	$commissions_table_name = $wpdb->prefix . 'commissions';
+
+	$commission = msk_get_customer_commission_balance($user_id);
+
+	$commission_data = $wpdb->get_results(
+		$wpdb->prepare("
+			SELECT id, type, amount, order_id, line_product_id, line_product_rate, line_product_quantity, time
+			FROM $commissions_table_name 
+			WHERE user_id = %d 
+			ORDER BY time DESC
+			",
+			$user_id
+		)
+	);
+
+	return array('points' => $commission, 'details' => $commission_data);
+}
