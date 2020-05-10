@@ -40,3 +40,38 @@ $commissions_sql = "CREATE TABLE IF NOT EXISTS $commissions_table_name (
 require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
 
 dbDelta($commissions_sql);
+
+
+/**
+ * On enregistre les valeurs des champs lorsque le produit est enregistré
+ */
+function oxy_save_commission_game_fields_data($product_id, $post, $update) {
+	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+
+	/* if ($post->post_type == 'boutique') {
+		$product = wc_get_product($product_id);
+
+		if (isset($_POST['commission_user_id'])) {
+			$commission_user_id = wc_clean($_POST['commission_user_id']);
+			$product->update_meta_data('commission_user_id', $commission_user_id);
+		}
+
+		if (isset($_POST['commission_rate'])) {
+			$commission_rate = floatval($_POST['commission_rate']);
+			$product->update_meta_data('commission_rate', $commission_rate);
+		}
+
+		if (isset($_POST['commission_date_start'])) {
+			$commission_date_start = wc_clean($_POST['commission_date_start']);
+			$product->update_meta_data('commission_date_start', $commission_date_start);
+		}
+
+		if (isset($_POST['commission_date_end'])) {
+			$commission_date_end = wc_clean($_POST['commission_date_end']);
+			$product->update_meta_data('commission_date_end', $commission_date_end);
+		}
+
+		$product->save();
+	} */
+}
+add_action('save_post', 'oxy_save_commission_game_fields_data', 10, 3);
