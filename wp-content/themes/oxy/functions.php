@@ -556,7 +556,7 @@ function oxy_save_commission_game_fields_data($product_id, $post, $update) {
 	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
 
 	if ($post->post_type == 'boutique') {
-		$product = get_post($product_id);
+		$product = get_posts($product_id);
 
 		if (isset($_POST['commission_user_id'])) {
 			$commission_user_id = clean_post_cache($_POST['commission_user_id']);

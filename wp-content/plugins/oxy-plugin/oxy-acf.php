@@ -26,11 +26,13 @@ function oxy_add_commission_field_groups($tabs) {
 			$commission_user_data = get_userdata((int)$commission_user_id);  				
 	}   */			
 		if (isset($commission_user_id) && $commission_user_id != '') {
-		$commission_user_data = get_userdata((int)$commission_user_id); 
-	 	$commission_user_id = get_post_meta($post->ID, 'commission_user_id', true);  			
+			$commission_user_data = get_userdata((int)$commission_user_id);
+			$commission_user_id = get_post_meta($post->ID, 'commission_user_id', true);  			
 
+		}
+		
 		if( function_exists('acf_add_local_field_group') ):
-			
+
 			acf_add_local_field_group(array(
 				'key' => 'group_5eb787bd06c2f',
 				'title' => __('Données du jeu', 'oxy'),
@@ -74,7 +76,7 @@ function oxy_add_commission_field_groups($tabs) {
 						'label' =>  __('Identifiant utilisateur', 'oxy'),
 						'name' => 'identifiant_utilisateur',
 						'type' => 'user',
-						'instructions' => '<br/><p style="padding-left:12px;font-style:italic;margin-top: -14px;">' . __('Cet identifiant correspond à l\'utilisateur %1$s ayant l\'e-mail %2$s.', 'oxy') . '</p>' . '<strong>' . $commission_user_data->user_login . '</strong>' . '<strong>' . $commission_user_data->user_email . '</strong>',
+						'instructions' => __('Cet identifiant correspond à l\'utilisateur','oxy'),
 						'required' => 0,
 						'conditional_logic' => 0,
 						'wrapper' => array(
@@ -165,7 +167,7 @@ function oxy_add_commission_field_groups($tabs) {
 				'description' => '',
 			));
 			endif;
-		}		
+				
 }
 add_action('acf/init', 'oxy_add_commission_field_groups');
 
