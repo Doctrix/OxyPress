@@ -13,18 +13,53 @@ register_deactivation_hook(__FILE__, function() {
 	unlink(__DIR__ . '/oxy-acf');
 });
 
+add_action('acf/init', 'oxy_add_commission_field_groups');
+// Fonction qui ajouter un menu ACF
+add_action('init', function () {
+	if (function_exists('acf_add_options_page')) {
+		acf_add_options_page([
+			'page_title' => 'Options de l\'utilisateur',
+			'position' => 8,
+		]);
+	}
+});
+
+// Block personnalité ACF
+add_filter('block_categories', function($categories) {
+	$categories[] = [
+		'slug' => 'game',
+		'title' => 'Game',
+		'icon' => null
+	];
+	return $categories;
+});
+
+if( function_exists('acf_register_block_type') ) {
+    add_action('acf/init', function () {
+		acf_register_block_type(array(
+			'name'              => 'featured_games',
+			'title'             => __('Featured Games'),
+			'description'       => __('A custom produit block.'),
+			'icon'				=> 'awards',
+			'render_template'   => 'blocs/featured.php',
+			'keywords'          => array( 'featured_games', 'quote' ),
+			'enqueue_style'		=> 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css',
+			'category'			=> 'game',
+			'supports'			=> [
+				'align'			=> false,
+				'mode'			=> true,
+				'multiple'		=> false,
+			]
+		));
+	});
+}
 
 /**
- * On ajoute un onglet "Parrainage" dans le back-office d'un produit WooCommerce
+ * On ajoute un onglet "Parrainage" dans le back-office d'un produit
  */
 function oxy_add_commission_field_groups($tabs) {
 	global $wpdb;
-	global $post;
-	
-// On affiche sous le champ le login et l'e-mail de l'utilisateur relié à l'ID défini dans le champ ci-dessus
-	/* if (isset($commission_user_id) && $commission_user_id != '') {
-			$commission_user_data = get_userdata((int)$commission_user_id);  				
-	}   */			
+	global $post;	
 		if (isset($commission_user_id) && $commission_user_id != '') {
 			$commission_user_data = get_userdata((int)$commission_user_id);
 			$commission_user_id = get_post_meta($post->ID, 'commission_user_id', true);  			
@@ -169,6 +204,6 @@ function oxy_add_commission_field_groups($tabs) {
 			endif;
 				
 }
-add_action('acf/init', 'oxy_add_commission_field_groups');
+
 
 
