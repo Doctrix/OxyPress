@@ -3,7 +3,7 @@
 require_once('walker/CommentWalker.php');
 require_once('options/apparence.php');
 require_once('options/cron.php');
-
+remove_action("wp_head", "wp_generator");
 
 function oxy_supports () {
 	add_theme_support('title-tag');
@@ -427,6 +427,161 @@ function get_display_name($user_id) {
 	return $curauth->data->display_name;
 }
 
+/* systeme de points */
+function add_points(){
+	global $current_user;
+	global $wpdb;
+	global $post;
+
+	// On verifie un membre poste un commentaire
+    if( $current_user ) {
+
+	// On recupere le nombre de points actuels
+	$points = intval(get_user_meta( $current_user->ID, 'Points', true));
+
+	// On verifie si le membre a deja poste un commentaire
+	$comment_user_count = (int) $wpdb->get_var(
+			$wpdb->prepare("SELECT COUNT(*) FROM $wpdb->comments
+			WHERE comment_post_ID = %d
+				AND user_id = %d
+				AND comment_approved = '1'", $post->ID, $current_user->ID)
+		);
+	// On est le premier commentaire, on met a jour les points
+	if( $comment_user_count == 1 ) {
+
+		$points += 5;
+		update_user_meta($current_user->ID, 'Points', $points);
+	}
+	
+	}
+}
+
+add_action('comment_post','add_points');
+
+
+/* Ajout ou retrait des points en fonction du statut */
+function update_points_comment_by_status($comment_id, $comment_status) {
+
+    global $current_user;
+    global $wpdb;
+    global $post;
+
+    // On verifie si le membre a les droits pour approuver un commentaire
+    if( current_user_can('manage_options') ) {
+
+	// On recupere les id du membre et du post concerné par un ajout de commentaire
+	$comment_user = $wpdb->get_row(
+		$wpdb->prepare("SELECT user_id, comment_post_ID FROM $wpdb->comments 
+                                WHERE comment_ID = %d", $comment_id)
+	);
+
+	if( $comment_user->user_id >= 1 ) {
+
+	    // Si on a bien un membre, on verifie si le commentaire est le premier pour cet article
+	    $comment_user_count = (int) $wpdb->get_row(
+			$wpdb->prepare("SELECT COUNT(comment_post_ID) FROM $wpdb->comments 
+                                        WHERE comment_post_ID = %d
+					    AND user_id = %d
+                                        GROUP BY comment_post_ID", $comment_user->comment_post_ID, $comment_user->user_id)
+            );
+
+	    // On recupere le nombre de points actuels
+	    $points = intval(get_user_meta( $comment_user->user_id, 'Points', true));
+
+	    switch( $comment_status ) {
+
+	        case 'approve' :		
+
+		    // Si on est sur le premier commentaire, on met a jour les points selon le statut
+		    if( $comment_user_count == 1 ) {
+
+		    $points += 5;
+			update_user_meta($comment_user->user_id, 'Points', $points);
+		    }
+
+		    break;
+
+		case 'hold' :
+
+		    $points += -5;
+		    update_user_meta($comment_user->user_id, 'Points', $points);
+
+		    break;
+
+		case 'trash' :
+
+		    $points += -50;
+		    update_user_meta($comment_user->user_id, 'Points', $points);
+
+		    break;
+	     }
+        }
+    }
+}
+add_action('wp_set_comment_status', 'update_points_comment_by_status', 10, 2);
+
+
+/* Ajout des points après annulation de la corbeille */
+function update_points_untrash_comment( $comment_id ) {
+
+    global $current_user;
+    global $wpdb;
+
+    // On verifie si le membre a le droit d'approuver un commentaire
+    if( current_user_can('manage_options') ) {
+
+        // On recupere id du membre
+	$comment_user_id = $wpdb->get_var(
+		$wpdb->prepare("SELECT user_id FROM $wpdb->comments 
+                                WHERE comment_ID = %d", $comment_id)
+	);
+
+	// On recupere le nombre de points actuels
+	$points = intval(get_user_meta( $comment_user_id, 'Points', true));
+
+	if( $comment_user_id >= 1 ) {
+
+	    $points += 50;
+	    update_user_meta($comment_user_id, 'Points', $points);
+	}
+    }
+}
+add_action('untrash_comment','update_points_untrash_comment');
+
+
+/**
+ * On enregistre les valeurs des champs lorsque le produit est enregistré
+ */
+function oxy_save_commission_game_fields_data($product_id, $post, $update) {
+	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+
+	if ($post->post_type == 'boutique') {
+		$product = get_post($product_id);
+
+		if (isset($_POST['commission_user_id'])) {
+			$commission_user_id = clean_post_cache($_POST['commission_user_id']);
+			$product->update_post_meta('commission_user_id', $commission_user_id);
+		}
+
+		 if (isset($_POST['commission_rate'])) {
+			$commission_rate = floatval($_POST['commission_rate']);
+			$product->update_post_meta('commission_rate', $commission_rate);
+		} 
+
+		if (isset($_POST['commission_date_start'])) {
+			$commission_date_start = clean_post_cache($_POST['commission_date_start']);
+			$product->update_post_meta('commission_date_start', $commission_date_start);
+		}
+
+		if (isset($_POST['commission_date_end'])) {
+			$commission_date_end = clean_post_cache($_POST['commission_date_end']);
+			$product->update_post_meta('commission_date_end', $commission_date_end);
+		}
+
+/* 		$product->save();
+ */	} 
+}
+add_action('save_post', 'oxy_save_commission_game_fields_data', 10, 3);
 
 /**
  * Permet de savoir combien de "points" un utilisateur possède
@@ -459,7 +614,6 @@ function oxy_get_customer_commission_balance($user_id) {
 	);
 }
 
-
 /**
  * On récupère chaque ligne de commission (récompense ou usage)
  */
@@ -482,3 +636,16 @@ function oxy_get_customer_commission_data($user_id) {
 
 	return array('points' => $commission, 'details' => $commission_data);
 }
+
+
+
+
+/* test */
+
+function bonjour ($montextebrut) {
+	$montexte = '<div class="montexte">';
+	$montexte .= $montextebrut;
+	$montexte .= '</div>';
+	return $montexte;
+}
+

@@ -1,5 +1,4 @@
-<?php
-
+<?php 
 class MenuProfilPage { 
 
 	const PLAY = 'play';
@@ -10,20 +9,19 @@ class MenuProfilPage {
 		add_action('admin_init', [self::class, 'registerSettings']);
 	}	
 	
- 	public function play_menu_page() {
+	public static function play_menu_page() {
 		// add_menu_page( $page_title, $menu_title, $capability, $menu_slug, $function, $icon_url, $position );
 		add_menu_page( 'Votre profil', 'Profil', 'manage_options', self::PLAY, [self::class, 'render'], 'dashicons-welcome-widgets-menus', 7 );
 	}
 
-	public function addSubMenu () {
+	public static function addSubMenu () {
 		add_submenu_page('play', 'Vos Options', 'Options', 'manage_options',  'play_options', [self::class, 'renderOptions']);
 	}
 
 	
 	public static function render () {
-	?>	
-
-	<?php
+	global $wpdb;
+	global $current_user;
 	$curauth = wp_get_current_user();
 	if ( ! ( $curauth instanceof WP_User ) ) {
 		return;
@@ -34,33 +32,47 @@ class MenuProfilPage {
 	*     return;
 	* }
 	*/
-	printf( __( 'Username: %s', 'textdomain' ), esc_html( $curauth->user_login ) ) . '<br />';
-	printf( __( 'User email: %s', 'textdomain' ), esc_html( $curauth->user_email ) ) . '<br />';
-	printf( __( 'User first name: %s', 'textdomain' ), esc_html( $curauth->user_firstname ) ) . '<br />';
-	printf( __( 'User last name: %s', 'textdomain' ), esc_html( $curauth->user_lastname ) ) . '<br />';
-	printf( __( 'User display name: %s', 'textdomain' ), esc_html( $curauth->display_name ) ) . '<br />';
-	printf( __( 'User ID: %s', 'textdomain' ), esc_html( $curauth->ID ) );
-	?>
+	echo '<h2>';
+	echo esc_html($curauth->display_name);
+	echo '</h2>';
+	echo get_avatar( $curauth->user_email, $size = 90 );
 
-    	<h3><?= esc_html($curauth->display_name) ?></h3>
-		<?= get_avatar( $curauth->user_email, $size = 90 );?>
-		<h4><?= __('Level') ?> : 10</h4>
-		<h4><?= __('Experience') ?> : 100 xp</h4>
-		<p><?= __('Votre site internet') ?> : <a href="<?= esc_html($curauth->user_url) ?>"><?= esc_html($curauth->user_url) ?></a></p>
-		<p><?= __('Inscrit depuis le') ?> <?= esc_html($curauth->user_registered) ?></p>
+	 // Interrogation de la base de données
+	$resultats = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}commissions");
+	// Parcours des resultats obtenus
+	foreach ($resultats as $gain) {
+	echo '<br/>';
+	echo $gain->amount;
+	echo ' Oxy';
+	echo '<br/>';
+	}
+
+	if (function_exists('update_points_comment_by_status'));
+		// On recupere les id du membre et du post concerné par un ajout de commentaire
+		$exp = intval(get_user_meta( $current_user->ID, 'Points', true));			
+		echo $exp;
+		echo ' XP';
+		echo '<br/>';
+		echo __('Votre site internet');
+		echo ' : '; 
+		echo '<a href="';
+		echo esc_html($curauth->user_url);
+		echo '">';
+		echo esc_html($curauth->user_url);
+		echo '</a>';
+		echo '<br/>';
+		echo __('Inscrit depuis le ');
+		echo esc_html($curauth->user_registered); 
+		settings_fields(self::PLAY);
+		do_settings_sections(self::class);
+		media_buttons();	
+		echo '<hr>';
+	?>
+		<div><img src="<?php get_post('thumbnail') ?>" alt="<?php get_post('alt') ?>"><?php get_post('name') ?><br>
+		<button type="button"><a href="#">Voir la page du jeu</a></button>
+		<button type="button"><a href="#">Voir les trophées</a></button></div>
+	<?php
 	
-	
-			<?php
-			settings_fields(self::PLAY);
-			do_settings_sections(self::class);
-			media_buttons();
-			?>
-			<hr>
-			<div><img src="<?php get_post('thumbnail') ?>" alt="<?php get_post('alt') ?>"><?php get_post('name') ?><br>
-			<button type="button"><a href="#">Voir la page du jeu</a></button>
-			<button type="button"><a href="#">Voir les trophées</a></button></div>
-		<?php
-		
 	} 
 
 	public static function registerSettings () {

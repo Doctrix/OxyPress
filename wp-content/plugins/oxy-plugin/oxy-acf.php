@@ -18,16 +18,17 @@ register_deactivation_hook(__FILE__, function() {
  * On ajoute un onglet "Parrainage" dans le back-office d'un produit WooCommerce
  */
 function oxy_add_commission_field_groups($tabs) {
+	global $wpdb;
 	global $post;
-	$commission_user_id = get_post_meta($post->ID, 'commission_user_id', true);  
+	
 // On affiche sous le champ le login et l'e-mail de l'utilisateur relié à l'ID défini dans le champ ci-dessus
 	/* if (isset($commission_user_id) && $commission_user_id != '') {
 			$commission_user_data = get_userdata((int)$commission_user_id);  				
 	}   */			
 		if (isset($commission_user_id) && $commission_user_id != '') {
 		$commission_user_data = get_userdata((int)$commission_user_id); 
-	} 				
-	else
+	 	$commission_user_id = get_post_meta($post->ID, 'commission_user_id', true);  			
+
 		if( function_exists('acf_add_local_field_group') ):
 			
 			acf_add_local_field_group(array(
@@ -163,7 +164,8 @@ function oxy_add_commission_field_groups($tabs) {
 				'active' => true,
 				'description' => '',
 			));
-			endif;		
+			endif;
+		}		
 }
 add_action('acf/init', 'oxy_add_commission_field_groups');
 
