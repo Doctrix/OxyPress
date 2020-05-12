@@ -7,8 +7,8 @@
 <div class="card">
     <div class="card-body">
         <h2><?php _e('Game description'); ?></h2>
-        <h3><?php _e('Profile of'); ?> <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo esc_attr( get_the_author() ); ?>"><?php the_author(); ?></a></h3>
-        <?php the_content() ?>
+        <h3><?php _e('Profile of'); ?> <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo esc_attr( get_the_author() ); ?>"><?php the_author(); ?></a></h3>             
+          <?php the_content() ?>
     </div>
 </div>
 <br/>
@@ -38,11 +38,11 @@
 </div>
 <br/>
 <div class="cover">
-    <div class="card-body">      
-        <svg class="bi bi-card-image" width="5em" height="5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-  <path fill-rule="evenodd" d="M14.5 3h-13a.5.5 0 00-.5.5v9a.5.5 0 00.5.5h13a.5.5 0 00.5-.5v-9a.5.5 0 00-.5-.5zm-13-1A1.5 1.5 0 000 3.5v9A1.5 1.5 0 001.5 14h13a1.5 1.5 0 001.5-1.5v-9A1.5 1.5 0 0014.5 2h-13z" clip-rule="evenodd"/>
-  <path d="M10.648 7.646a.5.5 0 01.577-.093L15.002 9.5V13h-14v-1l2.646-2.354a.5.5 0 01.63-.062l2.66 1.773 3.71-3.71z"/>
-  <path fill-rule="evenodd" d="M4.502 7a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" clip-rule="evenodd"/>
+<div class="card-body">      
+<svg class="bi bi-card-image" width="5em" height="5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" d="M14.5 3h-13a.5.5 0 00-.5.5v9a.5.5 0 00.5.5h13a.5.5 0 00.5-.5v-9a.5.5 0 00-.5-.5zm-13-1A1.5 1.5 0 000 3.5v9A1.5 1.5 0 001.5 14h13a1.5 1.5 0 001.5-1.5v-9A1.5 1.5 0 0014.5 2h-13z" clip-rule="evenodd"/>
+<path d="M10.648 7.646a.5.5 0 01.577-.093L15.002 9.5V13h-14v-1l2.646-2.354a.5.5 0 01.63-.062l2.66 1.773 3.71-3.71z"/>
+<path fill-rule="evenodd" d="M4.502 7a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" clip-rule="evenodd"/>
 </svg>
 
       <?php
@@ -52,16 +52,17 @@
         if( $images ): ?>
 
         <div id="mini-carousel" class="carousel slide" data-ride="carousel">
-              <ol class="carousel-indicators">
-                  <li data-target="#mini-carousel" data-slide-to="<?php echo $i;?>" class="<?php if($i == 0) echo 'active';?>">
-                  </li>
-              </ol>
+              <ul class="carousel-indicators">
+                  <li data-target="#mini-carousel" data-slide-to="<?php echo $i;?>" class="<?php if($i == 0) echo 'active';?>"></li>
+
+
+                </ul>
             <div class="carousel-inner">
                     <div class="carousel-item <?php if($i == 0) echo 'active';?>">
 
                 <?php
                     $total = count( $images );
-                    $counter = 0;
+                    $counter = 1;
                     foreach( $images as $image ):
                         $counter++; ?>
 
@@ -69,9 +70,10 @@
                         <img class="d-block w-100" src="<?php echo $image['sizes']['post-thumbnail']; ?>" alt="<?php echo $image['title']; ?>" />
                     </a>
 
-                    <?php $current_position = $images->$image + 1; // current_post starts at 0
+                    <?php $current_position = $images->$image + 1; 
+                        // current_post starts at 0
                         //if position is equal to the divider and not the last result close the currently open div and start another
-                        if (/* $image < $image->$total && */ $counter % $divider == 0) : ?>
+                        if ($image > $image->$total &&  $counter % $divider == 0 ) : ?>
 
                         </div><div class="carousel-item">
                     <?php endif; ?><?php endforeach; ?>
@@ -80,11 +82,11 @@
             <!-- Controls -->
             <a class="carousel-control-prev" href="#mini-carousel" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
+                
             </a>
             <a class="carousel-control-next" href="#mini-carousel" role="button" data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
+           
             </a>
         </div>
         <?php endif; ?>

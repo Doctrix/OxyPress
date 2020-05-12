@@ -23,9 +23,11 @@ if ( ! ( $wpdb instanceof WP_User ) ) {
 // SQL -- string->slug=%s -- integer->slug=%d
 /** @var wpdb $wpdb */
 global $wpdb;
+
 $tag = "jeux-video";
 $query = $wpdb->prepare("SELECT name FROM {$wpdb->terms} WHERE slug=%s", [$tag]);
 $results = $wpdb->get_results($query);
+
 $charset_collate = $wpdb->get_charset_collate();
 $commissions_table_name = $wpdb->prefix . 'commissions';
 $commissions_sql = "CREATE TABLE IF NOT EXISTS $commissions_table_name (

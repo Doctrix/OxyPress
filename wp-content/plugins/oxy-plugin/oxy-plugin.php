@@ -2,7 +2,7 @@
 /**
 * Plugin Name: Oxy Plugin
 */
-
+global $wpdb;
 defined('ABSPATH') or die('oups il y a rien à voir');
 
 register_activation_hook(__FILE__, function() {
@@ -14,6 +14,33 @@ register_deactivation_hook(__FILE__, function() {
 });
 
 // register_uninstall_hook();
+/**
+ * Hide Jetpack Banner
+ */
+add_filter('jetpack_just_in_time_msgs', '__return_false');
+add_filter('manage_posts_columns', 'posts_column_views');
+add_filter('manage_edit-post_sortable_columns', 'sort_by_views_column' );
+add_filter('rest_authentication_errors', function( $result ) {
+    // If a previous authentication check was applied,
+    // pass that result along without modification.
+    if ( true === $result || is_wp_error( $result ) ) {
+        return $result;
+    }
+
+    // No authentication has been performed yet.
+    // Return an error if user is not logged in.
+    if ( ! is_user_logged_in() ) {
+        return new WP_Error(
+            'rest_not_logged_in',
+            __( 'You are not currently logged in.' ),
+            array( 'status' => 401 )
+        );
+    }
+
+    // Our custom authentication check should have no effect
+    // on logged-in requests
+    return $result;
+});
 
 add_action('init', function () {
 	register_taxonomy('genre', 'post', [
@@ -124,38 +151,14 @@ add_action('init', function () {
 	]);
 });
 add_action('manage_posts_custom_column', 'posts_custom_column_views',5,2);
-add_action( 'pre_get_posts', 'post_views_orderby' );
+add_action('pre_get_posts', 'post_views_orderby' );
 add_action('comment_post','add_points');
 add_action('wp_set_comment_status', 'update_points_comment_by_status', 10, 2);
 add_action('untrash_comment','update_points_untrash_comment');
-add_filter('manage_posts_columns', 'posts_column_views');
-add_filter( 'manage_edit-post_sortable_columns', 'sort_by_views_column' );
-add_filter( 'rest_authentication_errors', function( $result ) {
-    // If a previous authentication check was applied,
-    // pass that result along without modification.
-    if ( true === $result || is_wp_error( $result ) ) {
-        return $result;
-    }
+add_action('wp_head', 'page_view');
 
-    // No authentication has been performed yet.
-    // Return an error if user is not logged in.
-    if ( ! is_user_logged_in() ) {
-        return new WP_Error(
-            'rest_not_logged_in',
-            __( 'You are not currently logged in.' ),
-            array( 'status' => 401 )
-        );
-    }
-
-    // Our custom authentication check should have no effect
-    // on logged-in requests
-    return $result;
-});
-/**
- * Hide Jetpack Banner
- */
-add_filter('jetpack_just_in_time_msgs', '__return_false');
 remove_action('try_gutenberg_panel', 'wp_try_gutenberg_panel');
+	
 
 /**
  * Compteur de visite et de vues
@@ -173,6 +176,7 @@ function getPostViews($postID){
 }
 //Setter
 function setPostViews($postID) {
+
     $count_key = 'post_views_count';
     $count = get_post_meta($postID, $count_key, true);
     if($count==''){
@@ -197,16 +201,16 @@ function posts_custom_column_views($column_name, $id){
 }
 
 //Sort by post-views in admin
-function sort_by_views_column( $columns ) {
+function sort_by_views_column($columns) {
     $columns['post-views'] = 'post-views';
     return $columns;
 }
 
-function post_views_orderby( $query ) {
+function post_views_orderby($query) {
     if( ! is_admin() )
         return;
  
-    $orderby = $query->get( 'orderby');
+    $orderby = $query->get('orderby');
  
     if( 'post-views' == $orderby ) {
         $query->set('meta_key','post_views_count');
@@ -219,7 +223,7 @@ function post_views_orderby( $query ) {
  */
 function add_points(){
 	global $current_user;
-	global $wpdb;
+	/* global $wpdb; */
 	global $post;
 
 	// On verifie un membre poste un commentaire
@@ -251,7 +255,7 @@ function add_points(){
 function update_points_comment_by_status($comment_id, $comment_status) {
 
     global $current_user;
-    global $wpdb;
+    /* global $wpdb; */
     global $post;
 
     // On verifie si le membre a les droits pour approuver un commentaire
@@ -313,7 +317,7 @@ function update_points_comment_by_status($comment_id, $comment_status) {
 function update_points_untrash_comment( $comment_id ) {
 
     global $current_user;
-    global $wpdb;
+    /* global $wpdb; */
 
     // On verifie si le membre a le droit d'approuver un commentaire
     if( current_user_can('manage_options') ) {
@@ -335,5 +339,8 @@ function update_points_untrash_comment( $comment_id ) {
     }
 }
 
+function page_view() {
+    setPostViews(get_the_ID());
+}
 
-
+           
