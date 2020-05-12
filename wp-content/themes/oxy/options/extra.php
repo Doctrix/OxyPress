@@ -22,64 +22,72 @@ class MenuProfilPage {
 	public static function render () {
 	global $wpdb;
 	global $current_user;
-	$curauth = wp_get_current_user();
-	if ( ! ( $curauth instanceof WP_User ) ) {
-		return;
-	} 
-	/*
-	* @example Safe usage: $curauth = wp_get_current_user();
-	* if ( ! ( $curauth instanceof WP_User ) ) {
-	*     return;
-	* }
-	*/
-	echo '<h2>';
-	echo esc_html($curauth->display_name);
-	echo '</h2>';
-	echo get_avatar( $curauth->user_email, $size = 90 );
-	echo '<br/>';
-
 	
-	 // Interrogation de la base de données
+	$current_user = wp_get_current_user();
+	if ( ! ( $current_user instanceof WP_User ) ) {
+		return;
+	}
+
+	// Interrogation de la base de données
 	$resultats = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}commissions");
 	// Parcours des resultats obtenus
 	foreach ($resultats as $gain) {
-	echo '<br/>';
-	echo $gain->amount;
-	echo ' Oxy';
-	echo '<br/>';
+		$OxyCoin = $gain->amount;
 	}
+		
+	$nom_aff = $current_user->display_name;
+	$email = $current_user->user_email;
+	$url = $current_user->user_url;
+	$date = $current_user->user_registered;
+	$id_user = $current_user->ID;
+	$exp = add_points('Points');
+	
+/**
+ * Nom d'affichage de l'utilisateur
+ */
+	echo '<h2>Hello, ' . esc_html($nom_aff). '</h2>';
 
-	if (function_exists('update_points_comment_by_status'));
-		// On recupere les id du membre et du post concerné par un ajout de commentaire
-		$exp = intval(get_user_meta( $current_user->ID, 'Points', true));			
-		echo $exp;
-		echo ' XP';
-		echo '<br/>';
-		echo __('Votre site internet');
-		echo ' : '; 
-		echo '<a href="';
-		echo esc_html($curauth->user_url);
-		echo '">';
-		echo esc_html($curauth->user_url);
-		echo '</a>';
-		echo '<br/>';
-		echo __('Inscrit depuis le ');
-		echo esc_html($curauth->user_registered); 
-		settings_fields(self::PLAY);
-		do_settings_sections(self::class);
-		function open_page_game() {
-			$html = '<input type="submit" value="Voir la page du jeu">';
-			return $html;
-		}
-		echo open_page_game();
-		echo '<hr>';
-		function open_page_trophee() {
-			$html = '<input type="submit" value="Voir les trophées">';
-			return $html;
-		}
-		echo open_page_trophee();
-		echo '<hr>';
-		media_buttons();			
+/**
+ * Avatar de l'utilisateur
+ */	
+	echo get_avatar($email, $size = 90). '<br/>';
+
+/**
+ * Monnaie de l'utilisateur
+ */	
+	echo "$OxyCoin Oxy\n";
+
+/**
+ * Points XP de l'utilisateur
+ */			
+	echo $exp . ' ' . 'XP' . '<br/>';
+var_dump($exp);
+/**
+ * Site internet de l'utilisateur
+ */
+	echo __('Votre site internet') . ' : ' . '<a href="' . esc_html($url) . '">' . esc_html($url) . '</a>' . '<br/>';
+
+/**
+ * Date d'inscription de l'utilisateur
+ */
+	echo __('Inscrit depuis le ')  . esc_html($date) ;
+
+/**
+ * Interface jouer
+ */
+	settings_fields(self::PLAY);
+	do_settings_sections(self::class);
+	function open_page_game() {
+		$html = '<input type="submit" value="Voir la page du jeu">';
+		return $html;
+	}
+	echo open_page_game()  . '<hr>';
+	function open_page_trophee() {
+		$html = '<input type="submit" value="Voir les trophées">';
+		return $html;
+	}
+	echo open_page_trophee() . '<hr>';
+	media_buttons();			
 	?>
 	<?php
 	} 

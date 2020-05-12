@@ -30,6 +30,8 @@ $results = $wpdb->get_results($query);
 
 $charset_collate = $wpdb->get_charset_collate();
 $commissions_table_name = $wpdb->prefix . 'commissions';
+$profil_table_name = $wpdb->prefix . 'profil';
+
 $commissions_sql = "CREATE TABLE IF NOT EXISTS $commissions_table_name (
 	id mediumint(9) NOT NULL AUTO_INCREMENT,
 	type varchar(45) DEFAULT NULL,
@@ -44,10 +46,25 @@ $commissions_sql = "CREATE TABLE IF NOT EXISTS $commissions_table_name (
 	time datetime DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	PRIMARY KEY  (id))
 $charset_collate;";
-require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
-dbDelta($commissions_sql);
 
-add_action('save_post', 'oxy_save_commission_game_fields_data', 10, 3);
+
+$profil_sql = "CREATE TABLE IF NOT EXISTS $profil_table_name (
+	id mediumint(9) NOT NULL AUTO_INCREMENT,
+	user_id mediumint(9) DEFAULT NULL,
+	nom varchar(45) DEFAULT NULL,
+	exp decimal(10,2) DEFAULT NULL,
+	niveau mediumint(9) DEFAULT NULL,
+	monnaie decimal(10,2) DEFAULT NULL,
+	user_notified varchar(45) DEFAULT NULL,
+	derniere_connexion datetime DEFAULT CURRENT_TIMESTAMP NOT NULL,
+	PRIMARY KEY  (id))
+$charset_collate;";
+
+require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+
+dbDelta($commissions_sql);
+dbDelta($profil_sql);
+
 
 /**
  * On enregistre les valeurs des champs lorsque le produit est enregistré
@@ -82,6 +99,7 @@ function oxy_save_commission_game_fields_data($product_id, $post, $update) {
  */	} 
 }
 
+add_action('save_post', 'oxy_save_commission_game_fields_data', 10, 3);
 /**
  * Permet de savoir combien de "points" un utilisateur possède
  * On compte combien de points il a gagné (récompense) et on soustrait le nombre de points qu'il a déjà utilisés (usage)
