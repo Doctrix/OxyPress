@@ -36,7 +36,9 @@ class MenuProfilPage {
 	echo esc_html($curauth->display_name);
 	echo '</h2>';
 	echo get_avatar( $curauth->user_email, $size = 90 );
+	echo '<br/>';
 
+	
 	 // Interrogation de la base de données
 	$resultats = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}commissions");
 	// Parcours des resultats obtenus
@@ -65,14 +67,21 @@ class MenuProfilPage {
 		echo esc_html($curauth->user_registered); 
 		settings_fields(self::PLAY);
 		do_settings_sections(self::class);
-		media_buttons();	
+		function open_page_game() {
+			$html = '<input type="submit" value="Voir la page du jeu">';
+			return $html;
+		}
+		echo open_page_game();
 		echo '<hr>';
+		function open_page_trophee() {
+			$html = '<input type="submit" value="Voir les trophées">';
+			return $html;
+		}
+		echo open_page_trophee();
+		echo '<hr>';
+		media_buttons();			
 	?>
-		<div><img src="<?php get_post('thumbnail') ?>" alt="<?php get_post('alt') ?>"><?php get_post('name') ?><br>
-		<button type="button"><a href="#">Voir la page du jeu</a></button>
-		<button type="button"><a href="#">Voir les trophées</a></button></div>
 	<?php
-	
 	} 
 
 	public static function registerSettings () {

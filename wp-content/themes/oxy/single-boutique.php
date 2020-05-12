@@ -8,7 +8,8 @@
     <div class="card-body">
         <h2><?php _e('Game description'); ?></h2>
         <h3><?php _e('Profile of'); ?> <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo esc_attr( get_the_author() ); ?>"><?php the_author(); ?></a></h3>             
-          <?php the_content() ?>
+          <?php the_content() ?>   
+          <small class="text-muted"><?php echo getPostViews(get_the_ID());?></small> 
     </div>
 </div>
 <br/>

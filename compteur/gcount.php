@@ -40,7 +40,7 @@ http://www.phpjunkyard.com/about/donate.php
 ////////////////////////////////////////////////////////////////////////////////
 
 // URL of the folder where script is installed. INCLUDE a "/" at the end!
-$base_url = "http://".$_SERVER['HTTP_HOST']."/compteur/";
+$base_url = "//".$_SERVER['HTTP_HOST']."/compteur/";
 
 // Default image style (font)
 $default_style = 'led';
