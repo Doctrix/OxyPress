@@ -1,4 +1,4 @@
-# OxyWeb
+# OxyPress
 
 OxyWeb is a website under Wordpress.
 
