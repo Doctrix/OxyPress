@@ -2,7 +2,6 @@
 /**
 * Plugin Name: Oxy DB
 */
-
 defined('ABSPATH') or die('oups il y a rien à voir');
 
 register_activation_hook(__FILE__, function() {
@@ -16,19 +15,9 @@ register_deactivation_hook(__FILE__, function() {
 /**
  * Si inexistante, on créée la table SQL "commissions" après l'activation du thème
  */
-if ( ! ( $wpdb instanceof WP_User ) ) {
-	return;
-}
-
-// SQL -- string->slug=%s -- integer->slug=%d
-/** @var wpdb $wpdb */
 global $wpdb;
-
-$tag = "jeux-video";
-$query = $wpdb->prepare("SELECT name FROM {$wpdb->terms} WHERE slug=%s", [$tag]);
-$results = $wpdb->get_results($query);
-
 $charset_collate = $wpdb->get_charset_collate();
+
 $commissions_table_name = $wpdb->prefix . 'commissions';
 $profil_table_name = $wpdb->prefix . 'profil';
 
@@ -44,10 +33,9 @@ $commissions_sql = "CREATE TABLE IF NOT EXISTS $commissions_table_name (
 	line_subtotal decimal(10,2) DEFAULT NULL,
 	user_notified varchar(45) DEFAULT NULL,
 	time datetime DEFAULT CURRENT_TIMESTAMP NOT NULL,
-	PRIMARY KEY  (id))
-$charset_collate;";
-
-
+	PRIMARY KEY  (id)
+	) $charset_collate;";
+	
 $profil_sql = "CREATE TABLE IF NOT EXISTS $profil_table_name (
 	id mediumint(9) NOT NULL AUTO_INCREMENT,
 	user_id mediumint(9) DEFAULT NULL,
@@ -57,14 +45,17 @@ $profil_sql = "CREATE TABLE IF NOT EXISTS $profil_table_name (
 	monnaie decimal(10,2) DEFAULT NULL,
 	user_notified varchar(45) DEFAULT NULL,
 	derniere_connexion datetime DEFAULT CURRENT_TIMESTAMP NOT NULL,
-	PRIMARY KEY  (id))
-$charset_collate;";
+	PRIMARY KEY  (id)
+	) $charset_collate;";
 
 require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
 
 dbDelta($commissions_sql);
 dbDelta($profil_sql);
 
+$tag = "jeux-video";
+$query = $wpdb->prepare("SELECT name FROM {$wpdb->terms} WHERE slug=%s", [$tag]);
+$results = $wpdb->get_results($query);
 
 /**
  * On enregistre les valeurs des champs lorsque le produit est enregistré

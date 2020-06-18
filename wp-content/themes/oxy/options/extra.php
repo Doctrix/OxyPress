@@ -24,9 +24,6 @@ class MenuProfilPage {
 	global $current_user;
 	
 	$current_user = wp_get_current_user();
-	if ( ! ( $current_user instanceof WP_User ) ) {
-		return;
-	}
 
 	// Interrogation de la base de données
 	$resultats = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}commissions");
@@ -42,6 +39,17 @@ class MenuProfilPage {
 	$id_user = $current_user->ID;
 	$exp = add_points('Points');
 	
+/* 		if(isset($_POST['nom'], $_POST['exp'])){
+			$exp = $wpdb->prepare('INSERT INTO PROFIL (user_id, exp, niveau, derniere_connexion) VALUES (:user_id, :exp, :niveau, :derniere_connexion)');
+			$exp->execute([
+				'nom' => $_POST['nom'],
+				'exp' => $_POST['exp'],
+				'derniere_connexion' => time()
+			]);
+		} */
+
+
+
 /**
  * Nom d'affichage de l'utilisateur
  */

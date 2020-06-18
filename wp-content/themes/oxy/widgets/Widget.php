@@ -61,7 +61,7 @@ class TwitchWidget extends WP_Widget {
 			echo $args['before_title'] . $title . $args['after_title'];
 		}
 		$twitch = isset($instance['twitch']) ? $instance['twitch'] : '';
-		echo '<div class="embed-responsive embed-responsive-16by9"><iframe  class="embed-responsive-item" src="https://player.twitch.tv/?autoplay=false&collection=' . esc_attr($twitch) . '" allowfullscreen></iframe></div>';
+		echo '<div class="embed-responsive embed-responsive-16by9"><iframe  class="embed-responsive-item" src="https://player.twitch.tv/?collection=' . esc_attr($twitch) . '&video=videoId&parent=oxygames.fr" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe></div>';
 		echo $args['after_widget'];
 	}
 	public function form ($instance) {

@@ -221,19 +221,17 @@ function add_points(){
 				AND user_id = %d
 				AND comment_approved = '1'", $post->ID, $current_user->ID)
 		);
-/* 	$points = (int) $wpdb->get_var(
-		$wpdb->prepare("SELECT user_id, exp FROM $wpdb->profil
-		WHERE id = %d", $points)
-	); */
+ 
 	// On est le premier commentaire, on met a jour les points
 	if( $comment_user_count == 1 ) {
 
 		$points += 5;
 		update_user_meta($current_user->ID, 'Points', $points);
-	}
-return $points;
+		}
+		return $points;
 	}
 }
+
 
 /*
  * Ajout ou retrait des points en fonction du statut
