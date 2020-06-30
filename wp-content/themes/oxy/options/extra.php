@@ -18,7 +18,6 @@ class MenuProfilPage {
 		add_submenu_page('play', 'Vos Options', 'Options', 'manage_options',  'play_options', [self::class, 'renderOptions']);
 	}
 
-	
 	public static function render () {
 	global $wpdb;
 	global $current_user;
@@ -47,9 +46,6 @@ class MenuProfilPage {
 				'derniere_connexion' => time()
 			]);
 		} */
-
-
-
 /**
  * Nom d'affichage de l'utilisateur
  */
@@ -63,13 +59,12 @@ class MenuProfilPage {
 /**
  * Monnaie de l'utilisateur
  */	
-	echo "$OxyCoin Oxy\n";
+	echo esc_html($OxyCoin). "Oxy\n";
 
 /**
  * Points XP de l'utilisateur
  */			
-	echo $exp . ' ' . 'XP' . '<br/>';
-var_dump($exp);
+	echo esc_html($exp). ' ' . 'XP' . '<br/>';
 /**
  * Site internet de l'utilisateur
  */
@@ -216,6 +211,7 @@ class MenuOptionsPage {
 		register_setting(self::GROUP, 'extra_liens');
 		register_setting(self::GROUP, 'extra_events_titre');
 		register_setting(self::GROUP, 'extra_events_date');
+		register_setting(self::GROUP, 'extra_btn_link');
 		add_settings_section('extra_options_section', 'Projets mis en avant', function() {
 			echo "Vous pouvez ici g&eacute;rer les param&egrave;tres";
 
@@ -238,6 +234,11 @@ class MenuOptionsPage {
 		add_settings_field('extra_options_events_date', "Date de sortie", function() {
 			?>
 			<input type="text" name="extra_events_date" value="<?= esc_attr(get_option('extra_events_date')) ?>" class="oxy_datepicker">
+			<?php
+		}, self::GROUP, 'extra_options_section');
+		add_settings_field('extra_options_btn_link', "Bouton Home", function() {
+			?>
+			<textarea name="extra_btn_link" rows="2" style="width: 100%"><?= esc_html(get_option('extra_btn_link')) ?></textarea>
 			<?php
 		}, self::GROUP, 'extra_options_section');
 	}

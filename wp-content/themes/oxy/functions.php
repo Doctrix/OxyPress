@@ -19,7 +19,6 @@ MenuProfilPage::register();
 MenuAideSupportPage::register();
 MenuOptionsPage::register();
 
-
 function oxy_supports () {
 	add_theme_support('title-tag');
 	add_theme_support('post-thumbnails');
@@ -31,22 +30,20 @@ function oxy_supports () {
 	add_image_size('post-thumbnail', 350, 215, true);
 
 	// Add Custom Background Support.
-		$args = array(
-			'default-color' => '2A2A2E',
-		);
-		add_theme_support( 'custom-background', $args );
+	$args = array(
+		'default-color' => '2A2A2E',
+	);
+	add_theme_support( 'custom-background', $args );
+	add_theme_support( 'custom-logo', array(
+		'height'		 => 60,
+		'width'			 => 200,
+		'flex-height'	 => true,
+		'flex-width'	 => true,
+		'header-text'	 => array( 'site-title', 'site-description' ),
+	) );
 
-		add_theme_support( 'custom-logo', array(
-			'height'		 => 60,
-			'width'			 => 200,
-			'flex-height'	 => true,
-			'flex-width'	 => true,
-			'header-text'	 => array( 'site-title', 'site-description' ),
-		) );
-
-		// Adds RSS feed links to for posts and comments.
-		add_theme_support( 'automatic-feed-links' );
-
+	// Adds RSS feed links to for posts and comments.
+	add_theme_support( 'automatic-feed-links' );
 }
 
 function oxy_register_assets () {
@@ -57,9 +54,9 @@ function oxy_register_assets () {
 		wp_deregister_script('jquery');
 		wp_register_script('jquery', 'https://code.jquery.com/jquery-3.5.1.slim.min.js', [], false, true);
 	}
-	wp_enqueue_style('bootstrap',);
+	wp_enqueue_style('bootstrap');
 	wp_enqueue_script('bootstrap');
-	wp_enqueue_style( 'style', get_stylesheet_uri() );
+	wp_enqueue_style('style', get_stylesheet_uri());
 }
 
 function oxy_title_separator () {
@@ -218,8 +215,6 @@ function page_view() {
    setPostViews(get_the_ID());
 }
 
-
-
 function posts_column_views($defaults){
 	$defaults['post-views'] = __('Views');
 	return $defaults;
@@ -249,7 +244,6 @@ function post_views_orderby($query) {
     }
 }
 
-
 add_action('pre_get_posts', 'oxy_pre_get_posts');
 add_filter('query_vars', 'oxy_query_vars');
 add_action('init', 'oxy_init');
@@ -258,14 +252,15 @@ add_action('wp_enqueue_scripts', 'oxy_register_assets');
 add_filter('document_title_separator', 'oxy_title_separator');
 add_filter('nav_menu_css_class', 'oxy_menu_class');
 add_filter('nav_menu_link_attributes', 'oxy_menu_link_class');
-add_filter('manage_boutique_posts_columns', function ($columns) {
-	
+add_filter('manage_boutique_posts_columns', function ($columns) 
+{
 	return [
 		'cb' => $columns['cb'],
 		'thumbnail' => 'Miniature',
 		'title' => $columns['title'],
 		'author' => $columns['author'],
 		'taxonomy-genre' => $columns['taxonomy-genre'],
+		'taxonomy-statut' => $columns['taxonomy-statut'],
 		'taxonomy-prix' => $columns['taxonomy-prix'],
 		'taxonomy-systeme' => $columns['taxonomy-systeme'],
 		'taxonomy-pegi' => $columns['taxonomy-pegi'],
@@ -273,7 +268,8 @@ add_filter('manage_boutique_posts_columns', function ($columns) {
 		'date' => $columns['date']
 	]; 
 }); 
-add_filter('manage_boutique_posts_custom_column',  function ($column, $postId) {
+add_filter('manage_boutique_posts_custom_column',  function ($column, $postId) 
+{
 	if ($column === 'thumbnail') {
 		the_post_thumbnail('thumbnail', $postId);
 	}

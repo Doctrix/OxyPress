@@ -13,12 +13,6 @@ register_deactivation_hook(__FILE__, function() {
 	unlink(__DIR__ . '/oxy');
 });
 
-
-
-
-
-
-
 /**
  * Hide Jetpack Banner
  */
@@ -48,7 +42,7 @@ add_filter('rest_authentication_errors', function( $result ) {
 });
 
 add_action('init', function () {
-	register_taxonomy('genre', 'post', [
+	register_taxonomy('genre', 'boutique', [
 		'labels' => [
 			'name' => 'Genre',
 			'singular_name' => 'Genre',
@@ -65,7 +59,7 @@ add_action('init', function () {
 		'hierarchical' => true,
 		'show_admin_column' => true,
 	]);
-	register_taxonomy('statut', 'post', [
+	register_taxonomy('statut', 'boutique', [
 		'labels' => [
 			'name' => 'Statut',
 			'singular_name' => 'Statut',
@@ -82,7 +76,7 @@ add_action('init', function () {
 		'hierarchical' => true,
 		'show_admin_column' => true,
 	]);
-	register_taxonomy('prix', 'post', [
+	register_taxonomy('prix', 'boutique', [
 		'labels' => [
 			'name' => 'Prix',
 			'singular_name' => 'Prix',
@@ -99,7 +93,7 @@ add_action('init', function () {
 		'hierarchical' => true,
 		'show_admin_column' => true,
 	]);
-	register_taxonomy('systeme', 'post', [
+	register_taxonomy('systeme', 'boutique', [
 		'labels' => [
 			'name' => 'Système d\'exploitation',
 			'singular_name' => 'Système d\'exploitation',
@@ -116,7 +110,7 @@ add_action('init', function () {
 		'hierarchical' => true,
 		'show_admin_column' => true,
 	]);
-	register_taxonomy('pegi', 'post', [
+	register_taxonomy('pegi', 'boutique', [
 		'labels' => [
 			'name' => 'Système d\'évaluation',
 			'singular_name' => 'Système d\'évaluation',

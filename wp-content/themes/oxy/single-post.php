@@ -7,7 +7,7 @@
 		<div class="alert alert-info">
 			Cet	article est sponsoris&eacute;/parrain&eacute;
 		</div>
-	<?php endif ?>
+	<?php endif; ?>
 
 	<p>
 		<img src="<?php the_post_thumbnail_url(); ?>" alt="" style="width:100%; height:auto;">
@@ -66,5 +66,5 @@
 <?php endwhile;
 endif; ?>
 
-<br />
+
 <?php get_footer() ?>

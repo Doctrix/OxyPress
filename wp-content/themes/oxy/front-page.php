@@ -5,7 +5,7 @@
             <br/>
             <h2 class="lead"><?= __('Gambling is life.', 'oxy'); ?></h2>
             <br/>
-            <a href="<?php echo get_option('extra_liens') ?>" class="btn btn-lg btn-secondary"><?= __('I want to believe', 'oxy'); ?></a>
+            <a href="<?php echo get_option('extra_btn_link') ?>" class="btn btn-lg btn-secondary" target="_blank"><?= __('I want to believe', 'oxy'); ?></a>
         </main>
         
     <aside class="col-md-20 blog-sidebar">
