@@ -41,8 +41,8 @@ $i=1;
 foreach ($twitchInit->getAPI_FeaturedStreams(2, 0) as $key => $item) {
 
 	echo "<h3>Stream n°$i</h3>";
-	echo "[status] 	=> ".$item['status']."<br />
-          [mature] 	=> ".$item['mature']."<br />
+	echo "[status] 			=> ".$item['status']."<br />
+          [mature] 			=> ".$item['mature']."<br />
 		  [display_name] 	=> ".$item['display_name']."<br />
 		  [name] 			=> ".$item['name']."<br />
 		  [game] 			=> ".$item['game']."<br />
