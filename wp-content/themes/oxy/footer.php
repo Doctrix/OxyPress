@@ -11,7 +11,7 @@
 			<h5><?= get_option('extra_infos') ?></h5>
 			<h6><a href="<?php echo get_option('extra_liens') ?>">En savoir plus</a></h6>
 			<h4>Projets en cours : <?= get_option('extra_events_titre') ?><br/>Sortie pr&eacute;vu : <?= get_option('extra_events_date') ?></h4>
-			<script type="text/javascript" src=<?php echo "//".$_SERVER['HTTP_HOST']."/compteur/"; ?>gcount.php?page=index"></script>
+			<script type="text/javascript" src="<?= "//".$_SERVER['HTTP_HOST']."/compteur/"; ?>gcount.php?page=index"></script>
 
 		</div>
 		</footer>

@@ -2,8 +2,8 @@
 Contributors: boldgrid, fredericktownes, maxicusc, gidomanders, bwmarkle, harryjackson1221, joemoto
 Tags: seo, cache, optimize, pagespeed, performance, caching, compression, maxcdn, nginx, varnish, redis, new relic, aws, amazon web services, s3, cloudfront, rackspace, cloudflare, azure, apache
 Requires at least: 3.2
-Tested up to: 5.4
-Stable tag: 0.13.3
+Tested up to: 5.6
+Stable tag: 2.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -104,7 +104,7 @@ It's in every web site owner's best interest is to make sure that the performanc
 
 = Which WordPress versions are supported? =
 
-To use all features in the suite, a minimum of version WordPress 2.8 with PHP 5.3 is required. Earlier versions will benefit from our Media Library Importer to get them back on the upgrade path and into a CDN of their choosing.
+To use all features in the suite, a minimum of version WordPress 3.2 with PHP 5.3 is required. Earlier versions will benefit from our Media Library Importer to get them back on the upgrade path and into a CDN of their choosing.
 
 = Why doesn't minify work for me? =
 
@@ -274,6 +274,69 @@ It's quite difficult to recall all of the innovators that have shared their thou
 Please reach out to all of these people and support their projects if you're so inclined.
 
 == Changelog ==
+
+= 2.0.1 =
+* Fix: Corrected redirection logic for the new Setup Guide
+* Fix: Fixed JavaScript w3tc_ga error
+
+= 2.0.0 =
+* Feature: Added the Setup Guide wizard for onboarding
+* Update: Updated jQuery compatibility and methods deprecated in WordPress 5.6
+* Fix: Browser Cache: Fixed ExpiresByType code; changed from modified time to client access time
+
+= 0.15.2 =
+* Fix: Minify: Do not remove quotes around meta tags
+* Fix: Minify: Removal of spaces in calc function was breaking CSS
+* Fix: Browser Cache: Query string was not added to prevent caching after setting changes
+* Fix: Avoid warning when sending an empty URL for purging
+* Update: Added a filter for minified JavaScript content
+* Update: Minify: Added options for minify only got both JS and CSS in auto mode
+
+= 0.15.1 =
+* Fix: Fixed Memcached flush logic
+* Fix: Remove disk enhanced rewrites when disabling page cache
+* Fix: Better handle conflicts on activation
+
+= 0.15.0 =
+* Feature: Added TransparentCDN full-site delivery option
+* Fix: Update settings on activation in a changed environment
+* Fix: Fixed a compatibility check for Apache when PHP is running as CGI
+* Fix: Always set HSTS headers in Apache; not only for 2xx HTTP codes
+* Fix: Implemented anatomic incrementing of key version in Memcache(d)
+* Update: Allow filtering of w3tc_minify_url_for_files Minify URL for files
+
+= 0.14.4 =
+* Fix: Cleanup widget and postbox display for WordPress 5.5
+* Fix: Update to PageSpeed API v5, show webvitals metrics
+* Fix: Console error when adminbar is hidden and PageSpeed module is active
+* Fix: Stats view JS issue
+* Fix: Deprecated jQuery warnings
+* Fix: Require files for request_filesystem_credentials() call
+* Added option to disable jquery-migrate on the front-end. Fixed #172 master (#240)
+
+= 0.14.3 =
+* Fix: Take "Accepted Query Strings" into account when "Cache query strings" enabled
+* Fixed typo in variable for lazy loading
+* Update: Add lazy load Google Maps reference to the general settings page
+* Update: Support background-image: together with background: for lazy loading
+
+= 0.14.2 =
+* Fixed WP-CLI redirect issue in multisite
+* Fix: Avoid PREG_JIT_STACKLIMIT_ERROR in minify
+* Fix: Prevent empty needle PHP warning
+* Update: Allow to specify URIs with a query string in Additional Pages
+
+= 0.14.1 =
+* Fixed CSS minify URL rewrite logic that affected some lazy loading and CSS URL addresses using protocols
+
+= 0.14.0 =
+* Added lazy loading for Google Maps
+* Added a filter w3tc_minify_css_content for minified contents
+* Fixed a minify regex issue in non-Unicode websites
+* Fixed a PHP notice in WPMU: accessing array offset on null
+* Fixed a minify issue where embedded CSS URL fragments were converted incorrectly
+* i18n improvement
+* Changed default to disabled for wp-admin requests in the object cache
 
 = 0.13.3 =
 * Fixed HTML minification of img elements containing embedded SVG strings

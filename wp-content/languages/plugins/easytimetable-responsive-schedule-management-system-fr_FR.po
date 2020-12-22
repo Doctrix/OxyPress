@@ -1,0 +1,663 @@
+# Translation of Plugins - EasyTimetable &#8211; Responsive Schedule management system - Development (trunk) in French (France)
+# This file is distributed under the same license as the Plugins - EasyTimetable &#8211; Responsive Schedule management system - Development (trunk) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2017-03-07 21:54:32+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: GlotPress/3.0.0-alpha.2\n"
+"Language: fr\n"
+"Project-Id-Version: Plugins - EasyTimetable &#8211; Responsive Schedule management system - Development (trunk)\n"
+
+#: admin/views/EasyTimetableViewCreate.php:838
+msgid "Hold ctrl to select/deselect week numbers manually"
+msgstr "Appuyez sur ctrl pour sélectionner/désélectionner les numéros de semaine manuellement"
+
+#: admin/views/EasyTimetableViewCreate.php:855
+msgid "Select an option"
+msgstr "Sélectionnez une option"
+
+#: admin/views/EasyTimetableViewCreate.php:860
+msgid "Hold ctrl + click to select/deselect several weeks manualy"
+msgstr "Appuyez sur ctrl et cliquez pour sélectionner plusieurs semaines manuellement"
+
+#: admin/views/EasyTimetableViewCreate.php:891
+msgid "Display them on the same page"
+msgstr "Affichez les sur la même page"
+
+#: admin/views/EasyTimetableViewList.php:41
+#: admin/views/EasyTimetableViewList.php:274
+#: admin/views/EasyTimetableViewList.php:318
+#: admin/views/EasyTimetableViewSettings.php:36
+msgid "Get extended"
+msgstr "Acheter la version Extended"
+
+#: admin/views/EasyTimetableViewList.php:78
+msgid "Delete timetable"
+msgstr "Supprimer le planning"
+
+#: admin/views/EasyTimetableViewList.php:338
+msgid "Print Schedules"
+msgstr "Imprimer les plannings"
+
+#: admin/views/EasyTimetableViewList.php:348
+msgid "And soon:"
+msgstr "Et bientôt :"
+
+#: admin/views/EasyTimetableViewList.php:352
+msgid "Display today or upcoming activities"
+msgstr "Affichez les activités du jour ou les prochaines activités"
+
+#: admin/views/EasyTimetableViewCreate.php:852
+msgid "Choose an option to delete"
+msgstr "Choisissez une option de suppression"
+
+#: admin/views/EasyTimetableViewCreate.php:854
+msgid "Delete activities in the schedule only"
+msgstr "Supprimer les activités planifiées uniquement"
+
+#: admin/views/EasyTimetableViewCreate.php:859
+msgid "Every weeks"
+msgstr "Toutes les semaines"
+
+#: admin/views/EasyTimetableViewCreate.php:862
+msgid "BG Color"
+msgstr "Couleur BG"
+
+#: admin/views/EasyTimetableViewCreate.php:861
+msgid "Duration"
+msgstr "Durée"
+
+#: admin/views/EasyTimetableViewCreate.php:864
+msgid "Font color"
+msgstr "Couleur de texte"
+
+#: admin/views/EasyTimetableViewCreate.php:863
+msgid "BG over Color"
+msgstr "Couleur survol BG"
+
+#: admin/views/EasyTimetableViewCreate.php:865
+msgid "Font over color"
+msgstr "Couleur survol texte"
+
+#: admin/views/EasyTimetableViewCreate.php:866
+msgid "Choose an image"
+msgstr "Choisissez une image"
+
+#: admin/views/EasyTimetableViewCreate.php:867
+msgid "Link to description"
+msgstr "Lien vers la description"
+
+#: admin/views/EasyTimetableViewCreate.php:870
+msgid "Text in the cell"
+msgstr "Texte dans la cellule"
+
+#: admin/views/EasyTimetableViewCreate.php:880
+msgid "Put 2 different activities in one cell"
+msgstr "Glissez 2 activités par cellule"
+
+#: admin/views/EasyTimetableViewCreate.php:882
+msgid "extended edition"
+msgstr "édition Extended"
+
+#: admin/views/EasyTimetableViewCreate.php:908
+msgid "Please <span class=\"save-info\">SAVE</span> to validate your choice or <span class=\"exit-info\">EXIT</span> to cancel"
+msgstr "Veuillez <span class=\"save-info\">Enregistrer</span> pour valider votre choix ou <span class=\"exit-info\">Quitter</span> pour annuler"
+
+#: admin/views/EasyTimetableViewList.php:37
+#: admin/views/EasyTimetableViewList.php:270
+#: admin/views/EasyTimetableViewList.php:314
+#: admin/views/EasyTimetableViewSettings.php:32
+msgid "New"
+msgstr "Nouveau"
+
+#: admin/views/EasyTimetableViewList.php:36
+#: admin/views/EasyTimetableViewList.php:269
+#: admin/views/EasyTimetableViewList.php:313
+#: admin/views/EasyTimetableViewSettings.php:31
+msgid "Manage"
+msgstr "Gérez"
+
+#: admin/views/EasyTimetableViewList.php:39
+#: admin/views/EasyTimetableViewList.php:272
+#: admin/views/EasyTimetableViewList.php:316
+#: admin/views/EasyTimetableViewSettings.php:34
+msgid "Documentation"
+msgstr "Documentation"
+
+#: admin/views/EasyTimetableViewList.php:75
+msgid "Edit timetable"
+msgstr "Modifier le planning"
+
+#: admin/views/EasyTimetableViewList.php:52
+msgid "Actions"
+msgstr "Actions"
+
+#: admin/views/EasyTimetableViewList.php:77
+msgid "Duplicate timetable is available in the extended version"
+msgstr "La duplication de planning est disponible dans la version Extended"
+
+#: admin/views/EasyTimetableViewList.php:183
+msgid "Please edit and save right after the timetable is loaded to update the timetable"
+msgstr "Veuillez modifier et enregistrer juste après que le planning soit charger pour mettre à jour le planning"
+
+#: admin/views/EasyTimetableViewList.php:282
+msgid "Stereonom's website"
+msgstr "le site de Stereonomy"
+
+#: admin/views/EasyTimetableViewList.php:343
+msgid "Unlimited columns - 7 in the free version"
+msgstr "Nombre de colonnes illimité - 7 dans la version gratuite"
+
+#: admin/views/EasyTimetableViewList.php:344
+msgid "Unlimited cells - 10 in the free version"
+msgstr "Nombre de cellules illimité - 10 dans la version gratuite"
+
+#: admin/views/EasyTimetableViewList.php:346
+msgid "Unlimited duration - 60 mins in the free version"
+msgstr "Durée des activités illimitée - 60 mins dans la version gratuite"
+
+#: admin/views/EasyTimetableViewList.php:350
+msgid "Booking system"
+msgstr "Système de réservation"
+
+#: admin/views/EasyTimetableViewList.php:351
+msgid "Category system"
+msgstr "Système de catégories"
+
+#: public/views/EasyTimetableViewPlanning.php:72
+msgid "Prev"
+msgstr "Préc"
+
+#: public/views/EasyTimetableViewPlanning.php:73
+msgid "Next week"
+msgstr "Semaine suivante"
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+msgid "http://www.stereonomy.com"
+msgstr "http://www.stereonomy.com"
+
+#. Plugin Name of the plugin
+msgid "EasyTimetable"
+msgstr "EasyTimetable"
+
+#. Author of the plugin
+msgid "Stereonomy - Anthony Ceccarelli"
+msgstr "Stereonomy - Anthony Ceccarelli"
+
+#: admin/views/EasyTimetableViewList.php:51
+msgid "Start time"
+msgstr "Heure de début"
+
+#: admin/views/EasyTimetableViewList.php:187
+msgid "Activities"
+msgstr "Activités"
+
+#: admin/views/EasyTimetableViewList.php:342
+msgid "Unlimited schedules - one in the free version"
+msgstr "Nombre illimité d'emploi du temps - un dans la version gratuite"
+
+#: admin/views/EasyTimetableViewList.php:345
+msgid "Unlimited activities - 8 in the free version"
+msgstr "Nombre d'activités illimité - 8 dans la version gratuite"
+
+#: admin/views/EasyTimetableViewList.php:354
+msgid "Dynamic display of activities"
+msgstr "Affichage dynamique des activités"
+
+#: public/views/EasyTimetableViewPlanning.php:72
+msgid "Previous week"
+msgstr "Semaine précédente"
+
+#: admin/views/EasyTimetableViewList.php:297
+#: admin/views/EasyTimetableViewList.php:362
+msgid "Follow us on Twitter"
+msgstr "Suivez-nous sur Twitter"
+
+#: admin/views/EasyTimetableViewList.php:296
+#: admin/views/EasyTimetableViewList.php:361
+msgid "Like us on Facebook"
+msgstr "Aimez notre page Facebook"
+
+#: admin/views/EasyTimetableViewCreate.php:856
+msgid "Even weeks"
+msgstr "Semaines paires"
+
+#: admin/views/EasyTimetableViewCreate.php:873
+msgid "No HTML inside"
+msgstr "Aucun HTML"
+
+#: admin/views/EasyTimetableViewList.php:355
+msgid "and more..."
+msgstr "et plus..."
+
+#: admin/views/EasyTimetableViewCreate.php:857
+msgid "Odd weeks"
+msgstr "Semaines impaires"
+
+#: admin/views/EasyTimetableViewList.php:332
+msgid "New v 1.3.0: Create as many schedule variations as you need"
+msgstr "Nouveau v 1.3.0 : créez autant de variations d'emploi du temps que nécessaires"
+
+#: admin/views/EasyTimetableViewList.php:333
+msgid "New v 1.3.0: Display several schedules on the same page"
+msgstr "Nouveau v 1.3.0 : Affichez plusieurs emplois du temps sur la même page"
+
+#: admin/views/EasyTimetableViewList.php:337
+msgid "New v 1.1.0: Put 2 activities in one cell"
+msgstr "Nouveau v 1.1.0 : Ajouter 2 activités par cellule"
+
+#: admin/views/EasyTimetableViewList.php:340
+msgid "Duplicate timetables"
+msgstr "Dupliquez des plannings"
+
+#: admin/views/EasyTimetableViewCreate.php:881
+msgid "with the "
+msgstr "avec l’"
+
+#: admin/views/EasyTimetableViewCreate.php:869
+msgid "Tooltip text"
+msgstr "Texte de l’infobulle"
+
+#: admin/views/EasyTimetableViewCreate.php:895
+msgid "More info on Stereonomy's website"
+msgstr "Plus d’info sur le site de Stereonomy"
+
+#: admin/views/EasyTimetableViewCreate.php:853
+msgid "Delete activity & activities in the schedule"
+msgstr "Supprimez l’activité et les activités dans le planning"
+
+#: admin/views/EasyTimetableViewCreate.php:868
+msgid "Image in tooltip"
+msgstr "Image dans l’infobulle"
+
+#: admin/views/EasyTimetableViewCreate.php:893
+msgid "by choosing a display period (weeks) for each variation"
+msgstr "en choisissant une période d’affichage (semaines) pour chaque variation"
+
+#: easy-timetable.php:110 admin/views/EasyTimetableViewList.php:322
+msgid "Get Extended"
+msgstr "Obtenez l’Extended"
+
+#: easy-timetable.php:116 admin/views/EasyTimetableViewList.php:42
+#: admin/views/EasyTimetableViewList.php:275
+#: admin/views/EasyTimetableViewList.php:278
+#: admin/views/EasyTimetableViewList.php:319
+#: admin/views/EasyTimetableViewSettings.php:37
+msgid "About"
+msgstr "À propos"
+
+#: admin/views/EasyTimetableViewCreate.php:858
+msgid "No recurrence"
+msgstr "Aucune récurrence"
+
+#: admin/views/EasyTimetableViewList.php:47
+msgid "Id"
+msgstr "ID"
+
+#: admin/views/EasyTimetableViewCreate.php:890
+msgid "Create as many schedule variations as you need"
+msgstr "Créez autant de variations d’emploi du temps dont vous avez besoin"
+
+#: admin/views/EasyTimetableViewList.php:324
+msgid "A few reasons to get EasyTimetable Extended version:"
+msgstr "Pourquoi acheter la version Extended d’EasyTimetable"
+
+#: admin/views/EasyTimetableViewList.php:335
+msgid "New v 1.2.2: HTML allowed in activity's description text"
+msgstr "Nouveau v 1.2.2 : le HTML n’est pas autorisé dans le texte de description de l’activité"
+
+#: admin/views/EasyTimetableViewList.php:336
+msgid "New v 1.2.0: Delete activity button with 2 options"
+msgstr "Nouveau v 1.2.0 : Bouton de suppression d’activité avec 2 options"
+
+#: admin/views/EasyTimetableViewCreate.php:876
+msgid "Enter the text displayed when the mouse enters the activity's cell (optional)."
+msgstr "Saisissez le texte à afficher quand la souris survole la cellule de l’activité (facultatif)."
+
+#: admin/views/EasyTimetableViewCreate.php:892
+msgid "and/or alternate schedules weekly"
+msgstr "et/ou alternez les emplois du temps toutes les semaines"
+
+#: admin/views/EasyTimetableViewList.php:34
+#: admin/views/EasyTimetableViewList.php:267
+#: admin/views/EasyTimetableViewList.php:311
+#: admin/views/EasyTimetableViewSettings.php:29
+msgid "EasyTimetable, schedule management system"
+msgstr "EasyTimetable, système de gestion d’emploi du temps"
+
+#: admin/views/EasyTimetableViewCreate.php:887
+msgid "Extended edition:"
+msgstr "Version \"Extended\" :"
+
+#: admin/views/EasyTimetableViewCreate.php:872
+msgid "Enter a description (optional)"
+msgstr "Saisissez une description (facultatif)"
+
+#: admin/views/EasyTimetableViewCreate.php:875
+msgid "Will be displayed only if there is enough place in the activity's cell<br>Adjust cell's height if needed in \"Timetable configuration\"<br>HTML allowed in the Extended edition"
+msgstr "Le contenu sera affiché uniquement s’il y a assez de place dans la cellule de l’activité<br>Ajustez la hauteur de la cellule si besoin dans \"Configuration du planning\"<br>le HTML est autorisé dans l’édition Extended"
+
+#: admin/views/EasyTimetableViewList.php:295
+#: admin/views/EasyTimetableViewList.php:360
+msgid "Check latest News & videos:"
+msgstr "Consultez les dernières actualités et vidéo :"
+
+#: admin/views/EasyTimetableViewCreate.php:848
+msgid "Please, choose an option"
+msgstr "Veuillez choisir une option"
+
+#: admin/views/EasyTimetableViewCreate.php:887
+msgid "What you can do with the "
+msgstr "Que pouvez vous faire avec l’"
+
+#: admin/views/EasyTimetableViewCreate.php:874
+msgid "HTML allowed in the Extended edition (div, span, link, styles...)"
+msgstr "Le HTML est autorisé dans l’édition Extended (div, span, link, styles...)"
+
+#: admin/views/EasyTimetableViewList.php:298
+#: admin/views/EasyTimetableViewList.php:363
+msgid "Our Youtube Channel"
+msgstr "Notre chaîne YouTube"
+
+#: admin/views/EasyTimetableViewList.php:334
+msgid "New v 1.3.0: Possibility to display a different schedule each week"
+msgstr "Nouveau v 1.3.0 : Possibilité d’afficher un emploi du temps différent chaque semaine"
+
+#: admin/views/EasyTimetableViewList.php:40
+#: admin/views/EasyTimetableViewList.php:273
+#: admin/views/EasyTimetableViewList.php:317
+#: admin/views/EasyTimetableViewSettings.php:35
+msgid "Ask for help"
+msgstr "Demandez de l’aide"
+
+#. Description of the plugin
+msgid "A very easy-to-use schedule management system to create beautiful responsive Timetable"
+msgstr "Un système très simple de gestion d’emploi du temps pour créer de magnifiques plannings responsive"
+
+#: admin/views/EasyTimetableViewCreate.php:877
+msgid "Enter the text to be displayed inside the cell (optional)"
+msgstr "Saisissez le texte à afficher dans la cellule (facultatif)"
+
+#: admin/views/EasyTimetableViewList.php:357
+msgid "Click to visit the plugin page on stereonomy website"
+msgstr "Cliquez pour visiter la page de l’extension sur le site de Stereonomy"
+
+#: admin/views/EasyTimetableViewList.php:341
+msgid "Modify the end time for each scheduled Activity"
+msgstr "Modifiez l’heure de fin de chaque activité planifiée"
+
+#: admin/views/EasyTimetableViewList.php:353
+msgid "Custom each dropped activity with it own tooltip, description, color and image"
+msgstr "Personnalisez chaque activité planifiée avec ses propres infobulle, description et image"
+
+#: admin/views/EasyTimetableViewList.php:83
+msgid "Click to copy the tag \"[easytimetable id=%s]"
+msgstr "Cliquez pour copier le code court [easytimetable id=%s]"
+
+#: admin/views/EasyTimetableViewList.php:39
+#: admin/views/EasyTimetableViewList.php:272
+#: admin/views/EasyTimetableViewList.php:316
+#: admin/views/EasyTimetableViewSettings.php:34
+msgid "EasyTimetable for Wordpress documentation"
+msgstr "Documentation d’EasyTimetable pour WordPress "
+
+#: admin/views/EasyTimetableViewList.php:339
+msgid "Display filters in Front-end"
+msgstr "Affichez le filtre sur l’interface publique"
+
+#: admin/views/EasyTimetableViewList.php:357
+#: admin/views/EasyTimetableViewCreate.php:3931
+msgid "Buy it now!"
+msgstr "Achetez-la dès maintenant !"
+
+#: admin/views/EasyTimetableViewList.php:40
+#: admin/views/EasyTimetableViewList.php:273
+#: admin/views/EasyTimetableViewList.php:317
+#: admin/views/EasyTimetableViewSettings.php:35
+msgid "EasyTimetable for Wordpress Support forum"
+msgstr "Forum de support d’EasyTimetable pour WordPress"
+
+#: admin/views/EasyTimetableViewList.php:49
+#: admin/views/EasyTimetableViewCreate.php:53
+#: admin/views/EasyTimetableViewCreate.php:468
+msgid "Type"
+msgstr "Type"
+
+#: admin/views/EasyTimetableViewCreate.php:86
+#: admin/views/EasyTimetableViewCreate.php:511
+msgid "Columns"
+msgstr "Colonnes"
+
+#: admin/views/EasyTimetableViewCreate.php:104
+#: admin/views/EasyTimetableViewCreate.php:523
+msgid "Cell color"
+msgstr "Couleur de cellule"
+
+#: admin/views/EasyTimetableViewCreate.php:173
+#: admin/views/EasyTimetableViewCreate.php:835
+msgid "Cancel"
+msgstr "Annuler"
+
+#: admin/views/EasyTimetableViewCreate.php:836
+msgid "Apply"
+msgstr "Appliquer"
+
+#: admin/views/EasyTimetableViewCreate.php:839
+msgid "Help"
+msgstr "Aide"
+
+#: admin/views/EasyTimetableViewCreate.php:846
+msgid "Empty schedule"
+msgstr "Emploi du temps vide"
+
+#: admin/views/EasyTimetableViewCreate.php:30
+#: admin/views/EasyTimetableViewCreate.php:3926
+msgid "EasyTimetable - Generate a schedule"
+msgstr "EasyTimetable - générer un emploi du temps"
+
+#: admin/views/EasyTimetableViewList.php:48
+#: admin/views/EasyTimetableViewCreate.php:37
+#: admin/views/EasyTimetableViewCreate.php:448
+#: admin/views/EasyTimetableViewCreate.php:833
+msgid "Title"
+msgstr "Titre"
+
+#: admin/views/EasyTimetableViewCreate.php:39
+#: admin/views/EasyTimetableViewCreate.php:450
+msgid "Enter a title"
+msgstr "Saisissez un titre"
+
+#: admin/views/EasyTimetableViewList.php:50
+#: admin/views/EasyTimetableViewCreate.php:44
+#: admin/views/EasyTimetableViewCreate.php:454
+msgid "Time mode"
+msgstr "Mode horaire"
+
+#: admin/views/EasyTimetableViewList.php:57
+#: admin/views/EasyTimetableViewCreate.php:47
+#: admin/views/EasyTimetableViewCreate.php:458
+#: admin/views/EasyTimetableViewCreate.php:461
+msgid "24h"
+msgstr "24h"
+
+#: admin/views/EasyTimetableViewList.php:57
+#: admin/views/EasyTimetableViewCreate.php:48
+#: admin/views/EasyTimetableViewCreate.php:459
+#: admin/views/EasyTimetableViewCreate.php:462
+msgid "12h"
+msgstr "12h"
+
+#: admin/views/EasyTimetableViewList.php:56
+#: admin/views/EasyTimetableViewCreate.php:56
+#: admin/views/EasyTimetableViewCreate.php:472
+#: admin/views/EasyTimetableViewCreate.php:475
+msgid "Fixed"
+msgstr "Fixe"
+
+#: admin/views/EasyTimetableViewList.php:56
+#: admin/views/EasyTimetableViewCreate.php:57
+#: admin/views/EasyTimetableViewCreate.php:473
+#: admin/views/EasyTimetableViewCreate.php:476
+msgid "Adaptative"
+msgstr "Adaptatif"
+
+#: admin/views/EasyTimetableViewCreate.php:62
+#: admin/views/EasyTimetableViewCreate.php:482
+msgid "Display Title"
+msgstr "Afficher le titre"
+
+#: admin/views/EasyTimetableViewCreate.php:65
+#: admin/views/EasyTimetableViewCreate.php:74
+#: admin/views/EasyTimetableViewCreate.php:125
+#: admin/views/EasyTimetableViewCreate.php:486
+#: admin/views/EasyTimetableViewCreate.php:489
+#: admin/views/EasyTimetableViewCreate.php:499
+#: admin/views/EasyTimetableViewCreate.php:539
+#: admin/views/EasyTimetableViewCreate.php:842
+msgid "No"
+msgstr "Non"
+
+#: admin/views/EasyTimetableViewList.php:76
+#: admin/views/EasyTimetableViewCreate.php:66
+#: admin/views/EasyTimetableViewCreate.php:75
+#: admin/views/EasyTimetableViewCreate.php:126
+#: admin/views/EasyTimetableViewCreate.php:487
+#: admin/views/EasyTimetableViewCreate.php:490
+#: admin/views/EasyTimetableViewCreate.php:500
+#: admin/views/EasyTimetableViewCreate.php:540
+#: admin/views/EasyTimetableViewCreate.php:841
+msgid "Yes"
+msgstr "Oui"
+
+#: admin/views/EasyTimetableViewCreate.php:71
+#: admin/views/EasyTimetableViewCreate.php:496
+msgid "Display filters"
+msgstr "Afficher les filtres"
+
+#: admin/views/EasyTimetableViewCreate.php:80
+#: admin/views/EasyTimetableViewCreate.php:505
+#: admin/views/EasyTimetableViewCreate.php:507
+msgid "Start Time"
+msgstr "Heure de début"
+
+#: admin/views/EasyTimetableViewCreate.php:92
+#: admin/views/EasyTimetableViewCreate.php:517
+msgid "Cells"
+msgstr "Cellules"
+
+#: admin/views/EasyTimetableViewCreate.php:98
+#: admin/views/EasyTimetableViewCreate.php:530
+msgid "Height"
+msgstr "Hauteur"
+
+#: admin/views/EasyTimetableViewCreate.php:110
+msgid "Custom column names"
+msgstr "Noms de colonnes personnalisés"
+
+#: admin/views/EasyTimetableViewCreate.php:112
+#: admin/views/EasyTimetableViewCreate.php:547
+msgid "Enter names separated by comma"
+msgstr "Saisissez les noms séparés par une virgule"
+
+#: admin/views/EasyTimetableViewCreate.php:585
+msgid "Period"
+msgstr "Période"
+
+#: admin/views/EasyTimetableViewCreate.php:586
+msgid "+"
+msgstr "+"
+
+#: admin/views/EasyTimetableViewCreate.php:587
+#: admin/views/EasyTimetableViewCreate.php:849
+msgid "Previous"
+msgstr "Précédente"
+
+#: admin/views/EasyTimetableViewCreate.php:588
+#: admin/views/EasyTimetableViewCreate.php:850
+#: public/views/EasyTimetableViewPlanning.php:73
+msgid "Next"
+msgstr "Suivant"
+
+#: admin/views/EasyTimetableViewCreate.php:837
+msgid "Weeks"
+msgstr "Semaines"
+
+#: admin/views/EasyTimetableViewCreate.php:174
+#: admin/views/EasyTimetableViewCreate.php:438
+#: admin/views/EasyTimetableViewCreate.php:572
+#: admin/views/EasyTimetableViewCreate.php:834
+msgid "Save"
+msgstr "Enregistrer"
+
+#: admin/views/EasyTimetableViewList.php:98
+#: admin/views/EasyTimetableViewCreate.php:651
+msgid "Schedule "
+msgstr "Emploi du temps"
+
+#: admin/views/EasyTimetableViewCreate.php:845
+#: admin/views/EasyTimetableViewCreate.php:851
+msgid "Manage display period"
+msgstr "Gérez les périodes d'affichage"
+
+#: admin/views/EasyTimetableViewCreate.php:116
+#: admin/views/EasyTimetableViewCreate.php:551
+#: admin/views/EasyTimetableViewCreate.php:871
+msgid "Description"
+msgstr "Description"
+
+#: admin/views/EasyTimetableViewCreate.php:122
+#: admin/views/EasyTimetableViewCreate.php:536
+msgid "Print"
+msgstr "Imprimer"
+
+#: admin/views/EasyTimetableViewCreate.php:434
+msgid "Timetable Configuration"
+msgstr "Configuration du planning"
+
+#: admin/views/EasyTimetableViewCreate.php:435
+msgid "Create a new activity"
+msgstr "Créez une nouvelle activité"
+
+#: admin/views/EasyTimetableViewCreate.php:440
+msgid "Exit"
+msgstr "Quitter"
+
+#: admin/views/EasyTimetableViewCreate.php:545
+msgid "Column names"
+msgstr "Noms des colonnes"
+
+#: admin/views/EasyTimetableViewCreate.php:118
+msgid "Enter a description"
+msgstr "Saisissez une description"
+
+#: admin/views/EasyTimetableViewCreate.php:436
+msgid "Days"
+msgstr "Jours"
+
+#: admin/views/EasyTimetableViewCreate.php:442
+msgid "Timetable configuration"
+msgstr "Configuration du planning"
+
+#: admin/views/EasyTimetableViewCreate.php:840
+msgid "Edit"
+msgstr "Modifier"
+
+#: admin/views/EasyTimetableViewCreate.php:433
+msgid "EasyTimetable - Edit Timetable - %s"
+msgstr "EasyTimetable - Modifier le planning - %s"
+
+#: admin/views/EasyTimetableViewCreate.php:847
+msgid "Copy current schedule"
+msgstr "Copie l’emploi du temps actuel"
+
+#: admin/views/EasyTimetableViewCreate.php:843
+msgid "Add a new schedule variation"
+msgstr "Ajoutez une variation d’emploi du temps"
+
+#: admin/views/EasyTimetableViewCreate.php:844
+msgid "Are you sure you want to leave?"
+msgstr "Confirmez-vous quitter la page ?"

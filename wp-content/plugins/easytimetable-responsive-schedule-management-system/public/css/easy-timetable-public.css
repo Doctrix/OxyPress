@@ -1,0 +1,318 @@
+ .fullplanning {
+    /*background-color: #f7f7f7;*/
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.fullplanning a {
+    transition:none;
+}
+.sy-row-container {
+    display: inline-block !important;
+    vertical-align: top;
+    /*width: 150px;*/
+}
+.sy-text-desc {
+    line-height: 22px;
+    padding: 20px 0 0;
+}
+.col-title {
+    min-height: 44px;
+    font-size: 16px;
+    padding: 10px; 
+}
+.timetable-nav .sy-button {
+    border-radius: 3px !important;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    font-size: 14px !important;
+    line-height: 17px !important;
+    padding: 10px 15px !important;
+    cursor: pointer;
+}
+
+.fullplanning .rows > ul { 
+    list-style-type: none !important; 
+    margin: 0 0 5px 0!important; 
+    padding: 0!important; 
+    display: block; 
+    vertical-align: top;
+}
+.sy-description-front {
+    margin-bottom: 15px;
+}
+.sy-dayname {
+    font-size: 18px;
+    line-height: 23px;
+}
+.sy-thedate {
+    font-size: 12px;
+    line-height: 16px;
+}
+.fullplanning .rows {width:100%;min-width: 92px;}
+
+.fullplanning .rows > li { margin: 5px; padding: 5px; width: 140px !important; }
+.creneau {
+    min-height: 53px;
+    /*background-color: #e9f1fb;*/
+    min-width: 100%;
+    max-width: 100%;
+}
+.activite {
+	margin: 0 auto 0;
+	color: #333;
+	/*font-size: 16px;*/ 
+	text-align: center;
+	height: 100%;
+	padding: 0px;
+	/*width: 140px;*/
+    *transition:background-color 0.2s;
+}
+
+.acttitle {
+    font-size: 14px;
+    padding: 0 5px 0;
+    font-weight: bold;
+    line-height: 20px;
+
+}
+.actiname {
+    font-size: 14px;
+    padding: 0 5px 10px;
+    text-transform: uppercase;
+}
+.fullplanning .time {
+    font-size: 12px;
+    padding-top: 5px;
+    line-height: 18px;
+}
+.fullplanning .sy-start, .fullplanning .sy-end {
+    width: 35px !important; 
+    *color:#fff !important;
+    /*font-weight: bold ;*/
+    text-align: center; 
+    border: 0 !important;
+    padding: 3px !important;
+    /*background-color: rgba(0, 0, 0, 0.2) !important;*/ 
+}
+.supprimer {
+    background-color: rgba(255, 255, 255, 0.32);
+    /*border-radius: 6px;*/
+    color: white;
+    cursor: pointer;
+    display: none;
+    float: right;
+    font-size: 10px;
+    line-height: 8px;
+    margin: 4px 50px;
+    padding: 0 2px 2px;
+    display: none;
+    position: absolute;
+}
+.fullplanning .duration {
+    color: rgba(255, 255, 255, 0.42);
+    font-size: 25px;
+    font-weight: 800;
+}
+.sy-actsingle {
+    cursor: pointer;
+    font-size: 12px !important;
+    margin-bottom: 4px !important;
+    padding: 6px 8px !important;
+    display: inline-block !important;
+}
+.sy-actsingle:not(.allfilter) {
+    margin-right: 4px;
+}
+.fullplanning .acttitle > a {
+    *color: #fff !important;
+    text-decoration: none;
+}
+
+.acttitle > a:hover {
+    
+    text-decoration: underline;
+}
+
+.tooltip {
+    width: inherit;
+}
+.tooltip.in {
+  opacity: 1 !important;
+}
+.tooltip-inner {
+    max-width: 300px !important;
+    text-align: center !important;
+}
+.sy-info-text {
+    padding: 3px;
+    text-align: center;
+}
+.sy-tooltiptitle {
+    font-weight: bold;
+    display: inline-block;
+}
+.sy-insideInfo {
+    font-size: 12px;
+}
+.hasInfo {
+    background-image: url('../../../../assets/images/information.png');
+    background-repeat: no-repeat;
+    background-position:98% 5px;
+}
+.syet-description {
+    max-width: 500px;
+    position: relative !important; 
+    margin: 0 auto;   
+}
+
+.syet-description button {
+    border: 0 !important;
+    padding: 5px !important;
+
+}
+.sy-tooltiptext {
+    display: inline-block;
+}
+.sy-info-image {
+    max-width: 200px;
+}
+.sy-infofields-container {
+    display:none;
+}
+.sy-infofield {
+    min-width: 130px;
+    max-width:220px;
+    padding: 8px 0;
+}
+.tooltipster-sidetip .tooltipster-box {
+    border: none !important;
+}
+.sy-description-container {
+    display: none;
+}
+.ui-widget-overlay.ui-front {
+    background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+.ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-front.ui-draggable.ui-resizable {
+    background: #ffffff none repeat scroll 0 0;
+    z-index: 10000;
+}
+.sy-description-style {
+    padding:  0 20px 40px;
+}
+.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-icon-only.ui-dialog-titlebar-close {
+    float: right;
+}
+.sy-displaydesc {
+    cursor: pointer;
+}
+.sy-imagefield {
+    padding-bottom:5px;
+}
+.sy-tooltipfield {
+    text-align: center;
+    font-size: 12px;
+}
+.sy-actincelltext {
+    font-size: 12px;
+    line-height: 14px;
+}
+.sy-print.sy-button {
+    float: right;
+    background-color: #778899;
+    font-size: 12px !important;
+    padding: 6px !important;
+    cursor: pointer;
+}
+.sy-print.sy-button:hover {
+    background-color: red;
+}
+#sy-thisprint h1 {
+    font-size: 65px !important;
+    padding: 20px;
+}
+.sy-actTitle {
+    text-align:center;
+    padding:3px 0;
+}
+.invisible {
+    display:none !important;
+}
+.timetable-nav {
+    text-align: right;
+}
+.next-variation.sy-button, .prev-variation.sy-button, .sy-choose-print.sy-button {
+    padding: 5px 8px !important;
+}
+
+.sy_close_modal_desc.uk-modal-close.uk-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 4px;
+}
+
+@media (max-width:768px) {
+    .sy-row-container {
+    display: block ;
+    width: 100% !important;
+    vertical-align: top;
+    /*width: 150px;*/
+    }
+    .sy-print.sy-button {
+    display: none;
+}
+    .empty {
+        display:none !important;
+    }
+    .time {
+        display: inline-block;
+        *font-size: inherit !important;
+    }
+    .acttitle {
+        display: inline-block;
+        font-weight: bold;
+        padding: 5px !important;
+    }
+    .full > .activite {
+        height: auto !important;
+    }
+    .full {
+        background-color: none !important;
+        height: auto !important;
+    }
+    .sy-button {
+        border-radius: 3px !important;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+        color: #fff;
+        display: inline-block;
+        font-size: 12px !important;
+        line-height: 14px !important;
+        padding: 7px 11px !important;
+    }
+
+    .col-title {
+        font-size: 14px;
+        padding: 7px;
+        min-height: 28px;
+        border-bottom: 1px solid #e2e2e2;
+    }
+    
+    .sy-actincelltext {
+        display: none;
+    }
+    .creneau {
+        height: auto;
+        min-height: 0;
+        /*background-color: #e9f1fb;*/
+        min-width: 100%;
+        max-width: 100%;
+    }
+}
+

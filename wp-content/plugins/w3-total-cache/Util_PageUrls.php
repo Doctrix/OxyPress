@@ -431,9 +431,10 @@ class Util_PageUrls {
 		$key = md5( implode( ',', $pages ) );
 		if ( !isset( $pages_urls[$key] ) ) {
 			$full_urls = array();
-			foreach ( $pages as $page_slug ) {
-				if ( $page_slug ) {
-					$page_link = get_home_url() . '/' . trim( $page_slug, '/' ) . '/';
+			foreach ( $pages as $uri ) {
+				if ( $uri ) {
+					$page_link = get_home_url() . '/' . trim( $uri, '/' ) .
+						( strpos( $uri, '?' ) !== FALSE ? '': '/' );
 					$full_urls[] = $page_link;
 				}
 			}

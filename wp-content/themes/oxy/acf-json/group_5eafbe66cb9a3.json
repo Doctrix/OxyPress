@@ -196,7 +196,7 @@
             "name": "galerie",
             "type": "gallery",
             "instructions": "Photos autorisés!\r\nCapture du jeu\r\nImage et logos du jeu",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -314,8 +314,15 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
-    "active": 1,
+    "hide_on_screen": [
+        "revisions",
+        "slug",
+        "author",
+        "page_attributes",
+        "categories",
+        "tags"
+    ],
+    "active": true,
     "description": "",
-    "modified": 1589087910
+    "modified": 1601730486
 }

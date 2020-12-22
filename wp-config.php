@@ -2,6 +2,7 @@
 /** Enable W3 Total Cache */
 define('WP_CACHE', true); // Added by W3 Total Cache
 
+
 /**
  * The base configuration for WordPress
  *
@@ -20,8 +21,6 @@ define('WP_CACHE', true); // Added by W3 Total Cache
  *
  * @package WordPress
  */
-
- define('DISABLE_WP_CRON', true);
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
@@ -68,7 +67,7 @@ define('NONCE_SALT',       'l$J^@Bq7l5tTqeAY1k%rk85c@&U=c:qfJ/2^(Ao)k@KOhYbe(q#M
  * You can have multiple installations in one database if you give each
  * a unique prefix. Only numbers, letters, and underscores please!
  */
-$table_prefix  = 'wptest_';
+$table_prefix  = 'oxy_';
 
 /**
  * For developers: WordPress debugging mode.
@@ -82,10 +81,10 @@ $table_prefix  = 'wptest_';
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
-/**define('WP_DEBUG', false);
+define('WP_DEBUG', false);
 define('WP_DEBUG_DISPLAY', false);
-define('DISALLOW_FILE_EDIT', true);*/
-
+define('DISALLOW_FILE_EDIT', true);
+define('DISABLE_WP_CRON', false);
 /* That's all, stop editing! Happy blogging. */
 
 /** Multisite */

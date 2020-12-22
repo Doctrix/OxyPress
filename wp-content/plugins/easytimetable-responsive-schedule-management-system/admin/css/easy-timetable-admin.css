@@ -1,0 +1,1107 @@
+.sy-form-container {
+    display: inline-block;
+    padding: 20px;
+    min-height: 570px !important;
+}
+.sy-text-script {
+    display: none;
+}
+.sy-tooltiplist {
+    max-width: 720px;
+    min-width: 400px;
+    margin-bottom: 10px;
+}
+.sy-listtimetables {
+    display: inline-block;
+    max-width: 620px;
+    width: auto;
+}
+.sy-title-list {
+    color: white !important;
+    border-bottom: 1px solid #aaa;
+    margin: 8px 0;
+    padding: 0 0 10px;
+}
+.sy-empty {
+    left: 100px;
+}
+.sy-form-container.ui-dialog-content.ui-widget-content {
+    background: #e8e8e8 none repeat scroll 0 0;
+}
+.toplevel_page_easy-timetable .wp-menu-image.dashicons-before > img {
+    width: 16px;
+}
+.ui-dialog-titlebar.ui-widget-header.ui-corner-all.ui-helper-clearfix.ui-draggable-handle {
+    background-color: darkgray;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 5px;
+    text-align: center;
+}
+.sy-home-button-container {
+    display: inline-block;
+    max-width: 211px;
+    vertical-align: top;
+    width: auto;
+}
+
+.sy-home-button-container a {
+    margin-bottom: 5px;
+}
+xmp {
+    display: inline-block;
+    margin: 0;
+    padding-top: 0;
+}
+.sy-exit a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.sy-exit a:hover {
+    color: #23282d;
+}
+.sy-cancel-image {
+    background: #000000 none repeat scroll 0 0;
+    color: #ffffff;
+    cursor: pointer;
+    display: none;
+    padding: 0 3px;
+    position: absolute;
+    top: 0;
+    z-index: 10029;
+}
+
+.deleteButton.ui-dialog-content.ui-widget-content {
+    bottom: 0;
+    font-size: 19px !important;
+    height: 50px !important;
+    position: absolute;
+    right: 0 !important;
+    text-align: center;
+    width: 86px !important;
+}
+.ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-front.no-close.ui-dialog-buttons.ui-draggable.ui-resizable {
+    min-height: 77px;
+}
+.sy-linkpart > label {
+    display: block;
+}
+.sy-form-container.newplanning {
+    background: #d2d2d2 none repeat scroll 0 0;
+    width: 300px;
+}
+.sy-form-container select {
+    font-size: 16px;
+}
+.forminput.cellcolor input {
+    width: 166px;
+}
+
+.sy-form-container option {
+    height: 29px;
+}
+
+.timetable-container {
+    background: #ffffff none repeat scroll 0 0;
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 20px 20px 50px;
+    text-align: center;
+    vertical-align: top;
+    width: 97%;
+}
+.button:hover {
+	color:white;
+	background-color: ;
+}
+.activities {
+    margin: 10px 0;
+    padding: 10px;
+    text-align: center;
+}
+.control-group {
+    /*display: inline-block !important;*/
+}
+.col-title {
+    min-height: 25px;
+}
+
+.saisie {
+    background: #fff none repeat scroll 0 0;
+}
+.sy-row-container {
+    display: inline-block;
+    vertical-align: top;
+    max-width: 300px;
+    min-width: 195px;
+}
+.liste-activites {
+	display: inline-block;
+    vertical-align: top;
+}
+.sy-small-col {
+	display: inline-block;
+    vertical-align: top;
+}
+.sy-small-creneau {
+	margin: 3px 0 !important;
+}
+.sy-small-schedule {
+	width:300px;
+	vertical-align: top;
+	display: inline-block;
+}
+.sy-small-act {
+	list-style: none;
+	padding:0 4px;
+}
+.sy-admin-container .col-title {
+    font-size: 16px;
+    padding: 10px;
+}
+.sy-admin-container .rows {width:100%;}
+.sy-admin-container .rows > ul { list-style-type: none; margin: 0; padding: 0; margin-bottom: 5px; display: block; vertical-align: top;border: none;}
+.sy-admin-container .rows > li { margin: 5px; padding: 5px; width: 140px !important; }
+.creneau {
+    height: 55px;
+    overflow: hidden;
+}
+.sy-admin-container .activite, .sy-small-schedule .activite {
+	margin: 0 auto 0;
+	color: #333;
+	/*font-size: 16px;*/ 
+	text-align: center;
+	height: 100%;
+	padding: 0px;
+    position: relative;
+	/*width: 140px;*/
+}
+.dragactivite {
+    margin: 0 auto 0;
+    color: #333;
+    /*font-size: 16px;*/ 
+    text-align: center;
+    height: 50px;
+    padding: 0px;
+    /*width: 140px;*/
+}
+
+.sy-admin-container .nameacti {
+    padding: 3px 0;
+}
+
+.sy-name {
+    padding: 4px 0;
+    position: relative;
+}
+
+.sy-admin-container .activity {
+    *cursor: move;
+    margin: 5px auto 0;
+    color: #333;
+    font-size: 16px; 
+    text-align: center;
+    height: 60px;
+    padding: 0px;
+    width: 170px;
+    display: inline-block;
+    z-index: 10008;
+    vertical-align: top;
+}
+.ui-draggable-handle, .ui-sortable-handle {
+	cursor: move;
+	background-color : rgba(0, 0, 0, 0);
+	transition:background-color 0.4s;
+}
+.ui-draggable-handle:hover, .ui-sortable-handle:hover {
+	background-color : rgba(0, 0, 0, 0.07);
+	transition:background-color 0.4s;
+}
+
+#nom {
+    cursor: move;
+}
+.sy-admin-container .acttitle {
+    font-size: 14px;
+    padding: 0 5px 10px;
+    text-transform: uppercase;
+}
+.sy-admin-container .actiname {
+    font-size: 14px;
+    padding: 0 5px 10px;
+    text-transform: uppercase;
+}
+.sy-admin-container .time {
+    font-size: 10px;
+    padding-top: 5px;
+}
+.sy-admin-container .start, .sy-admin-container .end {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+    border: 0 none !important;
+    *color: #fff !important;
+    font-size: 12px !important;
+    font-weight: bold;
+    padding: 2px 0 !important;
+    text-align: center;
+    height: 16px !important; 
+    border-radius: 3px !important;
+}
+.start.twentyfour, .end.twentyfour {
+    width: 35px !important;
+}
+.start.twelve, .end.twelve {
+    width: 62px !important;
+}
+
+.sy-admin-container .del {
+    background: rgba(0, 219, 0, 0) url("../images/delete.png") no-repeat scroll 0 0;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 10px;
+    height: 12px;
+    line-height: 8px;
+    margin: 3px;
+    padding: 0 0 2px;
+    position: absolute;
+    right: 0;
+    width: 12px;
+    z-index: 100;
+}
+.sy-admin-container .editacti {
+	background: rgba(0, 219, 0, 0) url("../images/edit.png") no-repeat scroll 0 0;
+	height: 12px;
+	width: 12px;
+	margin-left: 3px;
+	display: inline-block;
+	cursor: pointer !important;
+}
+.sy-admin-container .deleteacti {
+    background: rgba(0, 219, 0, 0) url("../images/delete.png") no-repeat scroll 0 0;
+    height: 14px;
+    width: 12px;
+    display: inline-block;
+    cursor: pointer !important;
+    position: absolute;
+    right: 2px;
+    top: 5px;
+}
+.sy-mergebutton {
+    background: rgba(0, 0, 0, 0) url("../images/double1.png") repeat scroll 0 0;
+    bottom: 4px;
+    cursor: pointer;
+    height: 5px;
+    opacity: 0.7;
+    position: absolute;
+    right: 3px;
+    width: 12px;
+}
+.sy-admin-container .status {    
+    /*border-radius: 6px;*/
+    color: white;
+    cursor: pointer;
+    float: left;
+    font-size: 10px;
+    line-height: 8px;
+    margin: 3px;
+    /*padding: 0 2px 2px;*/
+    height:8px;
+    width: 16px;
+}
+.sy-admin-container .published {
+    background: url('../images/published.png') no-repeat scroll 0 0 rgba(0, 219, 0, 0);
+    
+}
+.sy-admin-container .notpublished {
+    background: url('../images/unpublished.png') no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+.sy-admin-container .duration {
+    color: rgba(255, 255, 255, 0.42);
+    font-size: 25px;
+    font-weight: 800;
+}
+.sy-admin-container .placeholder {
+    background: repeating-linear-gradient(
+    45deg,
+    #b6b6b6,
+    #ffffff 2px,
+    rgba(0,0,0,0) 2px,
+    rgba(0,0,0,0) 4px
+  );
+    width: inherit;
+    height: 100% !important;
+    padding: 0;
+    margin: 0px;
+    *border: 2px dashed #dedede !important;
+    width: 100% !important;
+}
+.sy-admin-container .forminput, .sy-form-container .forminput {
+    padding: 5px 0;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 10px;
+}
+.forminput.description {
+	display: block;
+}
+.start_h {
+    width: 94px;
+}
+#rows, #cells, #height {
+    width: 52px;
+}
+
+.labeldecadix {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+/* LOADER
+============================================================ */
+.loader1 > img {
+    padding-top: 5px;
+
+}
+.loader1 {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10008;
+}
+
+/* PlanningForm */
+/*********************************************/
+/*           FORM CREATE ACTIVITY            */
+/*********************************************/
+
+#dialog-form input[type="text"], #editact-form input[type="text"], #editact-form textarea,  #dialog-form textarea, .sy-admin-container textarea, .sy-form-container textarea, .sy-admin-container input[type="number"], .sy-form-container input[type="number"], #dialog-form input[type="number"], #editact-form input[type="number"] {
+	border-radius: 0 !important;
+	border: 0 !important;
+	font-size: 16px !important;
+    padding: 3px 8px !important;
+    display: block;
+}
+.sy-admin-container input[type="number"], .sy-form-container input[type="number"], #dialog-form input[type="number"], #editact-form input[type="number"] {
+    height: 36px;
+    width: 73px;
+    box-shadow: none;
+}
+#dialogform textarea, #dialogeditactform textarea  {
+    width: 100%;
+}
+.sy-choose-image {
+    height: 125px;
+    padding: 20px 0;
+}
+
+/* NAME AND LINK*/
+.sy-namepart {
+	display: inline-block;
+	vertical-align: top;
+}
+.sy-namepart > input {
+    height: 36px;
+}
+.sy-namelink > div {
+    display: inline-block;
+}
+.sy-linkpart {
+    padding-top: 5px;
+    margin-right: 10px;
+    vertical-align: top;
+    display: inline-block;
+}
+.sy-linkpart > label {
+    display: block;
+    vertical-align: top;
+}
+.sy-linkpart > input {
+    //display: inline-block;
+}
+.sy-image-tooltip {
+    padding-top: 5px;
+    display: inline-block;
+}
+.sy-image-tooltip > label {
+    display: block;
+}
+.sy-act-description {
+    padding-bottom: 40px;
+}
+/* COLORS */
+.sy-formcolors {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.sy-colors > input, .sy-labelcolors > label{
+	display: inline-block;
+}
+.sy-showcolor {
+    box-shadow: 1px 1px 0px #cccccc;
+    display: inline-block;
+    height: 36px;
+    margin-top: 1px;
+    vertical-align: top;
+    width: 16px;
+}
+
+.thecolors {
+    display: inline-block;
+    width: 25%;
+}
+.sy-colors > input {
+	width: 15%;
+	margin-right: 15%;
+}
+.sy-labelcolors > label{
+	width: 30%;
+}
+.sy-cancel, .sy-apply, .sy-option1, .sy-option2, .sy-option3 {
+    height: auto;
+    border-radius: 0;
+}
+.sy-cancel {
+	left: 0;
+}
+.sy-apply {
+	right: 0;
+    background-color:cornflowerblue !important;
+    transition: background 0.1s ease 0s;
+}
+.sy-apply:hover {
+    background-color:white !important;
+    transition: background 0.1s ease 0s;
+}
+.sy-dialog-form, .sy-editact-form {
+    padding: 20px;
+}
+
+.sy-duration {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+#dialog-form select, .sy-form-container select, .sy-admin-container select {
+    height: unset !important;
+    margin-top: -1px;
+    padding-bottom: 3px;
+}
+
+.nooverflow {
+	overflow: hidden;
+}
+.syet_close {
+    background-color: #ffffff;
+    cursor: pointer;
+    display: table;
+    padding: 0 7px 4px;
+    text-align: left;
+    transition: background-color 0.2s;
+}
+.syet_close:hover {
+    background-color: #a9a9a9;
+    color: #ffffff;
+    transition: background-color 0.2s ease 0s;
+}
+.syet_gallery-container {
+    background: #eaeaea none repeat scroll 0 0;
+    box-shadow: 0 0 13px rgba(0, 0, 0, 0.2);
+    height: 500px;
+    left: 30.5%;
+    max-width: 500px;
+    padding: 20px;
+    position: absolute;
+    top: 18%;
+    z-index: 20000000;
+    min-width: 460px
+}
+#syet_media-gallery {
+    max-height: 490px;
+    max-width: 460px;
+    overflow-y: scroll;
+}
+#cell_color {
+    width: 85px;
+}
+#syet_media-gallery > img {
+    border: 5px solid rgba(0, 0, 0, 0);
+    margin: 5px;
+    vertical-align: top;
+    transition: border 0.2s;
+}
+#syet_media-gallery > img:hover {
+    border: 5px solid rgba(255, 0, 0, 1);
+    transition: border 0.2s;
+    cursor: pointer;
+}
+.sy-act-image {
+    float: right;
+    height: 100px;
+    overflow: hidden;
+    padding: 0 0 11px 30px;
+    width: 50%;
+    position: relative;
+}
+.sy-help-text-container {
+    display: none;
+}
+.sy-act-image > img {
+    max-height: 150px;
+    max-width: 150px;
+}
+/* DURATION BOOK PLACE */
+.sy-durationbookplace {
+	display: inline-block;;
+}
+.sy-durationbookplace > div {
+	display: inline-block;;
+}
+.sy-book {
+	vertical-align: top;
+	margin: 0 20px;
+}
+.sy-formcolors label {
+    display: block;
+}
+.sy-colorfield {
+    height: 36px;
+    padding: 0 2px !important;
+    width: 68px;
+    margin-right: 5px;
+    display: inline-block !important;
+}
+.sy-act-tooltiptext {
+    padding-top: 10px;
+}
+
+/* SELECT FIELD */
+.sy-fieldaccess .chzn-single, .sy-book .chzn-single, .sy-linkpart .chzn-single {
+	background: #fff none repeat scroll 0 0 !important;
+    border: 0 none !important;
+    border-radius: 0 !important;
+    box-shadow: 0 !important;
+    height: 38px !important;
+    line-height: 37px !important;
+}
+
+.sy-fieldaccess .chzn-drop, .sy-book .chzn-drop, .sy-linkpart .chzn-drop {
+	border: 0 !important;
+	border-radius: 0 !important;
+
+}
+.sy-fieldaccess .chzn-container .chzn-results li.highlighted, .sy-book .chzn-container .chzn-results li.highlighted, .sy-linkpart .chzn-container .chzn-results li.highlighted{
+    background-color: #4f8bb3 !important;
+    background-image: none !important;
+    color: #fff !important;
+}
+.sy-fieldaccess .chzn-container-single .chzn-single div b, .sy-book .chzn-container-single .chzn-single div b, .sy-linkpart .chzn-container-single .chzn-single div b{
+     background-position: 0 10px !important;
+     box-shadow: 0 !important;
+
+}
+
+#actbook_chzn, #actlink_chzn {
+	width: 133px !important;
+}
+
+
+
+
+
+/*********************************************/
+/*          END FORM CREATE ACTIVITY         */
+/*********************************************/
+
+/*********************************************/
+/*          ACTIVITIES LIST TO DROP          */
+/*********************************************/
+
+.longtitle {
+	font-size: 10px;
+	line-height: 12px;
+}
+.activities > li {
+	vertical-align: top;
+}
+.invisible {
+	display:none;
+}
+
+/*********************************************/
+/*        END ACTIVITIES LIST TO DROP        */
+/*********************************************/
+
+
+/*********  DAYS  *********/
+.sy-daysall.onlyone {
+    list-style: outside none none;
+}
+.sy-daysall.onlyone {
+    list-style: outside none none;
+}
+.sy-dayone > div {
+    display: inline-block;
+}
+
+
+.sy-thirdone {
+	padding: 15px;
+}
+
+.sy-thirdone > .control-group {
+    display: inline-block;
+    padding-right: 20px;
+    vertical-align: top;
+}
+
+.sy-place > input {
+    width: 55px;
+    margin-right: 10px;
+}
+.sy-placelimit > input {
+    width: 55px;
+}
+
+.sy-headtimetable {
+	padding:15px;
+}
+
+.sy-description-tab {
+	padding:15px;
+}
+/**********************************************************/
+/*****************           DIALOG         ***************/
+/**********************************************************/
+
+.ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-front.ui-dialog-buttons.ui-draggable.ui-resizable {
+    background: #e8e8e8 none repeat scroll 0 0;
+
+    z-index: 10000;
+}
+
+.ui-widget-overlay.ui-front {
+    background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
+    height: 100% !important;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.sy-labelact {
+    display:inline-block !important;
+    padding: 10px 5px 5px !important;
+}
+
+.sy-checkAct{
+    display: none !important;
+}
+
+.actlistbutton {
+    background-color: #008b8b ;
+    border: 0 none;
+    border-radius: 0.1875rem;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    display: inline-block;
+    font-size: 1rem;
+    line-height: 0.5 !important;
+    padding: 5px !important;
+    text-shadow: none;
+    transition: background 0.1s ease 0s;
+    vertical-align: middle;
+    margin: 3px;
+}
+
+.sy-unchecked {
+background-color: silver;
+}
+.laliste.ui-dialog-content.ui-widget-content {
+    overflow-y: scroll;
+}
+.syet-dialog .ui-dialog-buttonset > button {
+    background-color: #778899;
+    border: 0 none;
+    bottom: 0;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+    display: inline-block;
+    font-size: 1.2rem;
+    line-height: 1 !important;
+    padding: 15px !important;
+    position: absolute;
+    text-align: right;
+    text-shadow: none;
+    transition: background 0.1s ease 0s;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.sy-delete-act .ui-dialog-buttonset {
+    margin-top: 0;
+    width: 100%;
+}
+
+.sy-delete-act .ui-dialog-buttonset > button {
+    border: 0 none;
+    bottom: 20px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+    cursor: pointer;
+    display: block;
+    font-size: 1.2rem;
+    line-height: 1 !important;
+    margin: 0 auto 5px;
+    padding: 9px !important;
+    position: relative;
+    text-align: center;
+    text-shadow: none;
+    transition: background 0.1s ease 0s;
+    vertical-align: middle;
+}
+.sy-delete-act .sy-option1 {
+    background-color: #778899;
+}
+.sy-delete-act .sy-option2 {
+    background-color: #778899;
+}
+.sy-delete-act .sy-option3 {
+    background-color: red;
+}
+.syet-dialog .ui-dialog-buttonset > button:hover {
+    color: black;
+    background-color: white;
+}
+#deleteactinfo {
+    background: #6495ed none repeat scroll 0 0;
+    color: #ffffff;
+    font-size: 16px;
+    height: auto;
+    line-height: 26px;
+    padding: 15px;
+    position: fixed;
+    right: 12px;
+    bottom: 12px;
+    width: auto;
+    opacity: 0;
+    display: none;
+}
+.save-info {
+    background: #008000 none repeat scroll 0 0;
+    padding: 0 5px 1px;
+}
+.exit-info {
+    background: red none repeat scroll 0 0;
+    padding: 0 5px 1px;
+}
+.sy-configuration.button, .daysbutton.button, .createnew.button, .ultimate-submit.button, .page-title-action.button, .editButton, .saveButton, .exitButton, .deleteButton, .duplicateButton, .trashButton, .copyTagButton {
+    background-color: cornflowerblue; /*lightslategrey 008b8b*/
+    border: 0 none;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+    display: inline-block;
+    font-size: 1.2rem;
+    line-height: 1 !important;
+    padding: 15px !important;
+    text-align: right;
+    text-shadow: none;
+    transition: background 0.1s ease 0s;
+    vertical-align: middle;
+    border-radius: 0;
+    height: 50px;
+    margin: 10px;
+}
+.sy-exit {
+    background-color: lightslategrey !important;
+    border: 0 none !important;
+    border-radius: 0 !important;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1) !important;
+    color: #ffffff !important;
+    display: inline-block !important;
+    font-size: 1.2rem !important;
+    height: 50px !important;
+    line-height: 1 !important;
+    padding: 0 !important;
+    text-align: right;
+    text-shadow: none !important;
+    transition: background 0.1s ease 0s !important;
+    vertical-align: middle !important;
+}
+.sy-exit:hover {
+    background-color: #ffffff !important;
+} 
+.sy-exit a {
+    color: #ffffff;
+    height: 61px !important;
+    padding: 15px !important;
+    position: relative;
+    text-decoration: none;
+    top: 15px;
+}
+.sy-emptyfield {
+    background-color: red !important;
+    color: white !important; 
+}
+.editButton, .deleteButton, .duplicateButton, .trashButton, .copyTagButton {
+	font-size: 1rem;
+	padding: 4px 8px 6px !important;
+	margin: 0;
+	height: auto;
+	cursor: pointer;
+}
+.editButton {
+    background: cornflowerblue url("../images/edit-list.png") no-repeat scroll 50% 50%;
+    width: 26px;
+}
+.trashButton {
+    background: cornflowerblue url("../images/trash-list.png") no-repeat scroll 50% 50%;
+    width: 26px;
+}
+.duplicateButton {
+    background: cornflowerblue url("../images/copy-list.png") no-repeat scroll 50% 50%;
+    width: 26px;
+}
+.copyTagButton {
+    background: cornflowerblue url("../images/tag-list.png") no-repeat scroll 50% 50%;
+    width: 26px;
+}
+.sy-form-button {
+    text-align: right;
+}
+.exitButton {
+    text-decoration: none;
+    height: auto;
+}
+.exitButton:hover {
+    color: #555555;
+    background-color: white;
+    transition:background-color 0.2s;
+}
+.sy-plugin-title {
+    padding-bottom: 20px;
+}
+.sy-listplanning.sy-about {
+    max-width: 650px;
+    
+}
+.sy-listplanning.sy-about h1, .sy-listplanning.sy-about h2, .sy-listplanning.sy-about p {
+    color: #fefefe !important;
+}
+
+.sy-listplanning.sy-about a {
+    color: #ffffff;
+    text-decoration: none;
+}
+.page-title-action.button:hover {
+    background-color: #ffffff !important;
+}
+.sy-listplanning.sy-about ul {
+    list-style: inside none disc;
+}
+ol, ul {
+    padding: 0;
+}
+.page-title-action.button {
+    font-size: 15px;
+    height: 35px;
+    margin: 0 5px 10px !important;
+    padding: 9px !important;
+    text-align: left;
+    vertical-align: top !important;
+    width: 96%;
+}
+.sy-eachplanning {
+    border-bottom: 1px dotted #888;
+    margin-bottom: 0;
+    padding: 4px 0 3px;
+}
+.sy-divlist {
+    display: inline-block;
+    padding: 2px 5px;
+    vertical-align: top;
+}
+.sy-divlist.sy-listid {
+    width: 20px;
+}
+.sy-divlist.sy-listtitle {
+    width: 150px;
+}
+.sy-divlist.sy-listtype {
+    width: 75px;
+}
+.tooltip_templates {
+	display: none;
+}
+.sy-eachplanning:hover {
+    background-color: #404040;
+    transition:background-color 0.2s;
+}
+
+.sy-divlist.sy-listtimemode {
+    width: 43px;
+}
+.sy-divlist.sy-liststart {
+    width: 70px;
+}
+.sy-listplanning {
+    background: #23282d none repeat scroll 0 0;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 1rem;
+    padding: 1px 17px;
+}
+.ultimate-submit.button > label {
+    vertical-align: top;
+}
+.hastobesaved {
+	background-color: red !important;
+}
+.hastobesaved:hover {
+    background-color: darkred !important;
+    color: #ededed !important;
+}
+.preloader {
+    margin-left: 7px;
+    margin-top: 3px;
+}
+.preloader > img {
+    height: 18px;
+}
+.sy-listplanning input[type="submit"]:hover {
+    background-color: #ffffff;
+}
+
+.colpick {
+    z-index: 20000000;
+}
+.sy-button {
+    border: 0 none;
+    border-radius: 0.1875rem;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+    display: inline-block;
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 0.5rem 1rem;
+    text-shadow: none;
+    transition: background 0.1s ease 0s;
+    vertical-align: middle;
+    cursor:pointer;
+}
+
+.ui-dialog-titlebar-close {
+    display: none;
+}
+
+
+
+.sy-admin-container input[type="text"], .sy-form-container input[type="text"] {
+    border: 0 none;
+    color: #767676;
+    font-size: 16px;
+    height: 36px;
+    padding: 4px 11px;
+    box-shadow: none !important;
+}
+.sy-admin-container input[type=text]:focus, .sy-form-container input[type=text]:focus {
+	border-color:#333;  
+}
+
+.sy-admin-container input[type=submit], .sy-form-container input[type=text]:focus {
+    cursor: pointer;
+	border:0 none;
+    transition: background-color 0.35s;
+    transition: color 0.35s;
+    -webkit-transition: background-color 0.35s;
+    -webkit-transition: color 0.35s;
+}
+.sy-admin-container input[type=submit]:hover, .sy-form-container input[type=submit]:hover {
+	background-color:ButtonHighlight;
+	color:#555;
+}
+
+.forminput label {
+    vertical-align: initial;
+}
+.sy-day-form {
+    padding: 20px;
+}
+.sy-list-of-days {
+    margin-bottom: 50px;
+}
+.sy-a-day {
+    display: inline-block;
+    padding: 10px;
+}
+.variation-option {
+    text-align: right;
+}
+.withwithout > div {
+    border: 1px solid rgba(204, 204, 204, 0.8);
+    display: inline-block;
+    font-size: 14px;
+    height: 25px;
+    line-height: 24px;
+    margin: 1px;
+    text-align: center;
+    width: 25px;
+}
+.sy-admin-container .ui-selectee {
+    cursor: pointer;
+}
+.alreadySelect.ui-selectee {
+    cursor: default;
+    background-color: #999;
+}
+.withwithout .ui-selected {
+    background-color:#6495ed;
+    color: white;
+    cursor: pointer;
+}
+#period-form {
+    padding:20px 20px 60px;
+}
+.sy-with.ui-accordion-content.ui-helper-reset.ui-widget-content.ui-corner-bottom.ui-accordion-content-active {
+    height: auto !important;
+}
+.sy-without.ui-accordion-content.ui-helper-reset.ui-widget-content.ui-corner-bottom.ui-accordion-content-active {
+    height: auto !important;
+}
+.periodbutton, .addvariation, .prevvariation, .nextvariation, .actloadimage.button {
+    background-color: cornflowerblue !important;
+    border: 0 none !important;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1) !important;
+    color: #ffffff !important;
+    font-size: 1rem !important;
+    line-height: 1rem !important;
+    padding: 7px 12px !important;
+    text-shadow: none;
+    transition: background 0.1s ease 0s;
+    vertical-align: middle !important;
+    border-radius: 0 !important;
+    height: 32px !important;
+}
+.periodbutton:hover, .addvariation:hover, .prevvariation:hover, .nextvariation:hover, .actloadimage.button:hover {
+    background-color: white !important;
+    color: #333333 !important;
+    transition: background 0.1s ease 0s;
+}
+.variation-extended ul {
+    list-style: disc;
+    padding: 8px 0 0 16px;
+    margin: 0px;
+    line-height: 15px;
+}
+
+/* Slider revolution fix */
+.syet-dialog .ui-dialog-buttonpane, .sy-delete-act .ui-dialog-buttonpane {
+    background: rgba(0,0,0,0);
+    border-top: none;
+    padding: 0;
+}
+.sy-delete-dialog-content {
+    text-align:center;
+    min-height:40px;
+}
+.syet-dialog .ui-button {
+    margin-left: 0px;
+}
