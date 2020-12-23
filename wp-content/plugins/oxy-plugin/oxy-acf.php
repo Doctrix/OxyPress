@@ -19,7 +19,7 @@ add_action('init', function () {
 	if (function_exists('acf_add_options_page')) {
 		acf_add_options_page([
 			'page_title' => 'Options de l\'utilisateur',
-			'position' => 8,
+			'position' => 81,
 		]);
 	}
 });
@@ -188,7 +188,7 @@ function oxy_add_commission_field_groups($tabs) {
 						array(
 							'param' => 'post_type',
 							'operator' => '==',
-							'value' => 'boutique',
+							'value' => 'store',
 						),
 					),
 				),

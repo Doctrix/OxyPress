@@ -42,7 +42,7 @@ add_filter('rest_authentication_errors', function( $result ) {
 });
 
 add_action('init', function () {
-	register_taxonomy('genre', 'boutique', [
+	register_taxonomy('genre', 'store', [
 		'labels' => [
 			'name' => 'Genre',
 			'singular_name' => 'Genre',
@@ -59,7 +59,7 @@ add_action('init', function () {
 		'hierarchical' => true,
 		'show_admin_column' => true,
 	]);
-	register_taxonomy('statut', 'boutique', [
+	register_taxonomy('statut', 'store', [
 		'labels' => [
 			'name' => 'Statut',
 			'singular_name' => 'Statut',
@@ -76,7 +76,7 @@ add_action('init', function () {
 		'hierarchical' => true,
 		'show_admin_column' => true,
 	]);
-	register_taxonomy('prix', 'boutique', [
+	register_taxonomy('prix', 'store', [
 		'labels' => [
 			'name' => 'Prix',
 			'singular_name' => 'Prix',
@@ -93,7 +93,7 @@ add_action('init', function () {
 		'hierarchical' => true,
 		'show_admin_column' => true,
 	]);
-	register_taxonomy('systeme', 'boutique', [
+	register_taxonomy('systeme', 'store', [
 		'labels' => [
 			'name' => 'Système d\'exploitation',
 			'singular_name' => 'Système d\'exploitation',
@@ -110,7 +110,7 @@ add_action('init', function () {
 		'hierarchical' => true,
 		'show_admin_column' => true,
 	]);
-	register_taxonomy('pegi', 'boutique', [
+	register_taxonomy('pegi', 'store', [
 		'labels' => [
 			'name' => 'Système d\'évaluation',
 			'singular_name' => 'Système d\'évaluation',
@@ -127,11 +127,11 @@ add_action('init', function () {
 		'hierarchical' => true,
 		'show_admin_column' => true,
 	]);
-	register_post_type('boutique', [
+	register_post_type('store', [
 		'labels' => [
 			'name' => 'Boutique',
 			'singular_name' => 'Boutique',
-			'plural_name' => 'Magasins',
+			'plural_name' => 'Boutiques',
 			'search_items' => 'Rechercher des jeux',
 			'all_items' => 'Tous les jeux vidéos',
 			'edit_item' => 'Modifier le jeu',
@@ -145,8 +145,15 @@ add_action('init', function () {
 		'menu_icon' => 'dashicons-upload',
 		'supports' => ['title', 'editor', 'comments', 'author', 'excerpt', 'thumbnail', 'custom-fields', 'post-formats'],
 		'taxonomies' => ['genre','prix','systeme','pegi'],
-		'show_in_rest' => false,
-		'has_archive' => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => [ 'slug' => 'store' ],
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+		'show_in_rest' 		 => true,
 	]);
 });
 add_action('manage_posts_custom_column', 'posts_custom_column_views',5,2);
@@ -159,14 +166,10 @@ add_action('wp_head', 'page_view');
 remove_action('try_gutenberg_panel', 'wp_try_gutenberg_panel');
 // register_uninstall_hook();
 
-	
-
 /**
  * Compteur de visite et de vues
  */
 //Getter
-
-
 function getPostViews($postID){
 	global $wpdb;
     $count_key = 'post_views_count';
@@ -178,6 +181,7 @@ function getPostViews($postID){
     }
     return $count.' Views';
 }
+
 //Setter
 function setPostViews($postID) {
     $count_key = 'post_views_count';
@@ -191,8 +195,6 @@ function setPostViews($postID) {
         update_post_meta($postID, $count_key, $count);
     }
 }
- 
-
 
 /**
  * Systeme de points
@@ -226,8 +228,7 @@ function add_points(){
 	}
 }
 
-
-/*
+/**
  * Ajout ou retrait des points en fonction du statut
  */
 function update_points_comment_by_status($comment_id, $comment_status) {

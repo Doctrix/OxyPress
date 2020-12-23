@@ -11,11 +11,11 @@ class MenuProfilPage {
 	
 	public static function play_menu_page() {
 		// add_menu_page( $page_title, $menu_title, $capability, $menu_slug, $function, $icon_url, $position );
-		add_menu_page( 'Votre profil', 'Profil', 'manage_options', self::PLAY, [self::class, 'render'], 'dashicons-welcome-widgets-menus', 7 );
+		add_menu_page( 'Votre profil', 'Profil', 'manage_options', self::PLAY, [self::class, 'render'], 'dashicons-welcome-widgets-menus', 73 );
 	}
 
 	public static function addSubMenu () {
-		add_submenu_page('play', 'Vos Options', 'Options', 'manage_options',  'play_options', [self::class, 'renderOptions']);
+		add_submenu_page(self::PLAY, 'Vos Options', 'Options', 'manage_options',  'play_options', [self::class, 'renderOptions']);
 	}
 
 	public static function render () {
@@ -166,7 +166,7 @@ class MenuAideSupportPage {
 	}
 
 	public static function addMenu () {
-		add_menu_page("Informations complémentaire", "Aide?", "manage_options", self::GROUP, [self::class, 'render'],'',9);
+		add_menu_page("Informations complémentaire", "Aide?", "manage_options", self::GROUP, [self::class, 'render'],'',83);
 	}
 
 	public static function render () {
@@ -244,7 +244,7 @@ class MenuOptionsPage {
 	}
 
 	public static function addMenu () {
-		add_menu_page("Options", "Options", "manage_options", self::GROUP, [self::class, 'render'],'',101);
+		add_menu_page("Options", "Options", "manage_options", self::GROUP, [self::class, 'render'],'',82);
 	}
 
 	public static function render () {

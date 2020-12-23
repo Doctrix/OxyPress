@@ -46,7 +46,7 @@ Tags: one-column, two-columns, full-width-template, right-sidebar, custom-backgr
     margin-bottom: 4px;
 }
 
-.titre-boutique {
+.titre-store {
     color: #4c550085;
     text-align: center; 
     text-transform: capitalize;
@@ -56,7 +56,7 @@ Tags: one-column, two-columns, full-width-template, right-sidebar, custom-backgr
     word-wrap: break-word;
     margin-bottom: 4px;
 }
-.txt-date-publier-boutique {
+.txt-date-publier-store {
     text-align: center; 
     text-transform: capitalize;
     font-weight: 200;

@@ -1,8 +1,8 @@
 <?php get_header() ?>
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 	<p class="cover"><img src="<?php the_post_thumbnail_url(); ?>" alt="" style="width:98.75%; height:280px;"></p>
-    <h1 class="titre-boutique"><?php the_title() ?></h1>
-    <p class="card-subtitle"><h6 class="txt-date-publier-boutique"><small class="text-muted"><?= _e('Publi&eacute; il y a ' .human_time_diff(get_the_time('U'), current_time('timestamp'))); ?></small></h6></p>
+    <h1 class="titre-store"><?php the_title() ?></h1>
+    <p class="card-subtitle"><h6 class="txt-date-publier-store"><small class="text-muted"><?= _e('Publi&eacute; il y a ' .human_time_diff(get_the_time('U'), current_time('timestamp'))); ?></small></h6></p>
 <br/>
 <div class="card">
     <div class="card-body">

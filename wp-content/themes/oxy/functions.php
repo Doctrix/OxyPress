@@ -1,10 +1,11 @@
 <?php
 require_once('widgets/Widget.php');
 require_once('metaboxes/sponso.php');
-require_once('options/extra.php');
 require_once('walker/CommentWalker.php');
+require_once('options/extra.php');
 require_once('options/apparence.php');
 require_once('options/cron.php');
+require_once('types/projet.php');
 remove_action("wp_head", "wp_generator");
 
 if(isset($_GET['cachetest'])) {
@@ -252,7 +253,7 @@ add_action('wp_enqueue_scripts', 'oxy_register_assets');
 add_filter('document_title_separator', 'oxy_title_separator');
 add_filter('nav_menu_css_class', 'oxy_menu_class');
 add_filter('nav_menu_link_attributes', 'oxy_menu_link_class');
-add_filter('manage_boutique_posts_columns', function ($columns) 
+add_filter('manage_store_posts_columns', function ($columns) 
 {
 	return [
 		'cb' => $columns['cb'],
@@ -268,7 +269,7 @@ add_filter('manage_boutique_posts_columns', function ($columns)
 		'date' => $columns['date']
 	]; 
 }); 
-add_filter('manage_boutique_posts_custom_column',  function ($column, $postId) 
+add_filter('manage_store_posts_custom_column',  function ($column, $postId) 
 {
 	if ($column === 'thumbnail') {
 		the_post_thumbnail('thumbnail', $postId);

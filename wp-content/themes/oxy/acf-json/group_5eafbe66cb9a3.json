@@ -305,7 +305,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "boutique"
+                "value": "store"
             }
         ]
     ],

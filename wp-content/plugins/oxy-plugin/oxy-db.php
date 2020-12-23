@@ -63,7 +63,7 @@ $results = $wpdb->get_results($query);
 function oxy_save_commission_game_fields_data($product_id, $post, $update) {
 	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
 
-	if ($post->post_type == 'boutique') {
+	if ($post->post_type == 'store') {
 		$product = get_posts($product_id);
 
 		if (isset($_POST['commission_user_id'])) {
@@ -86,8 +86,8 @@ function oxy_save_commission_game_fields_data($product_id, $post, $update) {
 			$product->update_post_meta('commission_date_end', $commission_date_end);
 		}
 
-/* 		$product->save();
- */	} 
+		//$product->save_post();
+	} 
 }
 
 add_action('save_post', 'oxy_save_commission_game_fields_data', 10, 3);

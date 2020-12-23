@@ -35,7 +35,7 @@
                 "id": ""
             },
             "post_type": [
-                "boutique"
+                "store"
             ],
             "taxonomy": [
                 "category:jeux-video"
