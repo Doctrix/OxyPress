@@ -1,15 +1,15 @@
-<?php get_header() ?>
+<?php get_header(); ?>
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 	<p class="cover"><img src="<?php the_post_thumbnail_url(); ?>" alt="" style="width:98.75%; height:280px;"></p>
-    <h1 class="titre-store"><?php the_title() ?></h1>
+    <h1 class="titre-store"><?php the_title(); ?></h1>
     <p class="card-subtitle"><h6 class="txt-date-publier-store"><small class="text-muted"><?= _e('Publi&eacute; il y a ' .human_time_diff(get_the_time('U'), current_time('timestamp'))); ?></small></h6></p>
 <br/>
 <div class="card">
     <div class="card-body">
         <h2><?php _e('Game description'); ?></h2>
         <h3><?php _e('Profile of'); ?> <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo esc_attr( get_the_author() ); ?>"><?php the_author(); ?></a></h3>             
-          <?php the_content() ?>   
-          <small class="text-muted"><?php echo getPostViews(get_the_ID());?></small> 
+          <?php the_content(); ?>   
+          <small class="text-muted"><?php echo getPostViews(get_the_ID()); ?></small> 
     </div>
 </div>
 <br/>
@@ -28,8 +28,8 @@
         <?php if (get_field('payant') === false):?>
         <?php _e(the_terms(get_the_ID(), 'prix', '<h3>', '', '</h3>')); ?> 
         <?php if(have_rows('infos')): ?>
-        <?php while(have_rows('infos')): the_row() ?>        
-        <strong><?php _e('Author'); ?> :</strong> <a href="<?= get_sub_field('url') ?>" target="_blank"><?= get_sub_field('auteur') ?></a>
+        <?php while(have_rows('infos')): the_row(); ?>        
+        <strong><?php _e('Author'); ?> :</strong> <a href="<?= get_sub_field('url'); ?>" target="_blank"><?= get_sub_field('auteur'); ?></a>
         <?php endwhile; ?>
         <?php endif ?>
 	    <?php endif ?>
@@ -54,7 +54,7 @@
 
         <div id="mini-carousel" class="carousel slide" data-ride="carousel">
               <ul class="carousel-indicators">
-                  <li data-target="#mini-carousel" data-slide-to="<?php echo $i;?>" class="<?php if($i == 0) echo 'active';?>"></li>
+                  <li data-target="#mini-carousel" data-slide-to="<?php echo $i; ?>" class="<?php if($i == 0) echo 'active'; ?>"></li>
 
 
                 </ul>
@@ -104,4 +104,4 @@ jQuery(document).ready(function($) {
     });
 });
 </script>
-<?php get_footer() ?>
+<?php get_footer(); ?>

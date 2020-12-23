@@ -45,4 +45,8 @@ function get_projet() {
  
     register_post_type( 'projet', $args );
 }
+
+if((isset($_REQUEST['post_id']) && get_post_type($_REQUEST['post_id']) == 'projet') || (isset($_REQUEST['action']) && $_REQUEST['action'] == 'delete')){
+    set_post_thumbnail_size(220,150,true);
+}
 ?>
