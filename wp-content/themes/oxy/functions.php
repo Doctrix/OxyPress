@@ -4,7 +4,8 @@ require_once('metaboxes/sponso.php');
 require_once('walker/CommentWalker.php');
 require_once('options/extra.php');
 require_once('options/apparence.php');
-require_once('options/cron.php');
+require_once('options/panel.php');
+require_once('options/help.php');
 require_once('types/projet.php');
 remove_action("wp_head", "wp_generator");
 
