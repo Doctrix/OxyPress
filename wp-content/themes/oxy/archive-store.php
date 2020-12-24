@@ -1,12 +1,11 @@
 <?php get_header() ?>
 
-<h1>Voir tous les jeux</h1>
-
+<h1>Tous les jeux vidéos</h1>
+<br>
 <?php if (have_posts()) : ?>
 	<div class="row">
-    
 		<?php while (have_posts()) : the_post(); ?>
-    		<div class="col-sm-4">
+			<div class="col-sm-4">
 				<?php get_template_part('parts/card', 'post'); ?>
     		</div>
 		<?php endwhile ?>        

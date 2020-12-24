@@ -1,11 +1,11 @@
 <div class="card">
     <?php the_post_thumbnail('post-thumbnail', ['class' => 'card-img-top', 'alt' => '', 'style' => 'height: auto;']) ?>
-    <div class="card-body">
+    <div class="card-body cadre-bloc-shadow" style="text-align: center;">
    		<h5 type="text/css" class="card-title"><?php the_title() ?></h5>
         <h6 class="card-subtitle"><small class="text-muted"><?= 'Publi&eacute; il y a ' .human_time_diff(get_the_time('U'), current_time('timestamp')); ?></small></h6>
-   		<p class="card-text">
+   		<!-- <p class="card-text">
            <?php the_excerpt() ?>
-        </p>
+        </p> -->
         <h6 class="card-text"><small class="text-muted"><?php the_category(); ?></small></h6>
         <p><?php the_terms(get_the_ID(), 'genre', 'Genre : <small>', '</small> <small>', '</small>'); ?></p>
         <p><?php the_terms(get_the_ID(), 'statut', 'Statut : <small>', '</small> <small>', '</small>'); ?></p>
