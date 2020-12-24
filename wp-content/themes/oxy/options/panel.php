@@ -46,10 +46,42 @@ function render_panel(){
                         </tr>
                         <tr>
                             <th scope="row">
-                                <label for="oxygames">OxyGameS</label>
+                                <label for="ogs">Liens Reseau</label>
+                            </th>
+                            <td>
+                                <input type="text" id="ogs" name="options[ogs]" value="<?= get_option('ogs',''); ?>" size="75">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <label for="ogs-text">Nom du Reseau</label>
+                            </th>
+                            <td>
+                                <input type="text" id="ogs-text" name="options[ogs-text]" value="<?= get_option('ogs-text',''); ?>" size="75">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <label for="oxygames">Page important du site</label>
                             </th>
                             <td>
                                 <input type="text" id="oxygames" name="options[oxygames]" value="<?= get_option('oxygames',''); ?>" size="75">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <label for="discord">Serveur Discord</label>
+                            </th>
+                            <td>
+                                <input type="text" id="discord" name="options[discord]" value="<?= get_option('discord',''); ?>" size="75">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <label for="twitch">Twitch</label>
+                            </th>
+                            <td>
+                                <input type="text" id="twitch" name="options[twitch]" value="<?= get_option('twitch',''); ?>" size="75">
                             </td>
                         </tr>
                         <tr>
