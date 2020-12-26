@@ -32,4 +32,4 @@
 </nav>
 	<div class="container">
 
-<?php slider_ban_show(); ?>
+<div class="card-body cadre-bloc-shadow" style="text-align: center; height:100%;"><?php slider_ban_show(); ?></div>

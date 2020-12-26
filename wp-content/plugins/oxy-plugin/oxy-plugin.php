@@ -204,7 +204,7 @@ function slider_ban_init(){
 		'supports' => ['title', 'thumbnail']
 	]);
 
-	add_image_size('slider',1000,300,true);
+	add_image_size('slider',1100,300,true);
 }
 
 function slider_ban_columnfilter($columns){
@@ -263,9 +263,9 @@ function slider_ban_savepost($post_id, $post){
  * Permet d'afficher le carrousel
  */
 function slider_ban_show($limit = 10){
-	wp_deregister_script('jquery');
-	wp_enqueue_script('jquery','https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js',null,'3.5.1',true);
-	wp_enqueue_script('caroufredsel',plugins_url().'/oxy-plugin/js/jquery.carouFredSel-6.2.1-packed.js',['jquery'],'6.2.1',true);
+	wp_deregister_script('jQuery');
+	wp_enqueue_script('jQuery','https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js',null,'3.5.1',true);
+	wp_enqueue_script('caroufredsel',plugins_url().'/oxy-plugin/js/jquery.carouFredSel-6.2.1-packed.js',['jQuery'],'6.2.1',true);
 	add_action('wp_footer', 'slider_ban_script', 30);
 
 	$slides = new WP_query("post_type=slide&posts_per_page=$limit");
@@ -274,7 +274,7 @@ function slider_ban_show($limit = 10){
 		$slides->the_post();
 		global $post;
 		echo '<a style="display:block; float:left; height:300px;" href="'.esc_attr(get_post_meta($post->ID, '_link', true)).'">';
-		the_post_thumbnail('slider', ['style' => 'width:1000px!important;']);
+		the_post_thumbnail('slider', ['style' => 'width:1100px!important; text-align: center; height:100%;']);
 		echo '</a>';
 	}
 	echo '</div>';
