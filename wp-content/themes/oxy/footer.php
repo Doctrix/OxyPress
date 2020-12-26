@@ -16,19 +16,18 @@
 				<div style="text-align: center;"><script type="text/javascript" src="<?= "//".$_SERVER['HTTP_HOST']."/compteur/"; ?>gcount.php?page=index"></script></div>
 			</div>
 			<div class="cadre-bloc-shadow" style="text-align: center;">
-				<ul><strong><a href="https://oxygames.fr/<?= get_option('oxygames', ''); ?>" target="_blank">OxyGameS</a>
+			<strong><a href="https://oxygames.fr/<?= get_option('oxygames', ''); ?>" target="_blank">OxyGameS</a>
 					- <a href="https://<?= get_option('ogs', ''); ?>" target="_blank"><?= get_option('ogs-text', ''); ?></a>
 					- <a href="https://discord.gg/<?= get_option('discord', ''); ?>" target="_blank">Serveur Discord</a>
 					 - <a href="https://twitch.tv/<?= get_option('twitch', ''); ?>" target="_blank">Twitch</a>
 					  -	<a href="https://twitter.com/<?= get_option('twitter', ''); ?>" target="_blank">Twitter</a>
 					   - <a href="https://facebook.com/<?= get_option('facebook', ''); ?>" target="_blank">Facebook</a>
-					</strong><br><?= get_option('copyright', ''); ?>
-				</ul>
+					</strong><br><?= get_option('copyright', ''); ?>				
 			</div>
 		</footer>
 	</div>
 	<!-- #content -->
 	<br>
-<?php wp_footer() ?>
+<?php wp_footer(); ?>
 </body>
 </html>

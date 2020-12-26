@@ -22,4 +22,4 @@
 	       <?php endif ?>
    		<a href="<?php the_permalink() ?>" class="btn btn-primary">Voir plus</a>
   	</div>
-</div>
+</div><br>

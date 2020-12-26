@@ -1,15 +1,15 @@
 <?php get_header(); ?>
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-	<p class="cover"><img src="<?php the_post_thumbnail_url(); ?>" alt="" style="width:98.75%; height:280px;"></p>
+	<p class="cover"><img src="<?php the_post_thumbnail_url() ?>" alt="" style="width:100%; height:280px;"></p>
     <h1 class="titre-store"><?php the_title(); ?></h1>
     <p class="card-subtitle"><h6 class="txt-date-publier-store"><small class="text-muted"><?= _e('Publi&eacute; il y a ' .human_time_diff(get_the_time('U'), current_time('timestamp'))); ?></small></h6></p>
 <br/>
 <div class="card">
     <div class="card-body">
         <h2><?php _e('Game description'); ?></h2>
-        <h3><?php _e('Profile of'); ?> <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo esc_attr( get_the_author() ); ?>"><?php the_author(); ?></a></h3>             
+        <h3><?php _e('Profile of'); ?> <a href="<?= esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?= esc_attr( get_the_author() ); ?>"><?php the_author(); ?></a></h3>             
           <?php the_content(); ?>   
-          <small class="text-muted"><?php echo getPostViews(get_the_ID()); ?></small> 
+          <small class="text-muted"><?= getPostViews(get_the_ID()); ?></small> 
     </div>
 </div>
 <br/>
@@ -67,8 +67,8 @@
                     foreach( $images as $image ):
                         $counter++; ?>
 
-                    <a href="<?php echo $image['sizes']['thumbnail']; ?>" class="fancybox img-<?php echo $counter; ?>" rel="mini">
-                        <img class="d-block w-100" src="<?php echo $image['sizes']['post-thumbnail']; ?>" alt="<?php echo $image['title']; ?>" />
+                    <a href="<?= $image['sizes']['thumbnail']; ?>" class="fancybox img-<?= $counter; ?>" rel="mini">
+                        <img class="d-block w-100" src="<?= $image['sizes']['post-thumbnail']; ?>" alt="<?= $image['title']; ?>" />
                     </a>
 
                     <?php $current_position = $images->$image + 1; 

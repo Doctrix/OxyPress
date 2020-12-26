@@ -7,7 +7,6 @@
             <br/>
             <a href="<?php echo get_option('extra_btn_link') ?>" class="btn btn-lg btn-secondary" target="_blank"><?= __('I want to believe', 'oxy'); ?></a>
         </main>
-        
     <aside class="col-md-20 blog-sidebar">
         <?= get_sidebar('homepage'); ?>
     </aside>
