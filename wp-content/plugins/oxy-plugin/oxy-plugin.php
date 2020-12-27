@@ -262,7 +262,7 @@ function slider_ban_savepost($post_id, $post){
 /**
  * Permet d'afficher le carrousel
  */
-function slider_ban_show($limit = 10){
+function slider_ban_show($limit = 10, $labels = null){
 	wp_deregister_script('jQuery');
 	wp_enqueue_script('jQuery','https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js',null,'3.5.1',true);
 	wp_enqueue_script('caroufredsel',plugins_url().'/oxy-plugin/js/jquery.carouFredSel-6.2.1-packed.js',['jQuery'],'6.2.1',true);
@@ -273,11 +273,16 @@ function slider_ban_show($limit = 10){
 	while ($slides->have_posts()) {
 		$slides->the_post();
 		global $post;
-		echo '<a style="display:block; float:left; height:300px;" href="'.esc_attr(get_post_meta($post->ID, '_link', true)).'">';
-		the_post_thumbnail('slider', ['style' => 'width:1100px!important; text-align: center; height:100%;']);
+		echo '<a style="display:block; float:center; height:300px;" href="'.esc_attr(get_post_meta($post->ID, '_link', true)).'">';
+		the_title('<div class="titre">','</div>');
+		the_post_thumbnail('slider', [
+			'style' => 'width:1100px!important; height:300px;',
+			'class' => 'responsive'
+		]);
 		echo '</a>';
 	}
 	echo '</div>';
+	echo "<?php wp_title(''); ?>";
 }
 
 function slider_ban_script(){
