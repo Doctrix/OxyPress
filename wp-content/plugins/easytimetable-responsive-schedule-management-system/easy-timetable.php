@@ -16,7 +16,7 @@
  * Plugin Name:       EasyTimetable
  * Plugin URI:        http://www.stereonomy.com
  * Description:       A very easy-to-use schedule management system to create beautiful responsive Timetable
- * Version:           1.4.12
+ * Version:           1.4.13
  * Author:            Stereonomy - Anthony Ceccarelli
  * Author URI:        http://www.stereonomy.com
  * License:           GPL-2.0+

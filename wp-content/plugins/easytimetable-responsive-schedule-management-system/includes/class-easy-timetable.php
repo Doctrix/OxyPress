@@ -69,7 +69,7 @@ class Easy_Timetable {
 	public function __construct() {
 
 		$this->plugin_name = 'easy-timetable';
-		$this->version = '1.4.12';
+		$this->version = '1.4.13';
 
 		$this->load_dependencies();
 		$this->set_locale();

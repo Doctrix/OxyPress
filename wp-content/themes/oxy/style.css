@@ -12,12 +12,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: oxy
 Tags: one-column, two-columns, full-width-template, right-sidebar, custom-background, custom-menu, custom-header, editor-style, featured-images, translation-ready, custom-logo, threaded-comments, footer-widgets, rtl-language-support, theme-options, news, blog, e-commerce
 */
-.responsive {
-    width: auto;
-    max-width: 1100px;
-    height: auto;
-    max-height: 300px;
-  }
 
 .cadre-bloc-shadow {
     width: 80em;

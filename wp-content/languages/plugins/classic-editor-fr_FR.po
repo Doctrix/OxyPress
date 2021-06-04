@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Classic Editor - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-12-06 17:28:22+0000\n"
+"PO-Revision-Date: 2021-01-12 06:42:01+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,16 @@ msgstr ""
 "X-Generator: GlotPress/3.0.0-alpha.2\n"
 "Language: fr\n"
 "Project-Id-Version: Plugins - Classic Editor - Stable (latest release)\n"
+
+#: classic-editor.php:822
+msgctxt "Editor Name"
+msgid "Edit (classic editor)"
+msgstr "Modifier (Classic Editor)"
+
+#: classic-editor.php:815
+msgctxt "Editor Name"
+msgid "Edit (block editor)"
+msgstr "Modifier (Nouvel éditeur)"
 
 #: classic-editor.php:489
 msgid "Change settings"
@@ -26,6 +36,33 @@ msgstr "Réglages de l’éditeur"
 #: classic-editor.php:456
 msgid "Default Editor"
 msgstr "Éditeur par défaut"
+
+#: classic-editor.php:856
+msgctxt "Editor Name"
+msgid "block editor"
+msgstr "Nouvel éditeur"
+
+#: classic-editor.php:853
+msgctxt "Editor Name"
+msgid "classic editor"
+msgstr "Éditeur classique"
+
+#. translators: %s: post title
+#: classic-editor.php:817
+msgid "Edit &#8220;%s&#8221; in the block editor"
+msgstr "Modifier &#171; %s &#187; dans l’éditeur de blocs"
+
+#: classic-editor.php:657
+msgid "Switch to block editor"
+msgstr "Changer vers le nouvel éditeur"
+
+#: classic-editor.php:681
+msgid "Switch to classic editor"
+msgstr "Basculer vers l’éditeur classique"
+
+#: classic-editor.php:493
+msgid "By default the block editor is replaced with the classic editor and users cannot switch editors."
+msgstr "Par défaut, le nouvel éditeur est remplacé par l’éditeur classique et les utilisateurs ne peuvent pas changer d’éditeur."
 
 #: classic-editor.php:492
 msgid "Allow site admins to change settings"
@@ -70,6 +107,11 @@ msgstr "Active l’éditeur classique de WordPress et l’ancienne disposition d
 #. Plugin Name of the plugin
 msgid "Classic Editor"
 msgstr "Classic Editor"
+
+#. translators: %s: post title
+#: classic-editor.php:824
+msgid "Edit &#8220;%s&#8221; in the classic editor"
+msgstr "Modifier « %s » dans l’éditeur classique"
 
 #: classic-editor.php:700
 msgid "Settings"

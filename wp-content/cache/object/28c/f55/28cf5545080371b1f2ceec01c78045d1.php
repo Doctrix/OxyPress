@@ -1,0 +1,1 @@
+€ñÚ_<?php exit; ?>a:1:{s:7:"content";a:6:{s:21:"dismissed_update_core";b:1;s:21:"jetpack_site_icon_url";b:1;s:10:"at_options";b:1;s:28:"jetpack_sso_require_two_step";b:1;s:29:"jetpack_sso_remove_login_form";b:1;s:26:"jetpack_sso_match_by_email";b:1;}}

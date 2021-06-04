@@ -66,6 +66,10 @@ class EasyTimetableViewPlanning {
 			//var_dump(implode(",", $weeks));
 			$year = $thisdate->format('Y');
 			$thisweek = (int)$thisdate->format('W');
+			if($thisweek == 53)
+			{
+				$thisweek = 1;
+			}
 		 ?>
 		<?php if(empty($model[0]->rows_name)): ?>
 			<div class="timetable-nav">

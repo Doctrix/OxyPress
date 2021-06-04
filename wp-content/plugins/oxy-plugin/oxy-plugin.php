@@ -274,7 +274,7 @@ function slider_ban_show($limit = 10, $labels = null){
 		$slides->the_post();
 		global $post;
 		echo '<a style="display:block; float:center; height:300px;" href="'.esc_attr(get_post_meta($post->ID, '_link', true)).'">';
-		the_title('<div class="titre">','</div>');
+		the_title('<div>','</div>');
 		the_post_thumbnail('slider', [
 			'style' => 'width:1100px!important; height:300px;',
 			'class' => 'responsive'
@@ -282,7 +282,6 @@ function slider_ban_show($limit = 10, $labels = null){
 		echo '</a>';
 	}
 	echo '</div>';
-	echo "<?php wp_title(''); ?>";
 }
 
 function slider_ban_script(){

@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: Template sans image mis en avant
- * Template Post Type: page
+ * Template Post Type: page, post
  */
  ?>
  

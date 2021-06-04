@@ -3,8 +3,8 @@ Contributors: stereonomy
 Donate link: https://www.paypal.me/stereonomy
 Tags: timetable, schedule, week schedule, scheduled activities, drag & drop, responsive, week calendar, jQuery, Ajax, school timetable, schedule management, planning, emploi du temps, Zeitplan, Wochenplan, programma settimanale, orario, empleo del tiempo, horario semanal, programação semanal, horário, dienstregeling
 Requires at least: 3.5.0
-Tested up to: 5.4
-Stable tag: 1.4.12
+Tested up to: 5.6
+Stable tag: 1.4.13
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -119,6 +119,8 @@ Yes, with the extended edition, you can display a different schedule each week i
 13. /assets/screenshot-13.png
 
 == Changelog ==
+= 1.4.13 =
+Bug fix:  53rd week of 2021 issue
 = 1.4.11 =
 Bug fix:  setting, calls for a file that does not exists in the free version.
 = 1.4.10 =
